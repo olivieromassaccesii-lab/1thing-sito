@@ -1,0 +1,21 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>1thing</title>
+<link rel="canonical" href="https://1thingapp.com/en/">
+<link rel="alternate" hreflang="it" href="https://1thingapp.com/it/">
+<link rel="alternate" hreflang="en" href="https://1thingapp.com/en/">
+<link rel="alternate" hreflang="es" href="https://1thingapp.com/es/">
+<link rel="alternate" hreflang="fr" href="https://1thingapp.com/fr/">
+<link rel="alternate" hreflang="pt-BR" href="https://1thingapp.com/pt/">
+<link rel="alternate" hreflang="x-default" href="https://1thingapp.com/en/">
+<script>
+(function(){var L=["it", "en", "es", "fr", "pt"],s;try{s=localStorage.getItem('lingua')}catch(e){}
+var a=(navigator.languages||[navigator.language||'en']).map(function(x){return String(x).slice(0,2).toLowerCase()});
+var l=L.indexOf(s)>=0?s:(a.filter(function(x){return L.indexOf(x)>=0})[0]||'en');
+location.replace(l+'/'+location.hash)})();
+</script>
+<style>body{background:#f9f5ef;color:#3a322b;font:20px/1.5 system-ui;padding:40px 20px}a{color:inherit;margin-right:14px}</style>
+</head><body>
+<a href="it/" hreflang="it">italiano</a><a href="en/" hreflang="en">english</a><a href="es/" hreflang="es">español</a><a href="fr/" hreflang="fr">français</a><a href="pt/" hreflang="pt-BR">português</a>
+</body></html>

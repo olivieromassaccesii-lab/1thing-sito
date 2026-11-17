@@ -1,0 +1,167 @@
+<!doctype html>
+<html lang="it">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>1thing — un obiettivo al giorno.</title>
+<meta name="description" content="1thing è un&#x27;app per iPhone: scegli un obiettivo al giorno, uno solo. ogni obiettivo completato dipinge un pezzo di un quadro a pastello.">
+<meta name="theme-color" content="#f9f5ef">
+<link rel="canonical" href="https://1thingapp.com/it/">
+<link rel="alternate" hreflang="it" href="https://1thingapp.com/it/">
+<link rel="alternate" hreflang="en" href="https://1thingapp.com/en/">
+<link rel="alternate" hreflang="es" href="https://1thingapp.com/es/">
+<link rel="alternate" hreflang="fr" href="https://1thingapp.com/fr/">
+<link rel="alternate" hreflang="pt-BR" href="https://1thingapp.com/pt/">
+<link rel="alternate" hreflang="x-default" href="https://1thingapp.com/en/">
+<meta property="og:type" content="website">
+<meta property="og:title" content="1thing — un obiettivo al giorno.">
+<meta property="og:description" content="1thing è un&#x27;app per iPhone: scegli un obiettivo al giorno, uno solo. ogni obiettivo completato dipinge un pezzo di un quadro a pastello.">
+<meta property="og:url" content="https://1thingapp.com/it/">
+<meta property="og:image" content="https://1thingapp.com/assets/img/og-it.jpg">
+<meta property="og:locale" content="it_IT">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="icon" href="../assets/img/icona.png">
+<link rel="apple-touch-icon" href="../assets/img/icona.png">
+<link rel="preload" href="../assets/poppi.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="../assets/img/costa-12.webp" as="image">
+<link rel="stylesheet" href="../assets/sito.css?v=202611171633">
+</head>
+<body>
+<a class="salta" href="#contenuto">vai al contenuto</a>
+
+<header class="testa">
+  <a class="marchio" href="./" aria-label="1thing">1thing</a>
+  <nav class="voci" aria-label="1thing">
+    <a href="#come">come funziona</a>
+    <a href="#dipinti">i dipinti</a>
+    <a href="#plus">1thing plus</a>
+  </nav>
+  <details class="lingue">
+    <summary aria-label="lingua">it</summary>
+    <ul><li><a href="../it/" hreflang="it" lang="it" aria-current="page">italiano</a></li><li><a href="../en/" hreflang="en" lang="en">english</a></li><li><a href="../es/" hreflang="es" lang="es">español</a></li><li><a href="../fr/" hreflang="fr" lang="fr">français</a></li><li><a href="../pt/" hreflang="pt-BR" lang="pt">português</a></li></ul>
+  </details>
+</header>
+
+<main id="contenuto">
+
+<section class="apertura" aria-labelledby="titolo">
+  <div class="apertura__testo">
+    <h1 id="titolo">un obiettivo al giorno.</h1>
+    <p class="apertura__sotto">non una lista: uno solo, quello che rimandi da troppo.</p>
+    <span class="tasto tasto--attesa">presto sull&#x27;App Store</span>
+  </div>
+
+  <div class="apertura__foglio">
+    <figure class="foglio" id="foglio" data-giorno="12">
+      <div class="foglio__dentro">
+      <img class="foglio__poster" src="../assets/img/costa-12.webp" width="800" height="1805" alt="la costa d&#x27;inverno, dipinta a pastello: il faro, il mare, la spiaggia con le cabine e l&#x27;airone." fetchpriority="high">
+      <canvas class="foglio__tela" aria-hidden="true"></canvas>
+      <p class="foglio__obiettivo" aria-hidden="true">chiamare la nonna</p>
+      <button class="cerchio" type="button" aria-label="tieni premuto per completare l&#x27;obiettivo">
+        <svg viewBox="0 0 100 100" aria-hidden="true">
+          <path class="cerchio__giro" d=""/>
+          <path class="cerchio__penna" d=""/>
+          <path class="cerchio__piu" d="M50 36 C50.4 45 49.7 55 50.2 64 M36.5 50.3 C45 49.6 55 50.4 63.6 49.8"/>
+          <path class="cerchio__fatto" d="M35 51.5 C39 55 42.5 59 45.5 63.5 C51 54 57.5 45 66 36.5"/>
+        </svg>
+      </button>
+      </div>
+    </figure>
+    <p class="foglio__nota" aria-live="polite">
+      <span class="nota__prova">tieni premuto il cerchio.</span>
+      <span class="nota__giorno" hidden></span>
+      <button class="nota__ancora" type="button" hidden>ricomincia</button>
+    </p>
+  </div>
+</section>
+
+<section class="come" id="come" aria-labelledby="come-t">
+  <h2 id="come-t">come funziona.</h2>
+  <ol class="passi">
+    <li><span class="passi__n" aria-hidden="true">1</span><h3>scegli un obiettivo. uno solo, per oggi.</h3><p>è così che si smette di rimandare: un piccolo passo alla volta.</p></li>
+    <li><span class="passi__n" aria-hidden="true">2</span><h3>quando lo completi, tieni premuto il cerchio.</h3><p>finché si chiude. è il tuo segno di fatto.</p></li>
+    <li><span class="passi__n" aria-hidden="true">3</span><h3>ogni obiettivo completato dipinge un pezzo del quadro.</h3><p>con 30 il dipinto è finito. se salti un giorno, ti aspetta.</p></li>
+  </ol>
+  <div class="striscia" role="list">
+    <figure role="listitem"><img src="../assets/img/giorno-1.webp" width="420" height="876" loading="lazy" alt=""><figcaption>giorno 1</figcaption></figure>
+    <figure role="listitem"><img src="../assets/img/giorno-5.webp" width="420" height="876" loading="lazy" alt=""><figcaption>giorno 5</figcaption></figure>
+    <figure role="listitem"><img src="../assets/img/giorno-12.webp" width="420" height="876" loading="lazy" alt=""><figcaption>giorno 12</figcaption></figure>
+    <figure role="listitem"><img src="../assets/img/giorno-20.webp" width="420" height="876" loading="lazy" alt=""><figcaption>giorno 20</figcaption></figure>
+    <figure role="listitem"><img src="../assets/img/giorno-30.webp" width="420" height="876" loading="lazy" alt=""><figcaption>giorno 30</figcaption></figure>
+  </div>
+</section>
+
+<section class="giorni" aria-labelledby="giorni-t">
+  <div class="giorni__testo">
+    <h2 id="giorni-t">i giorni fatti restano.</h2>
+    <p>ogni obiettivo completato è un pezzo del dipinto: 30 pezzi, anche non di seguito.</p>
+  </div>
+  <img class="schermo" src="../assets/img/calendario.webp" width="700" height="889" loading="lazy" alt="il calendario dell&#x27;app: i giorni fatti, ognuno con il suo pezzo di dipinto.">
+</section>
+
+<section class="dipinti" id="dipinti" aria-labelledby="dipinti-t">
+  <div class="dipinti__testa">
+    <h2 id="dipinti-t">cosa dipingiamo adesso?</h2>
+    <p>quando un dipinto è finito, lo appendo nello studio e ne comincia un altro.</p>
+  </div>
+  <ul class="quadri">
+    <li><div class="cornice"><img src="../assets/img/costa.webp" width="600" height="1354" loading="lazy" alt=""></div><span>la costa d&#x27;inverno</span></li>
+    <li><div class="cornice"><img src="../assets/img/giardino.webp" width="600" height="1354" loading="lazy" alt=""></div><span>il giardino</span></li>
+    <li><div class="cornice"><img src="../assets/img/bosco.webp" width="600" height="1354" loading="lazy" alt=""></div><span>il bosco d&#x27;autunno</span></li>
+    <li><div class="cornice"><img src="../assets/img/deserto.webp" width="600" height="1354" loading="lazy" alt=""></div><span>il deserto rosso</span></li>
+    <li><div class="cornice"><img src="../assets/img/luminoso.webp" width="600" height="1354" loading="lazy" alt=""></div><span>il luminoso</span></li>
+  </ul>
+</section>
+
+<section class="studio" aria-labelledby="studio-t">
+  <img class="schermo schermo--studio" src="../assets/img/studio.webp" width="800" height="1566" loading="lazy" alt="lo studio del pittore: la finestra, il dipinto sul cavalletto e il gatto che dorme nella cuccia.">
+  <div class="studio__testo">
+    <h2 id="studio-t">nel tuo studio vive un compagno.</h2>
+    <p>ti aspetta lì ogni giorno, mentre dipingi. scegli chi.</p>
+    <ul class="animali">
+      <li><button class="animale" type="button" aria-label="gatto"><img src="../assets/img/gatto-aspetta.webp" width="154" height="136" loading="lazy" alt=""><img src="../assets/img/gatto-felice.webp" width="154" height="136" loading="lazy" alt=""></button><span aria-hidden="true">gatto</span></li>
+      <li><button class="animale" type="button" aria-label="cane"><img src="../assets/img/cane-aspetta.webp" width="154" height="136" loading="lazy" alt=""><img src="../assets/img/cane-felice.webp" width="154" height="136" loading="lazy" alt=""></button><span aria-hidden="true">cane</span></li>
+      <li><button class="animale" type="button" aria-label="pappagallo"><img src="../assets/img/pappagallo-aspetta.webp" width="154" height="136" loading="lazy" alt=""><img src="../assets/img/pappagallo-felice.webp" width="154" height="136" loading="lazy" alt=""></button><span aria-hidden="true">pappagallo</span></li>
+      <li><button class="animale" type="button" aria-label="criceto"><img src="../assets/img/criceto-aspetta.webp" width="154" height="136" loading="lazy" alt=""><img src="../assets/img/criceto-felice.webp" width="154" height="136" loading="lazy" alt=""></button><span aria-hidden="true">criceto</span></li>
+    </ul>
+  </div>
+</section>
+
+<section class="plus" id="plus" aria-labelledby="plus-t">
+  <img class="plus__notte" src="../assets/img/notte.webp" width="1200" height="697" loading="lazy" alt="la costa di notte: la luna, il faro acceso, le stelle.">
+  <div class="plus__corpo">
+    <h2 id="plus-t">1thing plus.</h2>
+    <p class="plus__sotto">1thing è gratis. con 1thing plus:</p>
+    <dl class="plus__lista">
+      <div><dt>il tuo studio, arredato come vuoi tu.</dt><dd>piante, tende, lucine, il tuo compagno: più di 40 cose.</dd></div>
+      <div><dt>nei giorni vuoti, l&#x27;obiettivo giusto te lo trovo io.</dt><dd>so cosa ti sta a cuore.</dd></div>
+      <div><dt>il prossimo dipinto lo scegli tu.</dt><dd>ogni dipinto, quando vuoi.</dd></div>
+      <div><dt>l&#x27;alba, il tramonto e la notte.</dt><dd>il dipinto cambia con l&#x27;ora in cui completi il tuo obiettivo.</dd></div>
+      <div><dt>icona e widget come vuoi tu.</dt><dd>l&#x27;app diventa tua.</dd></div>
+    </dl>
+    <p class="plus__prova">14 giorni gratis per provarlo.</p>
+  </div>
+</section>
+
+<section class="fine" aria-labelledby="fine-t">
+  <img class="fine__quadro" src="../assets/img/costa.webp" width="600" height="1354" loading="lazy" alt="">
+  <div class="fine__testo">
+    <h2 id="fine-t">un obiettivo al giorno.</h2>
+    <p>per iPhone.</p>
+    <span class="tasto tasto--attesa">presto sull&#x27;App Store</span>
+  </div>
+</section>
+
+</main>
+
+<footer class="piede">
+  <span class="marchio marchio--piccolo">1thing</span>
+  <a href="mailto:feedback@1thingapp.com">scrivici</a>
+  <ul class="piede__lingue" aria-label="lingua"><li><a href="../it/" hreflang="it" lang="it" aria-current="page">italiano</a></li><li><a href="../en/" hreflang="en" lang="en">english</a></li><li><a href="../es/" hreflang="es" lang="es">español</a></li><li><a href="../fr/" hreflang="fr" lang="fr">français</a></li><li><a href="../pt/" hreflang="pt-BR" lang="pt">português</a></li></ul>
+  <span>© 2026</span>
+</footer>
+
+<script>window.TESTI={dayOf:"giorno {d} di 30",done:"dipinto 1 è finito."};</script>
+<script src="../assets/sito.js?v=202611171633" defer></script>
+</body>
+</html>

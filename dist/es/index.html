@@ -1,0 +1,167 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>1thing — un objetivo al día.</title>
+<meta name="description" content="1thing es una app para iPhone: elige un objetivo al día, solo uno. cada objetivo que completas pinta un trozo de un cuadro al pastel.">
+<meta name="theme-color" content="#f9f5ef">
+<link rel="canonical" href="https://1thingapp.com/es/">
+<link rel="alternate" hreflang="it" href="https://1thingapp.com/it/">
+<link rel="alternate" hreflang="en" href="https://1thingapp.com/en/">
+<link rel="alternate" hreflang="es" href="https://1thingapp.com/es/">
+<link rel="alternate" hreflang="fr" href="https://1thingapp.com/fr/">
+<link rel="alternate" hreflang="pt-BR" href="https://1thingapp.com/pt/">
+<link rel="alternate" hreflang="x-default" href="https://1thingapp.com/en/">
+<meta property="og:type" content="website">
+<meta property="og:title" content="1thing — un objetivo al día.">
+<meta property="og:description" content="1thing es una app para iPhone: elige un objetivo al día, solo uno. cada objetivo que completas pinta un trozo de un cuadro al pastel.">
+<meta property="og:url" content="https://1thingapp.com/es/">
+<meta property="og:image" content="https://1thingapp.com/assets/img/og-es.jpg">
+<meta property="og:locale" content="es_ES">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="icon" href="../assets/img/icona.png">
+<link rel="apple-touch-icon" href="../assets/img/icona.png">
+<link rel="preload" href="../assets/poppi.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="../assets/img/costa-12.webp" as="image">
+<link rel="stylesheet" href="../assets/sito.css?v=202611171633">
+</head>
+<body>
+<a class="salta" href="#contenuto">ir al contenido</a>
+
+<header class="testa">
+  <a class="marchio" href="./" aria-label="1thing">1thing</a>
+  <nav class="voci" aria-label="1thing">
+    <a href="#come">cómo funciona</a>
+    <a href="#dipinti">los cuadros</a>
+    <a href="#plus">1thing plus</a>
+  </nav>
+  <details class="lingue">
+    <summary aria-label="idioma">es</summary>
+    <ul><li><a href="../it/" hreflang="it" lang="it">italiano</a></li><li><a href="../en/" hreflang="en" lang="en">english</a></li><li><a href="../es/" hreflang="es" lang="es" aria-current="page">español</a></li><li><a href="../fr/" hreflang="fr" lang="fr">français</a></li><li><a href="../pt/" hreflang="pt-BR" lang="pt">português</a></li></ul>
+  </details>
+</header>
+
+<main id="contenuto">
+
+<section class="apertura" aria-labelledby="titolo">
+  <div class="apertura__testo">
+    <h1 id="titolo">un objetivo al día.</h1>
+    <p class="apertura__sotto">no una lista: solo uno, el que llevas demasiado tiempo posponiendo.</p>
+    <span class="tasto tasto--attesa">pronto en el App Store</span>
+  </div>
+
+  <div class="apertura__foglio">
+    <figure class="foglio" id="foglio" data-giorno="12">
+      <div class="foglio__dentro">
+      <img class="foglio__poster" src="../assets/img/costa-12.webp" width="800" height="1805" alt="la costa en invierno, pintada al pastel: el faro, el mar, la playa con las casetas y la garza." fetchpriority="high">
+      <canvas class="foglio__tela" aria-hidden="true"></canvas>
+      <p class="foglio__obiettivo" aria-hidden="true">llamar a la abuela</p>
+      <button class="cerchio" type="button" aria-label="mantén pulsado para completar el objetivo">
+        <svg viewBox="0 0 100 100" aria-hidden="true">
+          <path class="cerchio__giro" d=""/>
+          <path class="cerchio__penna" d=""/>
+          <path class="cerchio__piu" d="M50 36 C50.4 45 49.7 55 50.2 64 M36.5 50.3 C45 49.6 55 50.4 63.6 49.8"/>
+          <path class="cerchio__fatto" d="M35 51.5 C39 55 42.5 59 45.5 63.5 C51 54 57.5 45 66 36.5"/>
+        </svg>
+      </button>
+      </div>
+    </figure>
+    <p class="foglio__nota" aria-live="polite">
+      <span class="nota__prova">mantén pulsado el círculo.</span>
+      <span class="nota__giorno" hidden></span>
+      <button class="nota__ancora" type="button" hidden>empezar de nuevo</button>
+    </p>
+  </div>
+</section>
+
+<section class="come" id="come" aria-labelledby="come-t">
+  <h2 id="come-t">cómo funciona.</h2>
+  <ol class="passi">
+    <li><span class="passi__n" aria-hidden="true">1</span><h3>elige un objetivo. solo uno, para hoy.</h3><p>así se deja de posponer: un pequeño paso cada vez.</p></li>
+    <li><span class="passi__n" aria-hidden="true">2</span><h3>cuando lo completes, mantén pulsado el círculo.</h3><p>hasta que se cierre. es tu señal de hecho.</p></li>
+    <li><span class="passi__n" aria-hidden="true">3</span><h3>cada objetivo que completas pinta un trozo del cuadro.</h3><p>con 30, el cuadro está terminado. si te saltas un día, te espera.</p></li>
+  </ol>
+  <div class="striscia" role="list">
+    <figure role="listitem"><img src="../assets/img/giorno-1.webp" width="420" height="876" loading="lazy" alt=""><figcaption>día 1</figcaption></figure>
+    <figure role="listitem"><img src="../assets/img/giorno-5.webp" width="420" height="876" loading="lazy" alt=""><figcaption>día 5</figcaption></figure>
+    <figure role="listitem"><img src="../assets/img/giorno-12.webp" width="420" height="876" loading="lazy" alt=""><figcaption>día 12</figcaption></figure>
+    <figure role="listitem"><img src="../assets/img/giorno-20.webp" width="420" height="876" loading="lazy" alt=""><figcaption>día 20</figcaption></figure>
+    <figure role="listitem"><img src="../assets/img/giorno-30.webp" width="420" height="876" loading="lazy" alt=""><figcaption>día 30</figcaption></figure>
+  </div>
+</section>
+
+<section class="giorni" aria-labelledby="giorni-t">
+  <div class="giorni__testo">
+    <h2 id="giorni-t">los días hechos se quedan.</h2>
+    <p>cada objetivo que completas es un trozo del cuadro: 30 trozos, aunque no sean seguidos.</p>
+  </div>
+  <img class="schermo" src="../assets/img/calendario.webp" width="700" height="889" loading="lazy" alt="el calendario de la app: los días hechos, cada uno con su trozo de cuadro.">
+</section>
+
+<section class="dipinti" id="dipinti" aria-labelledby="dipinti-t">
+  <div class="dipinti__testa">
+    <h2 id="dipinti-t">¿qué pintamos ahora?</h2>
+    <p>cuando un cuadro está terminado, lo cuelgo en tu estudio y empieza otro.</p>
+  </div>
+  <ul class="quadri">
+    <li><div class="cornice"><img src="../assets/img/costa.webp" width="600" height="1354" loading="lazy" alt=""></div><span>la costa en invierno</span></li>
+    <li><div class="cornice"><img src="../assets/img/giardino.webp" width="600" height="1354" loading="lazy" alt=""></div><span>el jardín</span></li>
+    <li><div class="cornice"><img src="../assets/img/bosco.webp" width="600" height="1354" loading="lazy" alt=""></div><span>el bosque en otoño</span></li>
+    <li><div class="cornice"><img src="../assets/img/deserto.webp" width="600" height="1354" loading="lazy" alt=""></div><span>el desierto rojo</span></li>
+    <li><div class="cornice"><img src="../assets/img/luminoso.webp" width="600" height="1354" loading="lazy" alt=""></div><span>el luminoso</span></li>
+  </ul>
+</section>
+
+<section class="studio" aria-labelledby="studio-t">
+  <img class="schermo schermo--studio" src="../assets/img/studio.webp" width="800" height="1566" loading="lazy" alt="el estudio del pintor: la ventana, el cuadro en el caballete y el gato durmiendo en su caseta.">
+  <div class="studio__testo">
+    <h2 id="studio-t">en tu estudio vive un compañero.</h2>
+    <p>te espera allí cada día, mientras pintas. elige quién.</p>
+    <ul class="animali">
+      <li><button class="animale" type="button" aria-label="gato"><img src="../assets/img/gatto-aspetta.webp" width="154" height="136" loading="lazy" alt=""><img src="../assets/img/gatto-felice.webp" width="154" height="136" loading="lazy" alt=""></button><span aria-hidden="true">gato</span></li>
+      <li><button class="animale" type="button" aria-label="perro"><img src="../assets/img/cane-aspetta.webp" width="154" height="136" loading="lazy" alt=""><img src="../assets/img/cane-felice.webp" width="154" height="136" loading="lazy" alt=""></button><span aria-hidden="true">perro</span></li>
+      <li><button class="animale" type="button" aria-label="loro"><img src="../assets/img/pappagallo-aspetta.webp" width="154" height="136" loading="lazy" alt=""><img src="../assets/img/pappagallo-felice.webp" width="154" height="136" loading="lazy" alt=""></button><span aria-hidden="true">loro</span></li>
+      <li><button class="animale" type="button" aria-label="hámster"><img src="../assets/img/criceto-aspetta.webp" width="154" height="136" loading="lazy" alt=""><img src="../assets/img/criceto-felice.webp" width="154" height="136" loading="lazy" alt=""></button><span aria-hidden="true">hámster</span></li>
+    </ul>
+  </div>
+</section>
+
+<section class="plus" id="plus" aria-labelledby="plus-t">
+  <img class="plus__notte" src="../assets/img/notte.webp" width="1200" height="697" loading="lazy" alt="la costa de noche: la luna, el faro encendido, las estrellas.">
+  <div class="plus__corpo">
+    <h2 id="plus-t">1thing plus.</h2>
+    <p class="plus__sotto">1thing es gratis. con 1thing plus:</p>
+    <dl class="plus__lista">
+      <div><dt>tu estudio, decorado a tu gusto.</dt><dd>plantas, cortinas, lucecitas, tu compañero: más de 40 cosas.</dd></div>
+      <div><dt>en los días vacíos, el objetivo adecuado te lo busco yo.</dt><dd>sé lo que te importa.</dd></div>
+      <div><dt>el próximo cuadro lo eliges tú.</dt><dd>cualquier cuadro, cuando quieras.</dd></div>
+      <div><dt>el amanecer, el atardecer y la noche.</dt><dd>el cuadro cambia con la hora en que completas tu objetivo.</dd></div>
+      <div><dt>icono y widgets a tu gusto.</dt><dd>la app se vuelve tuya.</dd></div>
+    </dl>
+    <p class="plus__prova">pruébalo gratis durante 14 días.</p>
+  </div>
+</section>
+
+<section class="fine" aria-labelledby="fine-t">
+  <img class="fine__quadro" src="../assets/img/costa.webp" width="600" height="1354" loading="lazy" alt="">
+  <div class="fine__testo">
+    <h2 id="fine-t">un objetivo al día.</h2>
+    <p>para iPhone.</p>
+    <span class="tasto tasto--attesa">pronto en el App Store</span>
+  </div>
+</section>
+
+</main>
+
+<footer class="piede">
+  <span class="marchio marchio--piccolo">1thing</span>
+  <a href="mailto:feedback@1thingapp.com">escríbenos</a>
+  <ul class="piede__lingue" aria-label="idioma"><li><a href="../it/" hreflang="it" lang="it">italiano</a></li><li><a href="../en/" hreflang="en" lang="en">english</a></li><li><a href="../es/" hreflang="es" lang="es" aria-current="page">español</a></li><li><a href="../fr/" hreflang="fr" lang="fr">français</a></li><li><a href="../pt/" hreflang="pt-BR" lang="pt">português</a></li></ul>
+  <span>© 2026</span>
+</footer>
+
+<script>window.TESTI={dayOf:"día {d} de 30",done:"el cuadro 1 está terminado."};</script>
+<script src="../assets/sito.js?v=202611171633" defer></script>
+</body>
+</html>
