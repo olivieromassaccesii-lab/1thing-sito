@@ -25,10 +25,25 @@ testi = json.load(open(os.path.join(QUI, 'testi.json'), encoding='utf-8'))
 pagina = open(os.path.join(QUI, 'pagina.html'), encoding='utf-8').read()
 v = time.strftime('%Y%m%d%H%M')
 
-def tasto(t):
+COLORI = {'gatto': ['#e0873a', '#9a958c', '#5a534c', '#e8cfa2'],
+          'cane': ['#d9a464', '#8f6346', '#a7a39b', '#ead7b0'],
+          'pappagallo': ['#5e9e4a', '#5a8fc8', '#d4553c', '#e6b42e'],
+          'criceto': ['#e3a35a', '#ecd6ae', '#b0aaa0', '#f1ebe0']}
+STORIA = [1, 2, 4, 7, 10, 14, 18, 22, 26, 30]
+
+def tasto(t, tipo=''):
+    cls = 'tasto' + (' tasto--' + tipo if tipo else '')
     if APP_STORE:
-        return f'<a class="tasto" href="{APP_STORE}">{t["cta_store"]}</a>'
-    return f'<span class="tasto tasto--attesa">{t["cta_soon"]}</span>'
+        return f'<a class="{cls}" href="{APP_STORE}">{t["cta_store"]}</a>'
+    return f'<span class="{cls} tasto--presto">{t["cta_soon"]}</span>'
+
+ICONA_CAL = '<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4.5 7.2c0-1.2.9-2 2.1-2h10.8c1.2 0 2.1.8 2.1 2v10.6c0 1.2-.9 2-2.1 2H6.6c-1.2 0-2.1-.8-2.1-2Z M4.6 10h14.8 M8.4 3.6v3 M15.6 3.6v3"/></svg>'
+ICONA_TU = '<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 12.2a3.7 3.7 0 1 0 0-7.4 3.7 3.7 0 0 0 0 7.4Z M4.8 20c.9-3.4 3.7-5.3 7.2-5.3s6.3 1.9 7.2 5.3"/></svg>'
+
+def testa_app(t, n):
+    return (f'<div class="app-testa" aria-hidden="true">{ICONA_CAL}<div class="app-testa__mezzo">'
+            f'<span class="app-data"></span><span class="app-conto">{t["done_count"].replace("{n}", str(n))}</span>'
+            f'</div>{ICONA_TU}</div>')
 
 def fr_spazi(s):
     # in francese: spazio fine non separabile prima di : ; ? !
@@ -45,20 +60,31 @@ for lg in LINGUE:
         f'>{html.escape(testi[o]["lang_name"])}</a></li>' for o in LINGUE)
     hreflang = '\n'.join(f'<link rel="alternate" hreflang="{HREFLANG[o]}" href="{SITO}/{o}/">' for o in LINGUE) + \
         f'\n<link rel="alternate" hreflang="x-default" href="{SITO}/en/">'
-    strip = '\n    '.join(
-        f'<figure role="listitem"><img src="../assets/img/giorno-{d}.webp" width="420" height="876" loading="lazy" alt="">'
-        f'<figcaption>{e["day"].replace("{d}", str(d))}</figcaption></figure>' for d in GIORNI)
+    pigro = ['' if i == 0 else 'decoding="async" ' for i in range(len(STORIA))]
+    frames = '\n            '.join(
+        f'<img class="storia__quadro{" on" if i == 0 else ""}" data-d="{d}" src="../assets/img/storia-{d}.webp" width="600" height="1354" '
+        f'{pigro[i]}alt="">' for i, d in enumerate(STORIA))
     quadri = '\n    '.join(
-        f'<li><div class="cornice"><img src="../assets/img/{p}.webp" width="600" height="1354" loading="lazy" alt=""></div>'
+        f'<li data-r><figure class="quadro"><img src="../assets/img/{p}.webp" width="600" height="1354" loading="lazy" alt=""></figure>'
         f'<span>{e["p_" + p]}</span></li>' for p in DIPINTI)
-    animali = '\n      '.join(
-        f'<li><button class="animale" type="button" aria-label="{e["pet_" + a]}">'
-        f'<img src="../assets/img/{a}-aspetta.webp" width="154" height="136" loading="lazy" alt="">'
-        f'<img src="../assets/img/{a}-felice.webp" width="154" height="136" loading="lazy" alt=""></button>'
-        f'<span aria-hidden="true">{e["pet_" + a]}</span></li>' for a in ANIMALI)
+    def animale(a):
+        tinte = ''.join(
+            f'<button class="tinta" type="button" role="radio" aria-checked="{"true" if i == 0 else "false"}" data-c="{i}" '
+            f'style="--c:{c}" aria-label="{e["color"]} {i + 1}"><svg viewBox="0 0 40 40" aria-hidden="true"><path d=""/></svg></button>'
+            for i, c in enumerate(COLORI[a]))
+        return (f'<li class="animale" data-animale="{a}" data-colore="0">'
+                f'<button class="animale__figura" type="button" aria-label="{e["pet_" + a]}">'
+                f'<img class="animale__a" src="../assets/img/{a}-0-aspetta.webp" width="462" height="408" loading="lazy" alt="">'
+                f'<img class="animale__f" src="../assets/img/{a}-0-felice.webp" width="462" height="408" loading="lazy" alt=""></button>'
+                f'<span class="animale__nome" aria-hidden="true">{e["pet_" + a]}</span>'
+                f'<div class="tinte" role="radiogroup" aria-label="{e["pet_" + a]}: {e["color"]}">{tinte}</div></li>')
+    animali = '\n    '.join(animale(a) for a in ANIMALI)
     val = dict(e)
     val.update(lang=lg, site=SITO, v=v, locale=LOCALE[lg], hreflang=hreflang, lang_links=links,
-               strip=strip, paintings=quadri, pets=animali, cta=tasto(e),
+               story_frames=frames, paintings=quadri, pets=animali, cta=tasto(e),
+               cta_small=tasto(e, 'piccolo'), cta_light=tasto(e, 'chiaro'),
+               app_head=testa_app(e, 12), app_head_story=testa_app(e, 1),
+               js_count=json.dumps(t['done_count'], ensure_ascii=False),
                js_day_of=json.dumps(t['day_of'], ensure_ascii=False),
                js_done=json.dumps(t['painting_done'], ensure_ascii=False))
     out = re.sub(r'\{\{(\w+)\}\}', lambda m: val[m.group(1)], pagina)

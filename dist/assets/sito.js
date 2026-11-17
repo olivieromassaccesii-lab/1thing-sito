@@ -1,10 +1,15 @@
-/* 1thing — il sito. Il foglio dell'apertura è la Home dell'app: si tiene
-   premuto il cerchio, il cerchio si chiude e il motore a pastello dipinge
-   il pezzo del giorno dopo (matita, inchiostro, colore). */
+/* 1thing — il sito.
+   - L'iPhone dell'apertura è la Home dell'app: si tiene premuto il cerchio,
+     il cerchio si chiude e il motore a pastello dipinge il pezzo del giorno
+     dopo (matita, inchiostro, colore).
+   - Gli animali: un tocco e sono felici, i pallini cambiano il colore.
+   - «come funziona» si ferma mentre si scorre: il cerchio si chiude e il
+     dipinto cresce dal giorno 1 al 30. */
 (function () {
   'use strict';
   const T = window.TESTI || {};
   const calma = matchMedia('(prefers-reduced-motion: reduce)').matches;
+  const scriptSrc = document.currentScript && document.currentScript.src;
 
   // ---------- il cerchio a mano (HandRing dell'app, ProfileView.swift) ----------
   function rng(seed) { let s = seed >>> 0; return () => { s = (s * 1664525 + 1013904223) >>> 0; return s / 4294967296; }; }
@@ -25,51 +30,114 @@
       const y = (u * Math.sin(tilt) + v * Math.cos(tilt)) * wob / reach;
       pts.push((k ? 'L' : 'M') + (cx + x * r).toFixed(2) + ' ' + (cy + y * r).toFixed(2));
     }
-    return pts.join('');
+    return pts.join('') + (chiuso ? 'Z' : '');
+  }
+  // ogni cerchio della pagina ha il suo tratto: il giro d'inchiostro e la penna blu
+  function penna(svg, seed) {
+    const g = svg.querySelector('.cerchio__giro'), p = svg.querySelector('.cerchio__penna');
+    g.setAttribute('d', giro(seed, false, 50, 50, 44));
+    p.setAttribute('d', giro(seed + 12, false, 50, 50, 44));
+    const L = p.getTotalLength();
+    p.style.strokeDasharray = L;
+    const set = f => { p.style.strokeDashoffset = L * (1 - f); };
+    set(0);
+    return set;
   }
 
-  // ---------- gli animali: al tocco, felici ----------
-  document.querySelectorAll('.animale').forEach(b => {
-    b.addEventListener('click', () => {
-      b.classList.add('felice');
-      clearTimeout(b._t); b._t = setTimeout(() => b.classList.remove('felice'), 1600);
+  // ---------- testata, data ----------
+  const testa = document.querySelector('.testa');
+  const suTesta = () => testa.classList.toggle('giu', scrollY > 8);
+  addEventListener('scroll', suTesta, { passive: true }); suTesta();
+  try {
+    const d = new Intl.DateTimeFormat(T.lang === 'pt' ? 'pt-BR' : T.lang, { day: 'numeric', month: 'short' })
+      .format(new Date()).replace(/\./g, '').replace(' de ', ' ').toLowerCase();
+    document.querySelectorAll('.app-data').forEach(e => { e.textContent = d; });
+  } catch (e) {}
+  const conto = (el, n) => { if (el) el.textContent = (T.count || '{n}').replace('{n}', n); };
+
+  const lingue = document.querySelector('.lingue');
+  if (lingue) document.addEventListener('click', e => { if (!lingue.contains(e.target)) lingue.open = false; });
+  document.querySelectorAll('a[hreflang]').forEach(a => a.addEventListener('click', () => {
+    try { localStorage.setItem('lingua', a.getAttribute('lang') || ''); } catch (e) {}
+  }));
+
+  // ---------- gli animali ----------
+  document.querySelectorAll('.animale').forEach((li, i) => {
+    const nome = li.dataset.animale;
+    const [ia, iff] = li.querySelectorAll('.animale__figura img');
+    li.querySelector('.animale__figura').addEventListener('click', () => {
+      li.classList.remove('salta'); void li.offsetWidth;
+      li.classList.add('felice', 'salta');
+      if (navigator.vibrate) navigator.vibrate(8);
+      clearTimeout(li._t); li._t = setTimeout(() => li.classList.remove('felice', 'salta'), 1500);
+    });
+    li.querySelectorAll('.tinta').forEach((b, k) => {
+      b.querySelector('path').setAttribute('d', giro(31 + i * 4 + k, true, 20, 20, 17));
+      const src = t => `../assets/img/${nome}-${b.dataset.c}-${t}.webp`;
+      b.addEventListener('pointerenter', () => { new Image().src = src('aspetta'); new Image().src = src('felice'); }, { once: true });
+      b.addEventListener('click', () => {
+        li.querySelectorAll('.tinta').forEach(x => x.setAttribute('aria-checked', x === b ? 'true' : 'false'));
+        li.dataset.colore = b.dataset.c;
+        ia.src = src('aspetta'); iff.src = src('felice');
+        li.classList.remove('salta'); void li.offsetWidth; li.classList.add('felice', 'salta');
+        clearTimeout(li._t); li._t = setTimeout(() => li.classList.remove('felice', 'salta'), 1200);
+      });
     });
   });
 
-  // ---------- le lingue: chiudi il menu fuori ----------
-  const lingue = document.querySelector('.lingue');
-  if (lingue) document.addEventListener('click', e => { if (!lingue.contains(e.target)) lingue.open = false; });
+  // ---------- come funziona: il dipinto cresce scorrendo ----------
+  const storia = document.querySelector('.storia');
+  if (storia) {
+    const tel = storia.querySelector('.telefono');
+    const setPenna = penna(storia.querySelector('.cerchio svg'), 23);
+    const passi = [...storia.querySelectorAll('.passi li')];
+    const quadri = [...storia.querySelectorAll('.storia__quadro')];
+    const giorni = quadri.map(q => +q.dataset.d);
+    const nEl = storia.querySelector('.storia__n'), contoEl = storia.querySelector('.app-conto');
+    let ultimo = -1, raf = 0;
+    const aggiorna = () => {
+      raf = 0;
+      const r = storia.getBoundingClientRect();
+      const p = Math.min(1, Math.max(0, -r.top / (r.height - innerHeight)));
+      const passo = p < 0.28 ? 0 : p < 0.58 ? 1 : 2;
+      passi.forEach((li, i) => li.classList.toggle('on', i === passo));
+      // si parte dal giorno 1 (il faro): il cerchio si chiude e arriva il 2,
+      // poi scorrendo il dipinto cresce fino al 30
+      let giorno = 1, f = 0;
+      if (passo === 1) { f = Math.min(1, (p - 0.28) / 0.24); giorno = f >= 1 ? 2 : 1; }
+      if (passo === 2) { f = 1; giorno = Math.min(30, Math.max(2, Math.round(2 + (p - 0.58) / 0.38 * 28))); }
+      setPenna(f);
+      tel.classList.toggle('fatto', f >= 1);
+      if (giorno !== ultimo) {
+        ultimo = giorno;
+        let k = 0; giorni.forEach((d, i) => { if (d <= giorno) k = i; });
+        quadri.forEach((q, i) => q.classList.toggle('on', i === k));
+        nEl.textContent = giorno;
+        conto(contoEl, giorno);
+      }
+    };
+    addEventListener('scroll', () => { if (!raf) raf = requestAnimationFrame(aggiorna); }, { passive: true });
+    addEventListener('resize', aggiorna);
+    aggiorna();
+  }
 
-  // ---------- il foglio ----------
+  // ---------- l'apertura: tieni premuto ----------
   const foglio = document.getElementById('foglio');
   if (!foglio) return;
   const tela = foglio.querySelector('.foglio__tela');
   const cerchio = foglio.querySelector('.cerchio');
-  const pGiro = cerchio.querySelector('.cerchio__giro');
-  const pPenna = cerchio.querySelector('.cerchio__penna');
+  const setPenna = penna(cerchio.querySelector('svg'), 11);
+  const contoEl = foglio.querySelector('.app-conto');
   const nProva = document.querySelector('.nota__prova');
   const nGiorno = document.querySelector('.nota__giorno');
   const nAncora = document.querySelector('.nota__ancora');
 
-  pGiro.setAttribute('d', giro(11, false, 50, 50, 44));
-  pPenna.setAttribute('d', giro(23, false, 50, 50, 44));
-  const lung = pPenna.getTotalLength();
-  pPenna.style.strokeDasharray = lung;
-  const penna = f => { pPenna.style.strokeDashoffset = lung * (1 - f); };
-  penna(0);
-
   let giorno = +foglio.dataset.giorno || 12;
   let P = null, caricando = null, occupato = false;
 
-  // il motore e la costa (1,3 MB) si caricano quando il foglio si vede e il
+  // il motore e la costa (1,3 MB) si caricano quando l'iPhone si vede e il
   // browser è libero, o subito al primo tocco del cerchio
-  const scriptSrc = document.currentScript && document.currentScript.src;
-  const avvia = () => {
-    if (!scriptSrc) return;
-    if ('requestIdleCallback' in window) requestIdleCallback(caricaDaBase, { timeout: 2500 });
-    else setTimeout(caricaDaBase, 1200);
-  };
-  function caricaDaBase() {
+  function carica() {
     if (caricando) return caricando;
     caricando = new Promise((ok, no) => {
       const s = document.createElement('script');
@@ -83,7 +151,10 @@
     caricando.catch(() => { caricando = null; });
     return caricando;
   }
-  // il foglio comincia a caricare solo quando si vede
+  const avvia = () => {
+    if ('requestIdleCallback' in window) requestIdleCallback(carica, { timeout: 2500 });
+    else setTimeout(carica, 1200);
+  };
   if ('IntersectionObserver' in window) {
     const io = new IntersectionObserver(es => { if (es.some(e => e.isIntersecting)) { io.disconnect(); avvia(); } });
     io.observe(foglio);
@@ -94,23 +165,24 @@
     nGiorno.hidden = false;
     nGiorno.textContent = giorno >= 30 ? T.done : (T.dayOf || '{d}').replace('{d}', giorno);
     nAncora.hidden = giorno < 30;
+    conto(contoEl, giorno);
   }
 
-  // ---------- tieni premuto ----------
   const DURATA = 850;
   let t0 = 0, raf = 0, preso = false, f = 0;
+  const curva = x => 1 - Math.pow(1 - x, 2.2);
   function giu(e) {
     if (occupato || giorno >= 30) return;
     if (e.type === 'pointerdown') { if (e.button !== 0) return; cerchio.setPointerCapture(e.pointerId); }
     e.preventDefault();
     preso = true; t0 = performance.now() - f * DURATA;
     cerchio.classList.add('premuto');
-    caricaDaBase();
+    carica();
     cancelAnimationFrame(raf);
     const passo = now => {
       if (!preso) return;
       f = Math.min(1, (now - t0) / DURATA);
-      penna(1 - Math.pow(1 - f, 2.2));
+      setPenna(curva(f));
       if (f >= 1) { completa(); return; }
       raf = requestAnimationFrame(passo);
     };
@@ -121,13 +193,12 @@
     preso = false;
     cerchio.classList.remove('premuto');
     if (occupato) return;
-    // lasciato prima: la penna torna indietro
     cancelAnimationFrame(raf);
     const da = f, ts = performance.now();
     const indietro = now => {
       const k = Math.min(1, (now - ts) / 260);
       f = da * (1 - k);
-      penna(1 - Math.pow(1 - f, 2.2));
+      setPenna(curva(f));
       if (k < 1 && !preso) raf = requestAnimationFrame(indietro);
     };
     raf = requestAnimationFrame(indietro);
@@ -140,7 +211,7 @@
     giorno += 1;
     scrivi();
     try {
-      await caricaDaBase();
+      await carica();
       foglio.classList.add('disegna');
       if (calma) Pastello.draw(P, giorno);
       else await Pastello.play(giorno, 1.15);
@@ -149,7 +220,7 @@
     }
     foglio.classList.remove('disegna');
     setTimeout(() => {
-      if (giorno < 30) { foglio.classList.remove('fatto'); penna(0); }
+      if (giorno < 30) { foglio.classList.remove('fatto'); setPenna(0); }
       occupato = false;
     }, 900);
   }
@@ -166,14 +237,10 @@
     if (occupato) return;
     occupato = true;
     giorno = 0;
-    foglio.classList.remove('fatto'); penna(0);
+    foglio.classList.remove('fatto'); setPenna(0);
     nAncora.hidden = true; nGiorno.hidden = true; nProva.hidden = false;
-    try { await caricaDaBase(); Pastello.draw(P, 0); } catch (e) {}
+    conto(contoEl, 0);
+    try { await carica(); Pastello.draw(P, 0); } catch (e) {}
     occupato = false;
   });
 })();
-
-// la lingua scelta resta per la prossima volta (la radice la legge)
-document.querySelectorAll('a[hreflang]').forEach(a => a.addEventListener('click', () => {
-  try { localStorage.setItem('lingua', a.getAttribute('lang') || ''); } catch (e) {}
-}));

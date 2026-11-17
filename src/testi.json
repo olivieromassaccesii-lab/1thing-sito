@@ -37,7 +37,7 @@
     "p_deserto": "il deserto rosso",
     "p_luminoso": "il luminoso",
     "studio_title": "nel tuo studio vive un compagno.",
-    "studio_text": "ti aspetta lì ogni giorno, mentre dipingi. scegli chi.",
+    "studio_text": "ti aspetta lì ogni giorno, mentre dipingi.",
     "studio_alt": "lo studio del pittore: la finestra, il dipinto sul cavalletto e il gatto che dorme nella cuccia.",
     "pet_gatto": "gatto",
     "pet_cane": "cane",
@@ -60,7 +60,11 @@
     "end_title": "un obiettivo al giorno.",
     "end_text": "per iPhone.",
     "write": "scrivici",
-    "lang_label": "lingua"
+    "lang_label": "lingua",
+    "done_count": "{n} obiettivi completati",
+    "color": "colore",
+    "pets_kicker": "scegli chi.",
+    "nav_pets": "il compagno"
   },
   "en": {
     "lang_name": "english",
@@ -100,7 +104,7 @@
     "p_deserto": "the red desert",
     "p_luminoso": "the luminous",
     "studio_title": "a companion lives in your studio.",
-    "studio_text": "it waits for you there every day, while you paint. choose who.",
+    "studio_text": "it waits for you there every day, while you paint.",
     "studio_alt": "the painter's studio: the window, the painting on the easel and the cat asleep in its bed.",
     "pet_gatto": "cat",
     "pet_cane": "dog",
@@ -123,7 +127,11 @@
     "end_title": "one goal a day.",
     "end_text": "for iPhone.",
     "write": "write to us",
-    "lang_label": "language"
+    "lang_label": "language",
+    "done_count": "{n} goals completed",
+    "color": "colour",
+    "pets_kicker": "choose who.",
+    "nav_pets": "the companion"
   },
   "es": {
     "lang_name": "español",
@@ -163,7 +171,7 @@
     "p_deserto": "el desierto rojo",
     "p_luminoso": "el luminoso",
     "studio_title": "en tu estudio vive un compañero.",
-    "studio_text": "te espera allí cada día, mientras pintas. elige quién.",
+    "studio_text": "te espera allí cada día, mientras pintas.",
     "studio_alt": "el estudio del pintor: la ventana, el cuadro en el caballete y el gato durmiendo en su caseta.",
     "pet_gatto": "gato",
     "pet_cane": "perro",
@@ -186,7 +194,11 @@
     "end_title": "un objetivo al día.",
     "end_text": "para iPhone.",
     "write": "escríbenos",
-    "lang_label": "idioma"
+    "lang_label": "idioma",
+    "done_count": "{n} objetivos completados",
+    "color": "color",
+    "pets_kicker": "elige quién.",
+    "nav_pets": "el compañero"
   },
   "fr": {
     "lang_name": "français",
@@ -226,7 +238,7 @@
     "p_deserto": "le désert rouge",
     "p_luminoso": "le lumineux",
     "studio_title": "dans ton atelier vit un compagnon.",
-    "studio_text": "il t'y attend chaque jour, pendant que tu peins. choisis qui.",
+    "studio_text": "il t'y attend chaque jour, pendant que tu peins.",
     "studio_alt": "l'atelier du peintre : la fenêtre, le tableau sur le chevalet et le chat qui dort dans sa niche.",
     "pet_gatto": "chat",
     "pet_cane": "chien",
@@ -249,7 +261,11 @@
     "end_title": "un objectif par jour.",
     "end_text": "pour iPhone.",
     "write": "écris-nous",
-    "lang_label": "langue"
+    "lang_label": "langue",
+    "done_count": "{n} objectifs accomplis",
+    "color": "couleur",
+    "pets_kicker": "choisis qui.",
+    "nav_pets": "le compagnon"
   },
   "pt": {
     "lang_name": "português",
@@ -289,7 +305,7 @@
     "p_deserto": "o deserto vermelho",
     "p_luminoso": "o luminoso",
     "studio_title": "no seu ateliê mora um companheiro.",
-    "studio_text": "ele espera por você lá todo dia, enquanto você pinta. escolha quem.",
+    "studio_text": "ele espera por você lá todo dia, enquanto você pinta.",
     "studio_alt": "o ateliê do pintor: a janela, o quadro no cavalete e o gato dormindo na casinha.",
     "pet_gatto": "gato",
     "pet_cane": "cachorro",
@@ -312,6 +328,10 @@
     "end_title": "um objetivo por dia.",
     "end_text": "para iPhone.",
     "write": "fale com a gente",
-    "lang_label": "idioma"
+    "lang_label": "idioma",
+    "done_count": "{n} objetivos concluídos",
+    "color": "cor",
+    "pets_kicker": "escolha quem.",
+    "nav_pets": "o companheiro"
   }
 }

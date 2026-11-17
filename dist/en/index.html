@@ -24,49 +24,63 @@
 <link rel="apple-touch-icon" href="../assets/img/icona.png">
 <link rel="preload" href="../assets/poppi.woff2" as="font" type="font/woff2" crossorigin>
 <link rel="preload" href="../assets/img/costa-12.webp" as="image">
-<link rel="stylesheet" href="../assets/sito.css?v=202611171633">
+<link rel="stylesheet" href="../assets/sito.css?v=202611171648">
 </head>
 <body>
 <a class="salta" href="#contenuto">skip to content</a>
 
 <header class="testa">
-  <a class="marchio" href="./" aria-label="1thing">1thing</a>
-  <nav class="voci" aria-label="1thing">
-    <a href="#come">how it works</a>
-    <a href="#dipinti">the paintings</a>
-    <a href="#plus">1thing plus</a>
-  </nav>
-  <details class="lingue">
-    <summary aria-label="language">en</summary>
-    <ul><li><a href="../it/" hreflang="it" lang="it">italiano</a></li><li><a href="../en/" hreflang="en" lang="en" aria-current="page">english</a></li><li><a href="../es/" hreflang="es" lang="es">español</a></li><li><a href="../fr/" hreflang="fr" lang="fr">français</a></li><li><a href="../pt/" hreflang="pt-BR" lang="pt">português</a></li></ul>
-  </details>
+  <div class="testa__riga">
+    <a class="marchio" href="./">1thing</a>
+    <nav class="voci" aria-label="1thing">
+      <a href="#compagno">the companion</a>
+      <a href="#come">how it works</a>
+      <a href="#dipinti">the paintings</a>
+      <a href="#plus">1thing plus</a>
+    </nav>
+    <details class="lingue">
+      <summary aria-label="language">en</summary>
+      <ul><li><a href="../it/" hreflang="it" lang="it">italiano</a></li><li><a href="../en/" hreflang="en" lang="en" aria-current="page">english</a></li><li><a href="../es/" hreflang="es" lang="es">español</a></li><li><a href="../fr/" hreflang="fr" lang="fr">français</a></li><li><a href="../pt/" hreflang="pt-BR" lang="pt">português</a></li></ul>
+    </details>
+    <span class="tasto tasto--piccolo tasto--presto">coming soon to the App Store</span>
+  </div>
 </header>
 
 <main id="contenuto">
 
+<!-- l'apertura: la Home dell'app dentro l'iPhone, il compagno seduto sopra -->
 <section class="apertura" aria-labelledby="titolo">
   <div class="apertura__testo">
     <h1 id="titolo">one goal a day.</h1>
     <p class="apertura__sotto">not a list: just one, the one you&#x27;ve been putting off for too long.</p>
-    <span class="tasto tasto--attesa">coming soon to the App Store</span>
+    <div class="apertura__azioni">
+      <span class="tasto tasto--presto">coming soon to the App Store</span>
+      <a class="link-freccia" href="#come">how it works<span aria-hidden="true">↓</span></a>
+    </div>
   </div>
 
-  <div class="apertura__foglio">
-    <figure class="foglio" id="foglio" data-giorno="12">
-      <div class="foglio__dentro">
-      <img class="foglio__poster" src="../assets/img/costa-12.webp" width="800" height="1805" alt="the winter coast, painted in pastel: the lighthouse, the sea, the beach with its huts and the heron." fetchpriority="high">
-      <canvas class="foglio__tela" aria-hidden="true"></canvas>
-      <p class="foglio__obiettivo" aria-hidden="true">call grandma</p>
-      <button class="cerchio" type="button" aria-label="press and hold to complete the goal">
-        <svg viewBox="0 0 100 100" aria-hidden="true">
-          <path class="cerchio__giro" d=""/>
-          <path class="cerchio__penna" d=""/>
-          <path class="cerchio__piu" d="M50 36 C50.4 45 49.7 55 50.2 64 M36.5 50.3 C45 49.6 55 50.4 63.6 49.8"/>
-          <path class="cerchio__fatto" d="M35 51.5 C39 55 42.5 59 45.5 63.5 C51 54 57.5 45 66 36.5"/>
-        </svg>
-      </button>
+  <div class="apertura__scena">
+    <img class="alone" src="../assets/img/costa.webp" alt="" aria-hidden="true">
+    <div class="telefono telefono--vivo" id="foglio" data-giorno="12">
+      <div class="telefono__schermo">
+        <div class="foglio__dentro">
+          <img class="foglio__poster" src="../assets/img/costa-12.webp" width="800" height="1805" alt="the winter coast, painted in pastel: the lighthouse, the sea, the beach with its huts and the heron." fetchpriority="high">
+          <canvas class="foglio__tela" aria-hidden="true"></canvas>
+          <p class="foglio__obiettivo" aria-hidden="true">call grandma</p>
+          <button class="cerchio" type="button" aria-label="press and hold to complete the goal">
+            <svg viewBox="0 0 100 100" aria-hidden="true">
+              <path class="cerchio__giro" d=""/>
+              <path class="cerchio__penna" d=""/>
+              <path class="cerchio__piu" d="M50 36 C50.4 45 49.7 55 50.2 64 M36.5 50.3 C45 49.6 55 50.4 63.6 49.8"/>
+              <path class="cerchio__fatto" d="M35 51.5 C39 55 42.5 59 45.5 63.5 C51 54 57.5 45 66 36.5"/>
+            </svg>
+          </button>
+        </div>
+        <div class="app-testa" aria-hidden="true"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4.5 7.2c0-1.2.9-2 2.1-2h10.8c1.2 0 2.1.8 2.1 2v10.6c0 1.2-.9 2-2.1 2H6.6c-1.2 0-2.1-.8-2.1-2Z M4.6 10h14.8 M8.4 3.6v3 M15.6 3.6v3"/></svg><div class="app-testa__mezzo"><span class="app-data"></span><span class="app-conto">12 goals completed</span></div><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 12.2a3.7 3.7 0 1 0 0-7.4 3.7 3.7 0 0 0 0 7.4Z M4.8 20c.9-3.4 3.7-5.3 7.2-5.3s6.3 1.9 7.2 5.3"/></svg></div>
       </div>
-    </figure>
+      <span class="telefono__isola" aria-hidden="true"></span>
+    </div>
+    <img class="apertura__gatto" src="../assets/img/gatto-0-aspetta.webp" width="462" height="408" alt="">
     <p class="foglio__nota" aria-live="polite">
       <span class="nota__prova">press and hold the circle.</span>
       <span class="nota__giorno" hidden></span>
@@ -75,93 +89,122 @@
   </div>
 </section>
 
-<section class="come" id="come" aria-labelledby="come-t">
-  <h2 id="come-t">how it works.</h2>
-  <ol class="passi">
-    <li><span class="passi__n" aria-hidden="true">1</span><h3>choose one goal. just one, for today.</h3><p>that&#x27;s how you stop putting things off: one small step at a time.</p></li>
-    <li><span class="passi__n" aria-hidden="true">2</span><h3>when you complete it, press and hold the circle.</h3><p>until it closes. that&#x27;s your sign it&#x27;s done.</p></li>
-    <li><span class="passi__n" aria-hidden="true">3</span><h3>every goal you complete paints a piece of the picture.</h3><p>after 30, the painting is finished. if you skip a day, it waits for you.</p></li>
-  </ol>
-  <div class="striscia" role="list">
-    <figure role="listitem"><img src="../assets/img/giorno-1.webp" width="420" height="876" loading="lazy" alt=""><figcaption>day 1</figcaption></figure>
-    <figure role="listitem"><img src="../assets/img/giorno-5.webp" width="420" height="876" loading="lazy" alt=""><figcaption>day 5</figcaption></figure>
-    <figure role="listitem"><img src="../assets/img/giorno-12.webp" width="420" height="876" loading="lazy" alt=""><figcaption>day 12</figcaption></figure>
-    <figure role="listitem"><img src="../assets/img/giorno-20.webp" width="420" height="876" loading="lazy" alt=""><figcaption>day 20</figcaption></figure>
-    <figure role="listitem"><img src="../assets/img/giorno-30.webp" width="420" height="876" loading="lazy" alt=""><figcaption>day 30</figcaption></figure>
+<!-- il compagno, al centro della pagina -->
+<section class="compagno" id="compagno" aria-labelledby="compagno-t">
+  <div class="compagno__testa" data-r>
+    <h2 id="compagno-t">a companion lives in your studio.</h2>
+    <p>it waits for you there every day, while you paint.</p>
+  </div>
+  <ul class="animali">
+    <li class="animale" data-animale="gatto" data-colore="0"><button class="animale__figura" type="button" aria-label="cat"><img class="animale__a" src="../assets/img/gatto-0-aspetta.webp" width="462" height="408" loading="lazy" alt=""><img class="animale__f" src="../assets/img/gatto-0-felice.webp" width="462" height="408" loading="lazy" alt=""></button><span class="animale__nome" aria-hidden="true">cat</span><div class="tinte" role="radiogroup" aria-label="cat: colour"><button class="tinta" type="button" role="radio" aria-checked="true" data-c="0" style="--c:#e0873a" aria-label="colour 1"><svg viewBox="0 0 40 40" aria-hidden="true"><path d=""/></svg></button><button class="tinta" type="button" role="radio" aria-checked="false" data-c="1" style="--c:#9a958c" aria-label="colour 2"><svg viewBox="0 0 40 40" aria-hidden="true"><path d=""/></svg></button><button class="tinta" type="button" role="radio" aria-checked="false" data-c="2" style="--c:#5a534c" aria-label="colour 3"><svg viewBox="0 0 40 40" aria-hidden="true"><path d=""/></svg></button><button class="tinta" type="button" role="radio" aria-checked="false" data-c="3" style="--c:#e8cfa2" aria-label="colour 4"><svg viewBox="0 0 40 40" aria-hidden="true"><path d=""/></svg></button></div></li>
+    <li class="animale" data-animale="cane" data-colore="0"><button class="animale__figura" type="button" aria-label="dog"><img class="animale__a" src="../assets/img/cane-0-aspetta.webp" width="462" height="408" loading="lazy" alt=""><img class="animale__f" src="../assets/img/cane-0-felice.webp" width="462" height="408" loading="lazy" alt=""></button><span class="animale__nome" aria-hidden="true">dog</span><div class="tinte" role="radiogroup" aria-label="dog: colour"><button class="tinta" type="button" role="radio" aria-checked="true" data-c="0" style="--c:#d9a464" aria-label="colour 1"><svg viewBox="0 0 40 40" aria-hidden="true"><path d=""/></svg></button><button class="tinta" type="button" role="radio" aria-checked="false" data-c="1" style="--c:#8f6346" aria-label="colour 2"><svg viewBox="0 0 40 40" aria-hidden="true"><path d=""/></svg></button><button class="tinta" type="button" role="radio" aria-checked="false" data-c="2" style="--c:#a7a39b" aria-label="colour 3"><svg viewBox="0 0 40 40" aria-hidden="true"><path d=""/></svg></button><button class="tinta" type="button" role="radio" aria-checked="false" data-c="3" style="--c:#ead7b0" aria-label="colour 4"><svg viewBox="0 0 40 40" aria-hidden="true"><path d=""/></svg></button></div></li>
+    <li class="animale" data-animale="pappagallo" data-colore="0"><button class="animale__figura" type="button" aria-label="parrot"><img class="animale__a" src="../assets/img/pappagallo-0-aspetta.webp" width="462" height="408" loading="lazy" alt=""><img class="animale__f" src="../assets/img/pappagallo-0-felice.webp" width="462" height="408" loading="lazy" alt=""></button><span class="animale__nome" aria-hidden="true">parrot</span><div class="tinte" role="radiogroup" aria-label="parrot: colour"><button class="tinta" type="button" role="radio" aria-checked="true" data-c="0" style="--c:#5e9e4a" aria-label="colour 1"><svg viewBox="0 0 40 40" aria-hidden="true"><path d=""/></svg></button><button class="tinta" type="button" role="radio" aria-checked="false" data-c="1" style="--c:#5a8fc8" aria-label="colour 2"><svg viewBox="0 0 40 40" aria-hidden="true"><path d=""/></svg></button><button class="tinta" type="button" role="radio" aria-checked="false" data-c="2" style="--c:#d4553c" aria-label="colour 3"><svg viewBox="0 0 40 40" aria-hidden="true"><path d=""/></svg></button><button class="tinta" type="button" role="radio" aria-checked="false" data-c="3" style="--c:#e6b42e" aria-label="colour 4"><svg viewBox="0 0 40 40" aria-hidden="true"><path d=""/></svg></button></div></li>
+    <li class="animale" data-animale="criceto" data-colore="0"><button class="animale__figura" type="button" aria-label="hamster"><img class="animale__a" src="../assets/img/criceto-0-aspetta.webp" width="462" height="408" loading="lazy" alt=""><img class="animale__f" src="../assets/img/criceto-0-felice.webp" width="462" height="408" loading="lazy" alt=""></button><span class="animale__nome" aria-hidden="true">hamster</span><div class="tinte" role="radiogroup" aria-label="hamster: colour"><button class="tinta" type="button" role="radio" aria-checked="true" data-c="0" style="--c:#e3a35a" aria-label="colour 1"><svg viewBox="0 0 40 40" aria-hidden="true"><path d=""/></svg></button><button class="tinta" type="button" role="radio" aria-checked="false" data-c="1" style="--c:#ecd6ae" aria-label="colour 2"><svg viewBox="0 0 40 40" aria-hidden="true"><path d=""/></svg></button><button class="tinta" type="button" role="radio" aria-checked="false" data-c="2" style="--c:#b0aaa0" aria-label="colour 3"><svg viewBox="0 0 40 40" aria-hidden="true"><path d=""/></svg></button><button class="tinta" type="button" role="radio" aria-checked="false" data-c="3" style="--c:#f1ebe0" aria-label="colour 4"><svg viewBox="0 0 40 40" aria-hidden="true"><path d=""/></svg></button></div></li>
+  </ul>
+  <p class="compagno__richiamo" data-r>choose who.</p>
+</section>
+
+<!-- come funziona: la pagina si ferma, il dipinto cresce con lo scorrimento -->
+<section class="storia" id="come" aria-labelledby="come-t">
+  <div class="storia__fermo">
+    <div class="storia__testo">
+      <h2 id="come-t">how it works.</h2>
+      <ol class="passi">
+        <li class="on"><span class="passi__n" aria-hidden="true">1</span><div><h3>choose one goal. just one, for today.</h3><p>that&#x27;s how you stop putting things off: one small step at a time.</p></div></li>
+        <li><span class="passi__n" aria-hidden="true">2</span><div><h3>when you complete it, press and hold the circle.</h3><p>until it closes. that&#x27;s your sign it&#x27;s done.</p></div></li>
+        <li><span class="passi__n" aria-hidden="true">3</span><div><h3>every goal you complete paints a piece of the picture.</h3><p>after 30, the painting is finished. if you skip a day, it waits for you.</p></div></li>
+      </ol>
+    </div>
+    <div class="storia__scena">
+      <div class="telefono telefono--storia" aria-hidden="true">
+        <div class="telefono__schermo">
+          <div class="foglio__dentro">
+            <img class="storia__quadro on" data-d="1" src="../assets/img/storia-1.webp" width="600" height="1354" alt="">
+            <img class="storia__quadro" data-d="2" src="../assets/img/storia-2.webp" width="600" height="1354" decoding="async" alt="">
+            <img class="storia__quadro" data-d="4" src="../assets/img/storia-4.webp" width="600" height="1354" decoding="async" alt="">
+            <img class="storia__quadro" data-d="7" src="../assets/img/storia-7.webp" width="600" height="1354" decoding="async" alt="">
+            <img class="storia__quadro" data-d="10" src="../assets/img/storia-10.webp" width="600" height="1354" decoding="async" alt="">
+            <img class="storia__quadro" data-d="14" src="../assets/img/storia-14.webp" width="600" height="1354" decoding="async" alt="">
+            <img class="storia__quadro" data-d="18" src="../assets/img/storia-18.webp" width="600" height="1354" decoding="async" alt="">
+            <img class="storia__quadro" data-d="22" src="../assets/img/storia-22.webp" width="600" height="1354" decoding="async" alt="">
+            <img class="storia__quadro" data-d="26" src="../assets/img/storia-26.webp" width="600" height="1354" decoding="async" alt="">
+            <img class="storia__quadro" data-d="30" src="../assets/img/storia-30.webp" width="600" height="1354" decoding="async" alt="">
+            <p class="foglio__obiettivo">call grandma</p>
+            <span class="cerchio cerchio--muto">
+              <svg viewBox="0 0 100 100">
+                <path class="cerchio__giro" d=""/>
+                <path class="cerchio__penna" d=""/>
+                <path class="cerchio__piu" d="M50 36 C50.4 45 49.7 55 50.2 64 M36.5 50.3 C45 49.6 55 50.4 63.6 49.8"/>
+                <path class="cerchio__fatto" d="M35 51.5 C39 55 42.5 59 45.5 63.5 C51 54 57.5 45 66 36.5"/>
+              </svg>
+            </span>
+          </div>
+          <div class="app-testa" aria-hidden="true"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4.5 7.2c0-1.2.9-2 2.1-2h10.8c1.2 0 2.1.8 2.1 2v10.6c0 1.2-.9 2-2.1 2H6.6c-1.2 0-2.1-.8-2.1-2Z M4.6 10h14.8 M8.4 3.6v3 M15.6 3.6v3"/></svg><div class="app-testa__mezzo"><span class="app-data"></span><span class="app-conto">1 goals completed</span></div><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 12.2a3.7 3.7 0 1 0 0-7.4 3.7 3.7 0 0 0 0 7.4Z M4.8 20c.9-3.4 3.7-5.3 7.2-5.3s6.3 1.9 7.2 5.3"/></svg></div>
+        </div>
+        <span class="telefono__isola"></span>
+      </div>
+      <p class="storia__giorno" aria-hidden="true"><span class="storia__n">1</span> / 30</p>
+    </div>
   </div>
 </section>
 
-<section class="giorni" aria-labelledby="giorni-t">
-  <div class="giorni__testo">
-    <h2 id="giorni-t">the days you&#x27;ve done stay.</h2>
-    <p>every goal you complete is a piece of the painting: 30 pieces, not necessarily in a row.</p>
-  </div>
-  <img class="schermo" src="../assets/img/calendario.webp" width="700" height="889" loading="lazy" alt="the app&#x27;s calendar: the days you&#x27;ve done, each with its piece of the painting.">
-</section>
-
+<!-- i dipinti -->
 <section class="dipinti" id="dipinti" aria-labelledby="dipinti-t">
-  <div class="dipinti__testa">
+  <div class="dipinti__testa" data-r>
     <h2 id="dipinti-t">what shall we paint next?</h2>
     <p>when a painting is finished, I hang it in your studio and a new one begins.</p>
   </div>
   <ul class="quadri">
-    <li><div class="cornice"><img src="../assets/img/costa.webp" width="600" height="1354" loading="lazy" alt=""></div><span>the winter coast</span></li>
-    <li><div class="cornice"><img src="../assets/img/giardino.webp" width="600" height="1354" loading="lazy" alt=""></div><span>the garden</span></li>
-    <li><div class="cornice"><img src="../assets/img/bosco.webp" width="600" height="1354" loading="lazy" alt=""></div><span>the autumn wood</span></li>
-    <li><div class="cornice"><img src="../assets/img/deserto.webp" width="600" height="1354" loading="lazy" alt=""></div><span>the red desert</span></li>
-    <li><div class="cornice"><img src="../assets/img/luminoso.webp" width="600" height="1354" loading="lazy" alt=""></div><span>the luminous</span></li>
+    <li data-r><figure class="quadro"><img src="../assets/img/costa.webp" width="600" height="1354" loading="lazy" alt=""></figure><span>the winter coast</span></li>
+    <li data-r><figure class="quadro"><img src="../assets/img/giardino.webp" width="600" height="1354" loading="lazy" alt=""></figure><span>the garden</span></li>
+    <li data-r><figure class="quadro"><img src="../assets/img/bosco.webp" width="600" height="1354" loading="lazy" alt=""></figure><span>the autumn wood</span></li>
+    <li data-r><figure class="quadro"><img src="../assets/img/deserto.webp" width="600" height="1354" loading="lazy" alt=""></figure><span>the red desert</span></li>
+    <li data-r><figure class="quadro"><img src="../assets/img/luminoso.webp" width="600" height="1354" loading="lazy" alt=""></figure><span>the luminous</span></li>
   </ul>
 </section>
 
-<section class="studio" aria-labelledby="studio-t">
-  <img class="schermo schermo--studio" src="../assets/img/studio.webp" width="800" height="1566" loading="lazy" alt="the painter&#x27;s studio: the window, the painting on the easel and the cat asleep in its bed.">
-  <div class="studio__testo">
-    <h2 id="studio-t">a companion lives in your studio.</h2>
-    <p>it waits for you there every day, while you paint. choose who.</p>
-    <ul class="animali">
-      <li><button class="animale" type="button" aria-label="cat"><img src="../assets/img/gatto-aspetta.webp" width="154" height="136" loading="lazy" alt=""><img src="../assets/img/gatto-felice.webp" width="154" height="136" loading="lazy" alt=""></button><span aria-hidden="true">cat</span></li>
-      <li><button class="animale" type="button" aria-label="dog"><img src="../assets/img/cane-aspetta.webp" width="154" height="136" loading="lazy" alt=""><img src="../assets/img/cane-felice.webp" width="154" height="136" loading="lazy" alt=""></button><span aria-hidden="true">dog</span></li>
-      <li><button class="animale" type="button" aria-label="parrot"><img src="../assets/img/pappagallo-aspetta.webp" width="154" height="136" loading="lazy" alt=""><img src="../assets/img/pappagallo-felice.webp" width="154" height="136" loading="lazy" alt=""></button><span aria-hidden="true">parrot</span></li>
-      <li><button class="animale" type="button" aria-label="hamster"><img src="../assets/img/criceto-aspetta.webp" width="154" height="136" loading="lazy" alt=""><img src="../assets/img/criceto-felice.webp" width="154" height="136" loading="lazy" alt=""></button><span aria-hidden="true">hamster</span></li>
+<!-- plus, di notte -->
+<section class="plus" id="plus" aria-labelledby="plus-t">
+  <div class="plus__dentro">
+    <div class="plus__cielo" data-r>
+      <img src="../assets/img/notte.webp" width="1200" height="697" loading="lazy" alt="the coast at night: the moon, the lighthouse lit, the stars.">
+    </div>
+    <div class="plus__testa" data-r>
+      <h2 id="plus-t">1thing plus.</h2>
+      <p>1thing is free. with 1thing plus:</p>
+    </div>
+    <ul class="plus__lista">
+      <li data-r><h3>your studio, furnished your way.</h3><p>plants, curtains, fairy lights, your companion: more than 40 things.</p></li>
+      <li data-r><h3>on empty days, I&#x27;ll find the right goal for you.</h3><p>I know what matters to you.</p></li>
+      <li data-r><h3>you choose the next painting.</h3><p>any painting, whenever you like.</p></li>
+      <li data-r><h3>dawn, sunset and night.</h3><p>the painting changes with the hour you complete your goal.</p></li>
+      <li data-r><h3>icon and widgets your way.</h3><p>the app becomes yours.</p></li>
+      <li class="plus__prova" data-r><h3>try it free for 14 days.</h3><span class="tasto tasto--chiaro tasto--presto">coming soon to the App Store</span></li>
     </ul>
   </div>
 </section>
 
-<section class="plus" id="plus" aria-labelledby="plus-t">
-  <img class="plus__notte" src="../assets/img/notte.webp" width="1200" height="697" loading="lazy" alt="the coast at night: the moon, the lighthouse lit, the stars.">
-  <div class="plus__corpo">
-    <h2 id="plus-t">1thing plus.</h2>
-    <p class="plus__sotto">1thing is free. with 1thing plus:</p>
-    <dl class="plus__lista">
-      <div><dt>your studio, furnished your way.</dt><dd>plants, curtains, fairy lights, your companion: more than 40 things.</dd></div>
-      <div><dt>on empty days, I&#x27;ll find the right goal for you.</dt><dd>I know what matters to you.</dd></div>
-      <div><dt>you choose the next painting.</dt><dd>any painting, whenever you like.</dd></div>
-      <div><dt>dawn, sunset and night.</dt><dd>the painting changes with the hour you complete your goal.</dd></div>
-      <div><dt>icon and widgets your way.</dt><dd>the app becomes yours.</dd></div>
-    </dl>
-    <p class="plus__prova">try it free for 14 days.</p>
-  </div>
-</section>
-
+<!-- la fine -->
 <section class="fine" aria-labelledby="fine-t">
-  <img class="fine__quadro" src="../assets/img/costa.webp" width="600" height="1354" loading="lazy" alt="">
-  <div class="fine__testo">
-    <h2 id="fine-t">one goal a day.</h2>
-    <p>for iPhone.</p>
-    <span class="tasto tasto--attesa">coming soon to the App Store</span>
-  </div>
+  <img class="fine__icona" src="../assets/img/icona.png" width="180" height="180" alt="" data-r>
+  <h2 id="fine-t" data-r>one goal a day.</h2>
+  <p data-r>for iPhone.</p>
+  <div data-r><span class="tasto tasto--presto">coming soon to the App Store</span></div>
+  <img class="fine__gatto" src="../assets/img/gatto-0-felice.webp" width="462" height="408" alt="" loading="lazy">
 </section>
 
 </main>
 
 <footer class="piede">
-  <span class="marchio marchio--piccolo">1thing</span>
-  <a href="mailto:feedback@1thingapp.com">write to us</a>
-  <ul class="piede__lingue" aria-label="language"><li><a href="../it/" hreflang="it" lang="it">italiano</a></li><li><a href="../en/" hreflang="en" lang="en" aria-current="page">english</a></li><li><a href="../es/" hreflang="es" lang="es">español</a></li><li><a href="../fr/" hreflang="fr" lang="fr">français</a></li><li><a href="../pt/" hreflang="pt-BR" lang="pt">português</a></li></ul>
-  <span>© 2026</span>
+  <div class="piede__riga">
+    <span class="marchio marchio--piccolo">1thing</span>
+    <ul class="piede__lingue" aria-label="language"><li><a href="../it/" hreflang="it" lang="it">italiano</a></li><li><a href="../en/" hreflang="en" lang="en" aria-current="page">english</a></li><li><a href="../es/" hreflang="es" lang="es">español</a></li><li><a href="../fr/" hreflang="fr" lang="fr">français</a></li><li><a href="../pt/" hreflang="pt-BR" lang="pt">português</a></li></ul>
+    <a href="mailto:feedback@1thingapp.com">write to us</a>
+    <span class="piede__anno">© 2026</span>
+  </div>
 </footer>
 
-<script>window.TESTI={dayOf:"day {d} of 30",done:"painting 1 is finished."};</script>
-<script src="../assets/sito.js?v=202611171633" defer></script>
+<script>window.TESTI={lang:"en",dayOf:"day {d} of 30",done:"painting 1 is finished.",count:"{n} goals completed"};</script>
+<script src="../assets/sito.js?v=202611171648" defer></script>
 </body>
 </html>
