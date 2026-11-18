@@ -353,6 +353,33 @@ a.tasto:active{transform:translateY(0) scale(.98)}
 .piede a:hover{color:var(--inchiostro)}
 .piede__lingue a[aria-current]{color:var(--inchiostro);font-weight:500}
 
+/* ---------- le pagine di testo: domande frequenti e privacy ---------- */
+.voci a[aria-current]{color:var(--inchiostro)}
+.foglio-testo{max-width:760px;margin:0 auto;padding:clamp(40px,7vw,96px) var(--gutter) clamp(80px,10vw,130px)}
+.foglio-testo h1{font-size:clamp(3rem,1.8rem + 4vw,5rem);line-height:.98}
+.foglio-testo__intro{margin-top:20px;font-size:clamp(1.15rem,1rem + .45vw,1.35rem);color:var(--matita);max-width:48ch}
+.foglio-testo__data{margin-top:14px;font-size:.88rem;color:var(--matita)}
+.foglio-testo__fine{margin-top:44px;color:var(--matita)}
+.foglio-testo a{color:var(--penna);text-decoration-thickness:1px;text-underline-offset:.18em}
+.domande{margin-top:clamp(36px,5vw,56px);border-top:1px solid var(--filo)}
+.domanda{border-bottom:1px solid var(--filo)}
+.domanda summary{list-style:none;display:flex;align-items:center;justify-content:space-between;gap:20px;padding:22px 2px;cursor:pointer}
+.domanda summary::-webkit-details-marker{display:none}
+.domanda h2{font:600 1.12rem/1.35 var(--sans);letter-spacing:-.015em;color:var(--inchiostro)}
+.domanda__segno{position:relative;flex:none;width:18px;height:18px}
+.domanda__segno::before,.domanda__segno::after{content:"";position:absolute;left:2px;right:2px;top:50%;height:1.6px;margin-top:-.8px;border-radius:2px;background:var(--inchiostro);transition:transform .35s var(--esce)}
+.domanda__segno::after{transform:rotate(90deg)}
+.domanda[open] .domanda__segno::after{transform:rotate(0)}
+.domanda p{padding:0 2px 24px;color:var(--testo);max-width:60ch}
+.domanda summary:hover h2{color:var(--penna)}
+@media (prefers-reduced-motion:no-preference){.domanda[open] p{animation:sale .5s var(--esce)}}
+.informativa{margin-top:clamp(36px,5vw,56px)}
+.informativa section{padding:26px 0;border-top:1px solid var(--filo)}
+.informativa h2{font:600 1.15rem/1.3 var(--sans);letter-spacing:-.015em;color:var(--inchiostro)}
+.informativa p{margin-top:10px;max-width:64ch}
+.da-completare{background:#f6dc8a;color:var(--inchiostro);padding:0 4px;border-radius:4px}
+.documento .piede__riga{max-width:760px}
+
 /* ---------- lo scorrimento: le cose arrivano mentre entrano ---------- */
 @supports (animation-timeline:view()){
   @media (prefers-reduced-motion:no-preference){

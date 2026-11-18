@@ -1,0 +1,797 @@
+{
+  "it": {
+    "faq_nav": "domande frequenti",
+    "privacy_nav": "privacy",
+    "home_nav": "torna al sito",
+    "faq_title": "domande frequenti.",
+    "faq_intro": "le risposte brevi su come funziona 1thing. se non trovi quello che cerchi, scrivici.",
+    "faq": [
+      [
+        "cos'è 1thing?",
+        "un'app per iPhone. ogni giorno scegli un obiettivo, uno solo. quando lo completi tieni premuto il cerchio e un pezzo del dipinto si colora."
+      ],
+      [
+        "perché un obiettivo solo?",
+        "le liste lunghe fanno sembrare tutto urgente, e alla fine non si comincia niente. un obiettivo piccolo, per oggi, è abbastanza vicino da farlo davvero."
+      ],
+      [
+        "cosa succede se salto un giorno?",
+        "niente. il dipinto ti aspetta: servono 30 obiettivi completati, anche non di seguito."
+      ],
+      [
+        "e se a mezzanotte non l'ho completato?",
+        "l'obiettivo di oggi sparisce e domani ne scegli uno nuovo. il dipinto non perde nessun pezzo."
+      ],
+      [
+        "quanti dipinti ci sono?",
+        "cinque: la costa d'inverno, il giardino, il bosco d'autunno, il deserto rosso e il luminoso. quando ne finisci uno lo appendo nello studio e ne comincia un altro."
+      ],
+      [
+        "cos'è lo studio?",
+        "la stanza dove vivi con il tuo compagno. sul muro c'è una tacca per ogni obiettivo completato, alle pareti i dipinti che hai finito. puoi arredarlo come vuoi."
+      ],
+      [
+        "perché i colori del dipinto cambiano?",
+        "il dipinto prende la luce dell'ora in cui completi il tuo obiettivo: l'alba, il giorno, il tramonto o la notte."
+      ],
+      [
+        "dove ritrovo i giorni fatti?",
+        "nel calendario: i 30 pezzi del dipinto, ognuno con il suo obiettivo e la nota che hai lasciato. sotto c'è l'elenco di tutti gli obiettivi completati."
+      ],
+      [
+        "come metto il widget?",
+        "tieni premuto su uno spazio vuoto della schermata home, tocca + in alto, cerca 1thing e scegli il widget. ti mostra l'obiettivo di oggi dentro il dipinto."
+      ],
+      [
+        "come funziona il promemoria?",
+        "ne ricevi uno al giorno, all'ora che hai scelto. l'ora si cambia dallo studio. se le notifiche sono spente, l'app funziona lo stesso."
+      ],
+      [
+        "da dove arrivano le proposte per i giorni vuoti?",
+        "se dai il consenso, un'intelligenza artificiale (Claude, di Anthropic) legge una volta le risposte che hai dato all'inizio e scrive obiettivi pensati per te. le proposte restano sul tuo iPhone. puoi cambiare idea dallo studio."
+      ],
+      [
+        "i miei obiettivi e le mie note dove sono?",
+        "sul tuo iPhone. non c'è un account e non li mandiamo a nessuno. i dettagli sono nella privacy."
+      ],
+      [
+        "funziona senza internet?",
+        "sì. serve la rete solo per scrivere le proposte la prima volta."
+      ],
+      [
+        "come cancello tutto?",
+        "dallo studio, nelle impostazioni, «cancella tutto» toglie obiettivi, dipinti e risposte. anche eliminando l'app dal telefono si cancella tutto quello che hai scritto. se ci hai mandato un messaggio e vuoi che lo cancelliamo, scrivici."
+      ],
+      [
+        "c'è anche per Android?",
+        "per ora 1thing è solo per iPhone."
+      ]
+    ],
+    "faq_more": "non hai trovato la risposta?",
+    "privacy_title": "privacy.",
+    "privacy_intro": "1thing non ha account, non mostra pubblicità e non ti traccia. quello che scrivi resta sul tuo iPhone. qui sotto c'è tutto, nei dettagli.",
+    "updated": "aggiornata il 18 novembre 2026",
+    "privacy": [
+      [
+        "chi siamo",
+        [
+          "il titolare del trattamento è {titolare}. per qualsiasi domanda sulla privacy scrivi a {email}."
+        ]
+      ],
+      [
+        "cosa resta sul tuo iPhone",
+        [
+          "i tuoi obiettivi, le note, i dipinti, le risposte alle domande dell'inizio, il tuo nome, il compagno e le impostazioni. sono salvati solo sul telefono, in uno spazio che l'app condivide con i suoi widget. noi non li vediamo.",
+          "se hai attivato il backup di iCloud, Apple può includere questi dati nel backup del telefono, secondo le sue condizioni."
+        ]
+      ],
+      [
+        "le proposte con l'intelligenza artificiale",
+        [
+          "solo se dai il consenso, l'app manda al nostro server le risposte che hai dato all'inizio: i temi che hai scelto, i motivi, gli ostacoli, quanto tempo hai, quello che rimandi e quello che hai scritto su di te. con loro mandiamo la lingua dell'app e un codice casuale che identifica l'installazione, non te.",
+          "non mandiamo il tuo nome, gli obiettivi dei giorni né le note.",
+          "il server passa le risposte a Claude, il modello di intelligenza artificiale di Anthropic, che scrive le proposte. le proposte tornano sul telefono e restano lì: il nostro server non le conserva. Anthropic non usa i dati inviati tramite la sua API per addestrare i modelli e li conserva solo per un periodo limitato, come descritto nelle sue condizioni.",
+          "succede una volta, e di nuovo solo se rifai le domande o scrivi qualcosa a fine dipinto. la base è il tuo consenso, che puoi ritirare quando vuoi dallo studio.",
+          "ti consigliamo di non scrivere nelle risposte dati sulla salute o altre informazioni delicate."
+        ]
+      ],
+      [
+        "il nostro server",
+        [
+          "il server gira su Cloudflare. per evitare abusi conta quante richieste arrivano da ogni installazione (al massimo 5 ogni 30 giorni): per farlo conserva solo un'impronta cifrata del codice dell'installazione, non il codice. non registriamo indirizzi IP né il contenuto delle richieste."
+        ]
+      ],
+      [
+        "dati fuori dall'Unione Europea",
+        [
+          "Cloudflare e Anthropic possono trattare i dati negli Stati Uniti. Cloudflare aderisce al Data Privacy Framework tra Unione Europea e Stati Uniti; con Anthropic il trasferimento è coperto dalle clausole contrattuali standard della Commissione Europea."
+        ]
+      ],
+      [
+        "se ci scrivi",
+        [
+          "se ci scrivi per email, in fondo al messaggio l'app aggiunge la versione dell'app, il modello del telefono e la versione di iOS, che vedi prima di inviare. conserviamo i messaggi il tempo necessario a risponderti."
+        ]
+      ],
+      [
+        "acquisti",
+        [
+          "gli acquisti nell'app li gestisce Apple. non vediamo i tuoi dati di pagamento."
+        ]
+      ],
+      [
+        "notifiche",
+        [
+          "i promemoria sono programmati sul telefono. non passano dal nostro server."
+        ]
+      ],
+      [
+        "statistiche e pubblicità",
+        [
+          "l'app non usa strumenti di analisi di altre aziende, non mostra pubblicità e non ti segue in altre app o siti."
+        ]
+      ],
+      [
+        "questo sito",
+        [
+          "il sito non usa cookie né strumenti di analisi. ricorda la lingua che hai scelto nel tuo browser, e il carattere è ospitato insieme al sito. il fornitore che ospita il sito può registrare dati tecnici delle visite, come l'indirizzo IP, per farlo funzionare e proteggerlo."
+        ]
+      ],
+      [
+        "i tuoi diritti",
+        [
+          "puoi chiederci di vedere, correggere o cancellare i dati che abbiamo, di limitarne l'uso o di riceverne una copia, e puoi ritirare il consenso alle proposte quando vuoi. scrivi a {email}.",
+          "puoi anche fare reclamo al Garante per la protezione dei dati personali o all'autorità del paese in cui vivi."
+        ]
+      ],
+      [
+        "minori",
+        [
+          "se hai meno di 16 anni, chiedi a un genitore prima di attivare le proposte con l'intelligenza artificiale."
+        ]
+      ],
+      [
+        "modifiche",
+        [
+          "se cambiamo questa informativa aggiorniamo la data in alto. se cambia qualcosa di importante, te lo diciamo nell'app."
+        ]
+      ]
+    ]
+  },
+  "en": {
+    "faq_nav": "FAQ",
+    "privacy_nav": "privacy",
+    "home_nav": "back to the site",
+    "faq_title": "frequently asked questions.",
+    "faq_intro": "short answers about how 1thing works. if you can't find what you need, write to us.",
+    "faq": [
+      [
+        "what is 1thing?",
+        "an iPhone app. every day you choose one goal, just one. when you complete it, you press and hold the circle and a piece of the painting fills with colour."
+      ],
+      [
+        "why only one goal?",
+        "long lists make everything feel urgent, and in the end nothing gets started. one small goal, for today, is close enough to actually do."
+      ],
+      [
+        "what happens if I skip a day?",
+        "nothing. the painting waits for you: it takes 30 completed goals, not necessarily in a row."
+      ],
+      [
+        "and if I haven't completed it by midnight?",
+        "today's goal disappears and tomorrow you choose a new one. the painting doesn't lose a single piece."
+      ],
+      [
+        "how many paintings are there?",
+        "five: the winter coast, the garden, the autumn wood, the red desert and the luminous. when you finish one, I hang it in your studio and a new one begins."
+      ],
+      [
+        "what is the studio?",
+        "the room you share with your companion. on the wall there's a mark for every goal you complete, and the paintings you've finished hang there. you can furnish it however you like."
+      ],
+      [
+        "why do the painting's colours change?",
+        "the painting takes on the light of the hour you complete your goal: dawn, day, sunset or night."
+      ],
+      [
+        "where can I see the days I've done?",
+        "in the calendar: the 30 pieces of the painting, each with its goal and the note you left. below it is the list of every goal you've completed."
+      ],
+      [
+        "how do I add the widget?",
+        "press and hold an empty spot on your home screen, tap + at the top, search for 1thing and choose the widget. it shows today's goal inside the painting."
+      ],
+      [
+        "how does the reminder work?",
+        "you get one a day, at the time you chose. you can change the time from the studio. with notifications off, the app still works."
+      ],
+      [
+        "where do the suggestions for empty days come from?",
+        "if you agree, an artificial intelligence (Claude, by Anthropic) reads the answers you gave at the start, once, and writes goals made for you. the suggestions stay on your iPhone. you can change your mind from the studio."
+      ],
+      [
+        "where are my goals and notes?",
+        "on your iPhone. there's no account and we don't send them to anyone. the details are in the privacy policy."
+      ],
+      [
+        "does it work offline?",
+        "yes. it only needs a connection to write the suggestions the first time."
+      ],
+      [
+        "how do I delete everything?",
+        "in the studio settings, \"delete everything\" removes your goals, paintings and answers. deleting the app from your phone also deletes everything you've written. if you've sent us a message and want us to delete it, write to us."
+      ],
+      [
+        "is it on Android?",
+        "for now 1thing is only for iPhone."
+      ]
+    ],
+    "faq_more": "didn't find your answer?",
+    "privacy_title": "privacy.",
+    "privacy_intro": "1thing has no accounts, shows no ads and doesn't track you. what you write stays on your iPhone. everything is explained in detail below.",
+    "updated": "updated on 18 November 2026",
+    "privacy": [
+      [
+        "who we are",
+        [
+          "the data controller is {titolare}. for any privacy question, write to {email}."
+        ]
+      ],
+      [
+        "what stays on your iPhone",
+        [
+          "your goals, notes, paintings, the answers to the questions at the start, your name, your companion and your settings. they are saved only on your phone, in a space the app shares with its widgets. we don't see them.",
+          "if you've turned on iCloud backup, Apple may include this data in your phone's backup, under its own terms."
+        ]
+      ],
+      [
+        "suggestions written by artificial intelligence",
+        [
+          "only if you agree, the app sends our server the answers you gave at the start: the topics you chose, your reasons, your obstacles, how much time you have, what you keep putting off and what you wrote about yourself. with them we send the app's language and a random code that identifies the installation, not you.",
+          "we don't send your name, your daily goals or your notes.",
+          "the server passes the answers to Claude, Anthropic's artificial intelligence model, which writes the suggestions. the suggestions come back to your phone and stay there: our server doesn't keep them. Anthropic doesn't use data sent through its API to train its models and keeps it only for a limited period, as described in its terms.",
+          "this happens once, and again only if you answer the questions again or write something when a painting is finished. the basis is your consent, which you can withdraw at any time from the studio.",
+          "we recommend not writing health information or other sensitive details in your answers."
+        ]
+      ],
+      [
+        "our server",
+        [
+          "the server runs on Cloudflare. to prevent abuse it counts how many requests come from each installation (at most 5 every 30 days): to do this it keeps only an encrypted fingerprint of the installation code, not the code itself. we don't log IP addresses or the content of requests."
+        ]
+      ],
+      [
+        "data outside the European Union",
+        [
+          "Cloudflare and Anthropic may process data in the United States. Cloudflare is certified under the EU-US Data Privacy Framework; with Anthropic, the transfer is covered by the European Commission's standard contractual clauses."
+        ]
+      ],
+      [
+        "if you write to us",
+        [
+          "if you email us, the app adds the app version, your phone model and your iOS version at the bottom of the message, and you can see them before sending. we keep messages for as long as we need to reply."
+        ]
+      ],
+      [
+        "purchases",
+        [
+          "in-app purchases are handled by Apple. we don't see your payment details."
+        ]
+      ],
+      [
+        "notifications",
+        [
+          "reminders are scheduled on your phone. they don't go through our server."
+        ]
+      ],
+      [
+        "analytics and advertising",
+        [
+          "the app doesn't use analytics tools from other companies, shows no ads and doesn't follow you across other apps or websites."
+        ]
+      ],
+      [
+        "this website",
+        [
+          "the site uses no cookies and no analytics. it remembers the language you chose in your browser, and the font is hosted with the site. the provider hosting the site may record technical data about visits, such as your IP address, to run and protect it."
+        ]
+      ],
+      [
+        "your rights",
+        [
+          "you can ask us to access, correct or delete the data we hold, to restrict its use or to receive a copy, and you can withdraw your consent to the suggestions at any time. write to {email}.",
+          "you can also complain to the data protection authority of the country where you live."
+        ]
+      ],
+      [
+        "children",
+        [
+          "if you're under 16, ask a parent before turning on the suggestions written by artificial intelligence."
+        ]
+      ],
+      [
+        "changes",
+        [
+          "if we change this policy, we update the date at the top. if something important changes, we tell you in the app."
+        ]
+      ]
+    ]
+  },
+  "es": {
+    "faq_nav": "preguntas frecuentes",
+    "privacy_nav": "privacidad",
+    "home_nav": "volver al sitio",
+    "faq_title": "preguntas frecuentes.",
+    "faq_intro": "respuestas breves sobre cómo funciona 1thing. si no encuentras lo que buscas, escríbenos.",
+    "faq": [
+      [
+        "¿qué es 1thing?",
+        "una app para iPhone. cada día eliges un objetivo, solo uno. cuando lo completas, mantienes pulsado el círculo y un trozo del cuadro se llena de color."
+      ],
+      [
+        "¿por qué un solo objetivo?",
+        "las listas largas hacen que todo parezca urgente, y al final no se empieza nada. un objetivo pequeño, para hoy, está lo bastante cerca como para hacerlo de verdad."
+      ],
+      [
+        "¿qué pasa si me salto un día?",
+        "nada. el cuadro te espera: hacen falta 30 objetivos completados, aunque no sean seguidos."
+      ],
+      [
+        "¿y si a medianoche no lo he completado?",
+        "el objetivo de hoy desaparece y mañana eliges uno nuevo. el cuadro no pierde ningún trozo."
+      ],
+      [
+        "¿cuántos cuadros hay?",
+        "cinco: la costa en invierno, el jardín, el bosque en otoño, el desierto rojo y el luminoso. cuando terminas uno, lo cuelgo en tu estudio y empieza otro."
+      ],
+      [
+        "¿qué es el estudio?",
+        "la habitación donde vives con tu compañero. en la pared hay una marca por cada objetivo completado, y allí cuelgan los cuadros que has terminado. puedes decorarlo como quieras."
+      ],
+      [
+        "¿por qué cambian los colores del cuadro?",
+        "el cuadro toma la luz de la hora en que completas tu objetivo: el amanecer, el día, el atardecer o la noche."
+      ],
+      [
+        "¿dónde veo los días hechos?",
+        "en el calendario: los 30 trozos del cuadro, cada uno con su objetivo y la nota que dejaste. debajo está la lista de todos los objetivos completados."
+      ],
+      [
+        "¿cómo pongo el widget?",
+        "mantén pulsado un espacio vacío de la pantalla de inicio, toca + arriba, busca 1thing y elige el widget. te muestra el objetivo de hoy dentro del cuadro."
+      ],
+      [
+        "¿cómo funciona el recordatorio?",
+        "recibes uno al día, a la hora que elegiste. la hora se cambia desde el estudio. con las notificaciones desactivadas, la app funciona igual."
+      ],
+      [
+        "¿de dónde salen las propuestas para los días vacíos?",
+        "si das tu consentimiento, una inteligencia artificial (Claude, de Anthropic) lee una vez las respuestas que diste al principio y escribe objetivos pensados para ti. las propuestas se quedan en tu iPhone. puedes cambiar de opinión desde el estudio."
+      ],
+      [
+        "¿dónde están mis objetivos y mis notas?",
+        "en tu iPhone. no hay cuenta y no se los enviamos a nadie. los detalles están en la política de privacidad."
+      ],
+      [
+        "¿funciona sin internet?",
+        "sí. solo necesita conexión para escribir las propuestas la primera vez."
+      ],
+      [
+        "¿cómo lo borro todo?",
+        "en los ajustes del estudio, «borrar todo» elimina objetivos, cuadros y respuestas. al eliminar la app del teléfono también se borra todo lo que has escrito. si nos has enviado un mensaje y quieres que lo borremos, escríbenos."
+      ],
+      [
+        "¿está para Android?",
+        "por ahora 1thing es solo para iPhone."
+      ]
+    ],
+    "faq_more": "¿no has encontrado la respuesta?",
+    "privacy_title": "privacidad.",
+    "privacy_intro": "1thing no tiene cuentas, no muestra publicidad y no te rastrea. lo que escribes se queda en tu iPhone. aquí abajo está todo, en detalle.",
+    "updated": "actualizada el 18 de noviembre de 2026",
+    "privacy": [
+      [
+        "quiénes somos",
+        [
+          "el responsable del tratamiento es {titolare}. para cualquier pregunta sobre privacidad, escribe a {email}."
+        ]
+      ],
+      [
+        "qué se queda en tu iPhone",
+        [
+          "tus objetivos, las notas, los cuadros, las respuestas a las preguntas del principio, tu nombre, tu compañero y los ajustes. se guardan solo en el teléfono, en un espacio que la app comparte con sus widgets. nosotros no los vemos.",
+          "si tienes activada la copia de seguridad de iCloud, Apple puede incluir estos datos en la copia del teléfono, según sus condiciones."
+        ]
+      ],
+      [
+        "las propuestas con inteligencia artificial",
+        [
+          "solo si das tu consentimiento, la app envía a nuestro servidor las respuestas que diste al principio: los temas que elegiste, los motivos, los obstáculos, cuánto tiempo tienes, lo que pospones y lo que escribiste sobre ti. junto a ellas enviamos el idioma de la app y un código aleatorio que identifica la instalación, no a ti.",
+          "no enviamos tu nombre, los objetivos de cada día ni las notas.",
+          "el servidor pasa las respuestas a Claude, el modelo de inteligencia artificial de Anthropic, que escribe las propuestas. las propuestas vuelven al teléfono y se quedan allí: nuestro servidor no las guarda. Anthropic no usa los datos enviados a través de su API para entrenar sus modelos y los conserva solo durante un periodo limitado, como se describe en sus condiciones.",
+          "ocurre una vez, y de nuevo solo si vuelves a responder las preguntas o escribes algo al terminar un cuadro. la base es tu consentimiento, que puedes retirar cuando quieras desde el estudio.",
+          "te recomendamos no escribir en las respuestas datos de salud u otra información delicada."
+        ]
+      ],
+      [
+        "nuestro servidor",
+        [
+          "el servidor funciona en Cloudflare. para evitar abusos cuenta cuántas solicitudes llegan de cada instalación (como máximo 5 cada 30 días): para ello guarda solo una huella cifrada del código de la instalación, no el código. no registramos direcciones IP ni el contenido de las solicitudes."
+        ]
+      ],
+      [
+        "datos fuera de la Unión Europea",
+        [
+          "Cloudflare y Anthropic pueden tratar los datos en Estados Unidos. Cloudflare está adherida al Marco de Privacidad de Datos entre la UE y EE. UU.; con Anthropic, la transferencia está cubierta por las cláusulas contractuales tipo de la Comisión Europea."
+        ]
+      ],
+      [
+        "si nos escribes",
+        [
+          "si nos escribes por correo, al final del mensaje la app añade la versión de la app, el modelo del teléfono y la versión de iOS, que ves antes de enviar. conservamos los mensajes el tiempo necesario para responderte."
+        ]
+      ],
+      [
+        "compras",
+        [
+          "las compras dentro de la app las gestiona Apple. no vemos tus datos de pago."
+        ]
+      ],
+      [
+        "notificaciones",
+        [
+          "los recordatorios se programan en el teléfono. no pasan por nuestro servidor."
+        ]
+      ],
+      [
+        "estadísticas y publicidad",
+        [
+          "la app no usa herramientas de análisis de otras empresas, no muestra publicidad y no te sigue en otras apps ni sitios web."
+        ]
+      ],
+      [
+        "este sitio",
+        [
+          "el sitio no usa cookies ni herramientas de análisis. recuerda en tu navegador el idioma que elegiste, y la tipografía está alojada junto al sitio. el proveedor que aloja el sitio puede registrar datos técnicos de las visitas, como la dirección IP, para que funcione y para protegerlo."
+        ]
+      ],
+      [
+        "tus derechos",
+        [
+          "puedes pedirnos acceder a los datos que tenemos, corregirlos o borrarlos, limitar su uso o recibir una copia, y puedes retirar el consentimiento a las propuestas cuando quieras. escribe a {email}.",
+          "también puedes presentar una reclamación ante la Agencia Española de Protección de Datos o la autoridad del país en el que vives."
+        ]
+      ],
+      [
+        "menores",
+        [
+          "si tienes menos de 16 años, pide permiso a tu madre, a tu padre o a tu tutor antes de activar las propuestas con inteligencia artificial."
+        ]
+      ],
+      [
+        "cambios",
+        [
+          "si cambiamos esta política, actualizamos la fecha de arriba. si cambia algo importante, te lo decimos en la app."
+        ]
+      ]
+    ]
+  },
+  "fr": {
+    "faq_nav": "questions fréquentes",
+    "privacy_nav": "confidentialité",
+    "home_nav": "retour au site",
+    "faq_title": "questions fréquentes.",
+    "faq_intro": "des réponses courtes sur le fonctionnement de 1thing. si tu ne trouves pas ce que tu cherches, écris-nous.",
+    "faq": [
+      [
+        "qu'est-ce que 1thing ?",
+        "une app pour iPhone. chaque jour, tu choisis un objectif, un seul. quand tu l'as accompli, tu maintiens le cercle appuyé et un morceau du tableau prend ses couleurs."
+      ],
+      [
+        "pourquoi un seul objectif ?",
+        "les longues listes rendent tout urgent, et au final on ne commence rien. un petit objectif, pour aujourd'hui, est assez proche pour le faire vraiment."
+      ],
+      [
+        "que se passe-t-il si je saute un jour ?",
+        "rien. le tableau t'attend : il faut 30 objectifs accomplis, pas forcément d'affilée."
+      ],
+      [
+        "et si à minuit je ne l'ai pas accompli ?",
+        "l'objectif du jour disparaît et demain tu en choisis un nouveau. le tableau ne perd aucun morceau."
+      ],
+      [
+        "combien y a-t-il de tableaux ?",
+        "cinq : la côte en hiver, le jardin, le bois en automne, le désert rouge et le lumineux. quand tu en termines un, je l'accroche dans ton atelier et un autre commence."
+      ],
+      [
+        "qu'est-ce que l'atelier ?",
+        "la pièce où tu vis avec ton compagnon. sur le mur, un trait pour chaque objectif accompli, et les tableaux que tu as terminés y sont accrochés. tu peux l'aménager comme tu veux."
+      ],
+      [
+        "pourquoi les couleurs du tableau changent-elles ?",
+        "le tableau prend la lumière de l'heure où tu accomplis ton objectif : l'aube, le jour, le coucher du soleil ou la nuit."
+      ],
+      [
+        "où retrouver les jours faits ?",
+        "dans le calendrier : les 30 morceaux du tableau, chacun avec son objectif et la note que tu as laissée. en dessous, la liste de tous les objectifs accomplis."
+      ],
+      [
+        "comment ajouter le widget ?",
+        "maintiens appuyé un espace vide de l'écran d'accueil, touche + en haut, cherche 1thing et choisis le widget. il affiche l'objectif du jour dans le tableau."
+      ],
+      [
+        "comment fonctionne le rappel ?",
+        "tu en reçois un par jour, à l'heure que tu as choisie. l'heure se change depuis l'atelier. avec les notifications désactivées, l'app fonctionne quand même."
+      ],
+      [
+        "d'où viennent les propositions pour les jours vides ?",
+        "si tu donnes ton accord, une intelligence artificielle (Claude, d'Anthropic) lit une fois les réponses que tu as données au début et écrit des objectifs pensés pour toi. les propositions restent sur ton iPhone. tu peux changer d'avis depuis l'atelier."
+      ],
+      [
+        "où sont mes objectifs et mes notes ?",
+        "sur ton iPhone. il n'y a pas de compte et nous ne les envoyons à personne. les détails sont dans la politique de confidentialité."
+      ],
+      [
+        "est-ce que ça marche sans internet ?",
+        "oui. la connexion sert seulement à écrire les propositions la première fois."
+      ],
+      [
+        "comment tout effacer ?",
+        "dans les réglages de l'atelier, « tout effacer » supprime objectifs, tableaux et réponses. supprimer l'app du téléphone efface aussi tout ce que tu as écrit. si tu nous as envoyé un message et veux que nous l'effacions, écris-nous."
+      ],
+      [
+        "existe-t-elle sur Android ?",
+        "pour l'instant, 1thing est seulement pour iPhone."
+      ]
+    ],
+    "faq_more": "tu n'as pas trouvé la réponse ?",
+    "privacy_title": "confidentialité.",
+    "privacy_intro": "1thing n'a pas de compte, n'affiche pas de publicité et ne te suit pas. ce que tu écris reste sur ton iPhone. tout est expliqué en détail ci-dessous.",
+    "updated": "mise à jour le 18 novembre 2026",
+    "privacy": [
+      [
+        "qui sommes-nous",
+        [
+          "le responsable du traitement est {titolare}. pour toute question sur la confidentialité, écris à {email}."
+        ]
+      ],
+      [
+        "ce qui reste sur ton iPhone",
+        [
+          "tes objectifs, tes notes, les tableaux, les réponses aux questions du début, ton prénom, ton compagnon et tes réglages. ils sont enregistrés seulement sur le téléphone, dans un espace que l'app partage avec ses widgets. nous ne les voyons pas.",
+          "si la sauvegarde iCloud est activée, Apple peut inclure ces données dans la sauvegarde du téléphone, selon ses propres conditions."
+        ]
+      ],
+      [
+        "les propositions écrites par l'intelligence artificielle",
+        [
+          "seulement si tu donnes ton accord, l'app envoie à notre serveur les réponses que tu as données au début : les thèmes choisis, tes raisons, tes obstacles, le temps dont tu disposes, ce que tu repousses et ce que tu as écrit sur toi. avec elles, nous envoyons la langue de l'app et un code aléatoire qui identifie l'installation, pas toi.",
+          "nous n'envoyons ni ton prénom, ni les objectifs de chaque jour, ni tes notes.",
+          "le serveur transmet les réponses à Claude, le modèle d'intelligence artificielle d'Anthropic, qui écrit les propositions. elles reviennent sur le téléphone et y restent : notre serveur ne les conserve pas. Anthropic n'utilise pas les données envoyées via son API pour entraîner ses modèles et ne les conserve que pendant une durée limitée, comme indiqué dans ses conditions.",
+          "cela arrive une fois, puis seulement si tu réponds de nouveau aux questions ou écris quelque chose à la fin d'un tableau. la base est ton consentement, que tu peux retirer à tout moment depuis l'atelier.",
+          "nous te conseillons de ne pas écrire dans tes réponses d'informations de santé ou d'autres données sensibles."
+        ]
+      ],
+      [
+        "notre serveur",
+        [
+          "le serveur fonctionne sur Cloudflare. pour éviter les abus, il compte combien de demandes arrivent de chaque installation (5 au maximum tous les 30 jours) : pour cela, il ne garde qu'une empreinte chiffrée du code d'installation, pas le code lui-même. nous n'enregistrons ni les adresses IP ni le contenu des demandes."
+        ]
+      ],
+      [
+        "données hors de l'Union européenne",
+        [
+          "Cloudflare et Anthropic peuvent traiter les données aux États-Unis. Cloudflare adhère au cadre de protection des données UE-États-Unis ; avec Anthropic, le transfert est encadré par les clauses contractuelles types de la Commission européenne."
+        ]
+      ],
+      [
+        "si tu nous écris",
+        [
+          "si tu nous écris par e-mail, l'app ajoute en bas du message la version de l'app, le modèle du téléphone et la version d'iOS, que tu vois avant d'envoyer. nous gardons les messages le temps nécessaire pour te répondre."
+        ]
+      ],
+      [
+        "achats",
+        [
+          "les achats dans l'app sont gérés par Apple. nous ne voyons pas tes données de paiement."
+        ]
+      ],
+      [
+        "notifications",
+        [
+          "les rappels sont programmés sur le téléphone. ils ne passent pas par notre serveur."
+        ]
+      ],
+      [
+        "statistiques et publicité",
+        [
+          "l'app n'utilise pas d'outils d'analyse d'autres entreprises, n'affiche pas de publicité et ne te suit pas dans d'autres apps ou sites."
+        ]
+      ],
+      [
+        "ce site",
+        [
+          "le site n'utilise ni cookies ni outils d'analyse. il retient dans ton navigateur la langue que tu as choisie, et la police est hébergée avec le site. l'hébergeur du site peut enregistrer des données techniques sur les visites, comme l'adresse IP, pour le faire fonctionner et le protéger."
+        ]
+      ],
+      [
+        "tes droits",
+        [
+          "tu peux nous demander d'accéder aux données que nous détenons, de les corriger ou de les effacer, d'en limiter l'utilisation ou d'en recevoir une copie, et tu peux retirer ton consentement aux propositions à tout moment. écris à {email}.",
+          "tu peux aussi adresser une réclamation à la CNIL ou à l'autorité du pays où tu vis."
+        ]
+      ],
+      [
+        "mineurs",
+        [
+          "si tu as moins de 16 ans, demande à un parent avant d'activer les propositions écrites par l'intelligence artificielle."
+        ]
+      ],
+      [
+        "modifications",
+        [
+          "si nous modifions cette politique, nous mettons à jour la date en haut. si quelque chose d'important change, nous te le disons dans l'app."
+        ]
+      ]
+    ]
+  },
+  "pt": {
+    "faq_nav": "perguntas frequentes",
+    "privacy_nav": "privacidade",
+    "home_nav": "voltar ao site",
+    "faq_title": "perguntas frequentes.",
+    "faq_intro": "respostas curtas sobre como o 1thing funciona. se não encontrar o que procura, fale com a gente.",
+    "faq": [
+      [
+        "o que é o 1thing?",
+        "um app para iPhone. todo dia você escolhe um objetivo, só um. quando conclui, segura o círculo e um pedaço do quadro ganha cor."
+      ],
+      [
+        "por que um objetivo só?",
+        "listas longas fazem tudo parecer urgente, e no fim nada começa. um objetivo pequeno, para hoje, está perto o bastante para ser feito de verdade."
+      ],
+      [
+        "o que acontece se eu pular um dia?",
+        "nada. o quadro espera por você: são 30 objetivos concluídos, mesmo que não sejam seguidos."
+      ],
+      [
+        "e se eu não concluir até a meia-noite?",
+        "o objetivo de hoje some e amanhã você escolhe um novo. o quadro não perde nenhum pedaço."
+      ],
+      [
+        "quantos quadros existem?",
+        "cinco: a costa no inverno, o jardim, o bosque no outono, o deserto vermelho e o luminoso. quando você termina um, eu o penduro no seu ateliê e começa outro."
+      ],
+      [
+        "o que é o ateliê?",
+        "o cômodo onde você mora com seu companheiro. na parede tem um risquinho para cada objetivo concluído, e ali ficam pendurados os quadros que você terminou. dá para decorar do seu jeito."
+      ],
+      [
+        "por que as cores do quadro mudam?",
+        "o quadro ganha a luz da hora em que você conclui seu objetivo: o amanhecer, o dia, o pôr do sol ou a noite."
+      ],
+      [
+        "onde vejo os dias feitos?",
+        "no calendário: os 30 pedaços do quadro, cada um com seu objetivo e a nota que você deixou. embaixo fica a lista de todos os objetivos concluídos."
+      ],
+      [
+        "como coloco o widget?",
+        "toque e segure um espaço vazio da tela de início, toque em + no alto, procure 1thing e escolha o widget. ele mostra o objetivo de hoje dentro do quadro."
+      ],
+      [
+        "como funciona o lembrete?",
+        "você recebe um por dia, na hora que escolheu. a hora se muda no ateliê. com as notificações desligadas, o app funciona do mesmo jeito."
+      ],
+      [
+        "de onde vêm as sugestões para os dias vazios?",
+        "se você der seu consentimento, uma inteligência artificial (Claude, da Anthropic) lê uma vez as respostas que você deu no começo e escreve objetivos pensados para você. as sugestões ficam no seu iPhone. você pode mudar de ideia no ateliê."
+      ],
+      [
+        "onde ficam meus objetivos e minhas notas?",
+        "no seu iPhone. não tem conta e não mandamos nada para ninguém. os detalhes estão na política de privacidade."
+      ],
+      [
+        "funciona sem internet?",
+        "sim. a internet só é necessária para escrever as sugestões na primeira vez."
+      ],
+      [
+        "como apago tudo?",
+        "nas configurações do ateliê, «apagar tudo» remove objetivos, quadros e respostas. apagar o app do celular também apaga tudo o que você escreveu. se você nos mandou uma mensagem e quer que a gente apague, fale com a gente."
+      ],
+      [
+        "tem para Android?",
+        "por enquanto o 1thing é só para iPhone."
+      ]
+    ],
+    "faq_more": "não encontrou a resposta?",
+    "privacy_title": "privacidade.",
+    "privacy_intro": "o 1thing não tem conta, não mostra anúncios e não rastreia você. o que você escreve fica no seu iPhone. tudo está explicado em detalhes abaixo.",
+    "updated": "atualizada em 18 de novembro de 2026",
+    "privacy": [
+      [
+        "quem somos",
+        [
+          "o controlador dos dados é {titolare}. para qualquer pergunta sobre privacidade, escreva para {email}."
+        ]
+      ],
+      [
+        "o que fica no seu iPhone",
+        [
+          "seus objetivos, as notas, os quadros, as respostas às perguntas do começo, seu nome, seu companheiro e as configurações. ficam salvos só no celular, em um espaço que o app divide com os widgets. nós não vemos esses dados.",
+          "se o backup do iCloud estiver ativado, a Apple pode incluir esses dados no backup do celular, conforme os termos dela."
+        ]
+      ],
+      [
+        "as sugestões com inteligência artificial",
+        [
+          "só se você der seu consentimento, o app envia ao nosso servidor as respostas que você deu no começo: os temas escolhidos, os motivos, os obstáculos, quanto tempo você tem, o que você vem adiando e o que escreveu sobre você. junto, enviamos o idioma do app e um código aleatório que identifica a instalação, não você.",
+          "não enviamos seu nome, os objetivos de cada dia nem as notas.",
+          "o servidor passa as respostas para o Claude, o modelo de inteligência artificial da Anthropic, que escreve as sugestões. as sugestões voltam para o celular e ficam lá: nosso servidor não as guarda. a Anthropic não usa os dados enviados pela API dela para treinar modelos e os guarda só por um período limitado, conforme descrito nos termos dela.",
+          "isso acontece uma vez, e de novo só se você responder às perguntas outra vez ou escrever algo no fim de um quadro. a base é o seu consentimento, que você pode retirar quando quiser no ateliê.",
+          "recomendamos não escrever nas respostas dados de saúde ou outras informações sensíveis."
+        ]
+      ],
+      [
+        "nosso servidor",
+        [
+          "o servidor roda na Cloudflare. para evitar abusos, ele conta quantos pedidos chegam de cada instalação (no máximo 5 a cada 30 dias): para isso guarda só uma impressão criptografada do código da instalação, não o código. não registramos endereços IP nem o conteúdo dos pedidos."
+        ]
+      ],
+      [
+        "dados fora da União Europeia",
+        [
+          "a Cloudflare e a Anthropic podem tratar dados nos Estados Unidos. a Cloudflare aderiu ao Data Privacy Framework entre a União Europeia e os Estados Unidos; com a Anthropic, a transferência é coberta pelas cláusulas contratuais padrão da Comissão Europeia."
+        ]
+      ],
+      [
+        "se você nos escrever",
+        [
+          "se você nos mandar um e-mail, o app acrescenta no fim da mensagem a versão do app, o modelo do celular e a versão do iOS, que você vê antes de enviar. guardamos as mensagens pelo tempo necessário para responder."
+        ]
+      ],
+      [
+        "compras",
+        [
+          "as compras dentro do app são feitas pela Apple. não vemos seus dados de pagamento."
+        ]
+      ],
+      [
+        "notificações",
+        [
+          "os lembretes são programados no celular. não passam pelo nosso servidor."
+        ]
+      ],
+      [
+        "estatísticas e anúncios",
+        [
+          "o app não usa ferramentas de análise de outras empresas, não mostra anúncios e não segue você em outros apps ou sites."
+        ]
+      ],
+      [
+        "este site",
+        [
+          "o site não usa cookies nem ferramentas de análise. ele lembra no seu navegador o idioma que você escolheu, e a fonte fica hospedada junto com o site. o provedor que hospeda o site pode registrar dados técnicos das visitas, como o endereço IP, para fazê-lo funcionar e protegê-lo."
+        ]
+      ],
+      [
+        "seus direitos",
+        [
+          "você pode nos pedir para ver, corrigir ou apagar os dados que temos, limitar o uso deles ou receber uma cópia, e pode retirar o consentimento às sugestões quando quiser. escreva para {email}.",
+          "você também pode fazer uma reclamação à autoridade de proteção de dados do país onde mora, como a ANPD no Brasil ou a CNPD em Portugal."
+        ]
+      ],
+      [
+        "menores",
+        [
+          "se você tem menos de 16 anos, peça a um responsável antes de ativar as sugestões com inteligência artificial."
+        ]
+      ],
+      [
+        "mudanças",
+        [
+          "se mudarmos esta política, atualizamos a data no alto. se algo importante mudar, avisamos no app."
+        ]
+      ]
+    ]
+  }
+}

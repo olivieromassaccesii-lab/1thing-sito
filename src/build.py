@@ -22,6 +22,13 @@ ANIMALI = ['gatto', 'cane', 'pappagallo', 'criceto']
 GIORNI = [1, 5, 12, 20, 30]
 
 testi = json.load(open(os.path.join(QUI, 'testi.json'), encoding='utf-8'))
+documenti = json.load(open(os.path.join(QUI, 'documenti.json'), encoding='utf-8'))
+# il titolare del trattamento (nome e indirizzo, o ragione sociale e sede):
+# finché è vuoto la privacy lo mostra da completare, e il build lo ricorda
+TITOLARE = ''
+EMAIL = 'feedback@1thingapp.com'
+for _l in testi:
+    testi[_l].update({k: v for k, v in documenti[_l].items() if isinstance(v, str)})
 pagina = open(os.path.join(QUI, 'pagina.html'), encoding='utf-8').read()
 v = time.strftime('%Y%m%d%H%M')
 
@@ -113,6 +120,109 @@ for lg in LINGUE:
     out = out.replace(f'<html lang="{lg}">', f'<html lang="{HREFLANG[lg]}">', 1)
     os.makedirs(os.path.join(DIST, lg), exist_ok=True)
     open(os.path.join(DIST, lg, 'index.html'), 'w', encoding='utf-8').write(out)
+
+# ---------- le pagine /faq e /privacy, una per lingua ----------
+DOC = """<!doctype html>
+<html lang="{htmllang}">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>{title} — 1thing</title>
+<meta name="description" content="{desc}">
+<meta name="theme-color" content="#f9f5ef">
+<link rel="canonical" href="{site}/{lang}/{slug}/">
+{hreflang}
+<link rel="icon" href="../../assets/img/icona.png">
+<link rel="preload" href="../../assets/poppi.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="stylesheet" href="../../assets/sito.css?v={v}">
+</head>
+<body class="documento">
+<a class="salta" href="#contenuto">{skip}</a>
+<header class="testa">
+  <div class="testa__riga">
+    <a class="marchio" href="../">1thing</a>
+    <nav class="voci" aria-label="1thing">
+      <a href="../">{home_nav}</a>
+      <a href="../faq/"{cur_faq}>{faq_nav}</a>
+      <a href="../privacy/"{cur_priv}>{privacy_nav}</a>
+    </nav>
+    <details class="lingue">
+      <summary aria-label="{lang_label}">{lang}</summary>
+      <ul>{links}</ul>
+    </details>
+  </div>
+</header>
+<main id="contenuto" class="foglio-testo">
+  <h1>{title}</h1>
+  <p class="foglio-testo__intro">{intro}</p>
+  {extra}
+  {body}
+</main>
+<footer class="piede">
+  <div class="piede__riga">
+    <span class="marchio marchio--piccolo">1thing</span>
+    <ul class="piede__lingue" aria-label="{lang_label}">{links}</ul>
+    <a href="mailto:{email}">{write}</a>
+    <span class="piede__anno">© 2026</span>
+  </div>
+</footer>
+<script>
+document.querySelectorAll('a[hreflang]').forEach(a => a.addEventListener('click', () => {{ try {{ localStorage.setItem('lingua', a.getAttribute('lang') || ''); }} catch (e) {{}} }}));
+const L = document.querySelector('.lingue'); if (L) document.addEventListener('click', e => {{ if (!L.contains(e.target)) L.open = false; }});
+</script>
+</body>
+</html>
+"""
+mancano = False
+for lg in LINGUE:
+    t = testi[lg]; dd = documenti[lg]
+    fr = (lambda x: fr_spazi(x)) if lg == 'fr' else (lambda x: x)
+    E = lambda x: html.escape(fr(x), quote=True)
+    mail = f'<a href="mailto:{EMAIL}">{EMAIL}</a>'
+    tit = html.escape(TITOLARE) if TITOLARE else '<mark class="da-completare">[da completare]</mark>'
+    if not TITOLARE: mancano = True
+    for slug in ['faq', 'privacy']:
+        links = ''.join(
+            f'<li><a href="../../{o}/{slug}/" hreflang="{HREFLANG[o]}" lang="{o}"' + (' aria-current="page"' if o == lg else '') +
+            f'>{html.escape(testi[o]["lang_name"])}</a></li>' for o in LINGUE)
+        hl = '\n'.join(f'<link rel="alternate" hreflang="{HREFLANG[o]}" href="{SITO}/{o}/{slug}/">' for o in LINGUE) + \
+            f'\n<link rel="alternate" hreflang="x-default" href="{SITO}/en/{slug}/">'
+        if slug == 'faq':
+            body = '<div class="domande">' + ''.join(
+                f'<details class="domanda"><summary><h2>{E(q)}</h2><span class="domanda__segno" aria-hidden="true"></span></summary><p>{E(a)}</p></details>'
+                for q, a in dd['faq']) + '</div>' + \
+                f'<p class="foglio-testo__fine">{E(dd["faq_more"])} <a href="mailto:{EMAIL}">{EMAIL}</a></p>'
+            extra = ''
+            title, intro = dd['faq_title'], dd['faq_intro']
+        else:
+            parti = []
+            for h, ps in dd['privacy']:
+                pp = ''.join('<p>' + E(x).replace('{titolare}', tit).replace('{email}', mail) + '</p>' for x in ps)
+                parti.append(f'<section><h2>{E(h)}</h2>{pp}</section>')
+            body = '<div class="informativa">' + ''.join(parti) + '</div>'
+            extra = f'<p class="foglio-testo__data">{E(dd["updated"])}</p>'
+            title, intro = dd['privacy_title'], dd['privacy_intro']
+        out = DOC.format(htmllang=HREFLANG[lg], lang=lg, title=E(title), desc=E(intro), site=SITO, slug=slug, hreflang=hl, v=v,
+                         skip=E(t['skip']), home_nav=E(dd['home_nav']), faq_nav=E(dd['faq_nav']), privacy_nav=E(dd['privacy_nav']),
+                         cur_faq=' aria-current="page"' if slug == 'faq' else '', cur_priv=' aria-current="page"' if slug == 'privacy' else '',
+                         lang_label=E(t['lang_label']), links=links, intro=E(intro), extra=extra, body=body, email=EMAIL, write=E(t['write']))
+        os.makedirs(os.path.join(DIST, lg, slug), exist_ok=True)
+        open(os.path.join(DIST, lg, slug, 'index.html'), 'w', encoding='utf-8').write(out)
+
+# /faq e /privacy senza lingua (i link dentro l'app): ognuno alla sua
+for slug in ['faq', 'privacy']:
+    os.makedirs(os.path.join(DIST, slug), exist_ok=True)
+    open(os.path.join(DIST, slug, 'index.html'), 'w', encoding='utf-8').write(f"""<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+<title>1thing</title><link rel="canonical" href="{SITO}/en/{slug}/">
+<script>(function(){{var L={json.dumps(LINGUE)},s;try{{s=localStorage.getItem('lingua')}}catch(e){{}}
+var a=(navigator.languages||[navigator.language||'en']).map(function(x){{return String(x).slice(0,2).toLowerCase()}});
+var l=L.indexOf(s)>=0?s:(a.filter(function(x){{return L.indexOf(x)>=0}})[0]||'en');location.replace('../'+l+'/{slug}/')}})();</script>
+<style>body{{background:#f9f5ef;color:#3a322b;font:20px/1.5 system-ui;padding:40px 20px}}a{{color:inherit;margin-right:14px}}</style>
+</head><body>{''.join(f'<a href="../{o}/{slug}/" hreflang="{HREFLANG[o]}">{html.escape(testi[o]["lang_name"])}</a>' for o in LINGUE)}</body></html>
+""")
+if mancano:
+    print('ATTENZIONE: TITOLARE vuoto in build.py: la privacy mostra «[da completare]».')
 
 # la radice: ognuno alla sua lingua, l'inglese se non è fra le cinque
 radice = f'''<!doctype html>
