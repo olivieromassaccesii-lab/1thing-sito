@@ -270,6 +270,10 @@ open(os.path.join(DIST, '_headers'), 'w').write("""/*
   Cache-Control: public, max-age=0, must-revalidate
 """)
 
+# GitHub Pages: il dominio e niente Jekyll
+open(os.path.join(DIST, 'CNAME'), 'w').write(SITO.split('://')[1] + '\n')
+open(os.path.join(DIST, '.nojekyll'), 'w').write('')
+
 if mancano:
     print('ATTENZIONE: TITOLARE vuoto in build.py: la privacy mostra «[da completare]».')
 

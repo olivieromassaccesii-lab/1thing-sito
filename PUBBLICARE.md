@@ -18,7 +18,29 @@ Il sito è statico: si carica la cartella `dist/` così com'è, alla radice del 
 
 In tutto sono circa 5 MB. La prima visita scarica circa 0,7 MB; il motore e la costa (1,3 MB) arrivano solo quando l'iPhone dell'apertura è sullo schermo.
 
-## Consigliato: Cloudflare Pages
+## Con GitHub Pages (scelto il 18/11)
+
+Il repo ha già tutto: `dist/CNAME` con il dominio, `dist/.nojekyll` e il workflow `.github/workflows/pages.yml`, che pubblica `dist/` a ogni push su `main`.
+
+1. Su GitHub crea un repo vuoto, pubblico, per esempio `1thing-sito`, senza README. Con il piano gratuito Pages funziona solo con i repo pubblici.
+2. Collega il repo e fai il push:
+   ```bash
+   git remote add origin git@github.com:olivieromassaccesii-lab/1thing-sito.git
+   ```
+   ```bash
+   git push -u origin main
+   ```
+3. Nel repo, vai su **Settings**, poi **Pages**: in **Source** scegli **GitHub Actions**. Il workflow parte e pubblica.
+4. Sempre in **Pages**, in **Custom domain** scrivi `1thingapp.com` e salva.
+5. Presso il registrar del dominio, nei DNS:
+   - quattro record `A` per `1thingapp.com`: `185.199.108.153`, `185.199.109.153`, `185.199.110.153`, `185.199.111.153`;
+   - un record `CNAME` per `www` che punta a `olivieromassaccesii-lab.github.io`;
+   - non toccare `MX`, SPF, DKIM e DMARC della posta.
+6. Quando GitHub ha verificato il dominio (da qualche minuto a qualche ora), spunta **Enforce HTTPS**.
+
+Per aggiornare il sito: `python3 src/build.py`, poi commit e push. GitHub ignora il file `_headers`, che resta per Cloudflare o Netlify.
+
+## In alternativa: Cloudflare Pages
 
 Il server dell'app gira già su Cloudflare, quindi conviene tenere tutto lì. Il piano gratuito basta.
 
@@ -54,7 +76,7 @@ Carica il **contenuto** di `dist/` (non la cartella stessa) nella cartella pubbl
 - [ ] **Privacy.** Falla rileggere da un avvocato, soprattutto la parte sul consenso all'IA. Controlla poi la frase su quanto tempo Anthropic conserva i dati con le sue condizioni del momento.
 - [ ] **App.** Nell'app i link sono `https://1thingapp.com/faq` e `https://1thingapp.com/privacy`, e funzionano così come sono.
 - [ ] **App Store Connect.** Come URL della privacy usa `https://1thingapp.com/privacy`; come URL di supporto `https://1thingapp.com/faq` oppure la mail.
-- [ ] **Vecchio hosting.** `.openai/hosting.json` è la configurazione del vecchio sito sull'hosting OpenAI. Non serve più: se quel sito è ancora online, spegnilo per non avere due versioni in giro.
+- [ ] **Vecchio hosting.** Il vecchio sito era sull'hosting di OpenAI (la sua configurazione è stata tolta dal repo). Se è ancora online, spegnilo per non avere due versioni in giro.
 
 ## Dopo la pubblicazione
 
