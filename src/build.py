@@ -25,7 +25,7 @@ testi = json.load(open(os.path.join(QUI, 'testi.json'), encoding='utf-8'))
 documenti = json.load(open(os.path.join(QUI, 'documenti.json'), encoding='utf-8'))
 # il titolare del trattamento (nome e indirizzo, o ragione sociale e sede):
 # finché è vuoto la privacy lo mostra da completare, e il build lo ricorda
-TITOLARE = ''
+TITOLARE = 'Oliviero Massaccesi'
 EMAIL = 'feedback@1thingapp.com'
 for _l in testi:
     testi[_l].update({k: v for k, v in documenti[_l].items() if isinstance(v, str)})
@@ -221,6 +221,55 @@ var l=L.indexOf(s)>=0?s:(a.filter(function(x){{return L.indexOf(x)>=0}})[0]||'en
 <style>body{{background:#f9f5ef;color:#3a322b;font:20px/1.5 system-ui;padding:40px 20px}}a{{color:inherit;margin-right:14px}}</style>
 </head><body>{''.join(f'<a href="../{o}/{slug}/" hreflang="{HREFLANG[o]}">{html.escape(testi[o]["lang_name"])}</a>' for o in LINGUE)}</body></html>
 """)
+
+# ---------- per il dominio: 404, robots, sitemap, favicon, intestazioni ----------
+oggi = time.strftime('%Y-%m-%d')
+sitemap = ['<?xml version="1.0" encoding="UTF-8"?>',
+           '<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:xhtml="http://www.w3.org/1999/xhtml">']
+for x in ['', 'faq/', 'privacy/']:
+    for o in LINGUE:
+        sitemap.append(f'  <url><loc>{SITO}/{o}/{x}</loc><lastmod>{oggi}</lastmod>')
+        for o2 in LINGUE:
+            sitemap.append(f'    <xhtml:link rel="alternate" hreflang="{HREFLANG[o2]}" href="{SITO}/{o2}/{x}"/>')
+        sitemap.append('  </url>')
+sitemap.append('</urlset>')
+open(os.path.join(DIST, 'sitemap.xml'), 'w', encoding='utf-8').write('\n'.join(sitemap) + '\n')
+open(os.path.join(DIST, 'robots.txt'), 'w').write(f'User-agent: *\nAllow: /\n\nSitemap: {SITO}/sitemap.xml\n')
+
+# la pagina che non c'è: percorsi dalla radice, perché l'hosting la serve a qualsiasi indirizzo
+P404 = {'it': 'questa pagina non c’è.', 'en': 'this page doesn’t exist.', 'es': 'esta página no existe.', 'fr': 'cette page n’existe pas.', 'pt': 'esta página não existe.'}
+righe = ''.join(f'<p lang="{o}">{html.escape(P404[o])} <a href="/{o}/">1thing</a></p>' for o in LINGUE)
+open(os.path.join(DIST, '404.html'), 'w', encoding='utf-8').write(f"""<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+<title>1thing</title><meta name="robots" content="noindex">
+<link rel="icon" href="/assets/img/icona.png"><link rel="stylesheet" href="/assets/sito.css?v={v}">
+<style>.vuota{{max-width:640px;margin:0 auto;min-height:100svh;padding:15vh 24px;display:flex;flex-direction:column;gap:14px}}.vuota img{{width:160px;margin-bottom:12px}}.vuota p{{color:var(--matita)}}.vuota a{{color:var(--penna)}}</style>
+</head><body><main class="vuota"><img src="/assets/img/gatto-0-aspetta.webp" width="462" height="408" alt=""><h1 style="font-size:3rem">1thing</h1>{righe}</main></body></html>
+""")
+
+# il favicon in piccolo, dall'icona dell'app
+try:
+    from PIL import Image
+    ic = Image.open(os.path.join(DIST, 'assets', 'img', 'icona.png')).convert('RGBA')
+    ic.resize((32, 32), Image.LANCZOS).save(os.path.join(DIST, 'favicon.ico'), sizes=[(32, 32)])
+    ic.resize((180, 180), Image.LANCZOS).save(os.path.join(DIST, 'apple-touch-icon.png'))
+except Exception as err:
+    print('favicon non fatto:', err)
+
+# intestazioni per Cloudflare Pages o Netlify (gli altri hosting le ignorano)
+open(os.path.join(DIST, '_headers'), 'w').write("""/*
+  X-Content-Type-Options: nosniff
+  Referrer-Policy: strict-origin-when-cross-origin
+  X-Frame-Options: DENY
+  Permissions-Policy: camera=(), microphone=(), geolocation=(), interest-cohort=()
+
+/assets/*
+  Cache-Control: public, max-age=604800
+
+/*.html
+  Cache-Control: public, max-age=0, must-revalidate
+""")
+
 if mancano:
     print('ATTENZIONE: TITOLARE vuoto in build.py: la privacy mostra «[da completare]».')
 
