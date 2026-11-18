@@ -62,28 +62,56 @@
   }));
 
   // ---------- gli animali ----------
+  // l'immagine nuova si cambia solo quando è già scaricata e decodificata:
+  // altrimenti per un attimo l'animale spariva
+  const pronta = src => { const im = new Image(); im.src = src; return (im.decode ? im.decode() : Promise.resolve()).catch(() => {}).then(() => src); };
+  const salto = li => {
+    li.classList.remove('saltello'); void li.offsetWidth;
+    li.classList.add('felice', 'saltello');
+    clearTimeout(li._t); li._t = setTimeout(() => li.classList.remove('felice', 'saltello'), 1400);
+  };
   document.querySelectorAll('.animale').forEach((li, i) => {
     const nome = li.dataset.animale;
     const [ia, iff] = li.querySelectorAll('.animale__figura img');
     li.querySelector('.animale__figura').addEventListener('click', () => {
-      li.classList.remove('salta'); void li.offsetWidth;
-      li.classList.add('felice', 'salta');
+      salto(li);
       if (navigator.vibrate) navigator.vibrate(8);
-      clearTimeout(li._t); li._t = setTimeout(() => li.classList.remove('felice', 'salta'), 1500);
     });
     li.querySelectorAll('.tinta').forEach((b, k) => {
       b.querySelector('path').setAttribute('d', giro(31 + i * 4 + k, true, 20, 20, 17));
       const src = t => `../assets/img/${nome}-${b.dataset.c}-${t}.webp`;
-      b.addEventListener('pointerenter', () => { new Image().src = src('aspetta'); new Image().src = src('felice'); }, { once: true });
-      b.addEventListener('click', () => {
+      const scalda = () => { pronta(src('aspetta')); pronta(src('felice')); };
+      b.addEventListener('pointerenter', scalda, { once: true });
+      b.addEventListener('focus', scalda, { once: true });
+      b.addEventListener('click', async () => {
         li.querySelectorAll('.tinta').forEach(x => x.setAttribute('aria-checked', x === b ? 'true' : 'false'));
         li.dataset.colore = b.dataset.c;
-        ia.src = src('aspetta'); iff.src = src('felice');
-        li.classList.remove('salta'); void li.offsetWidth; li.classList.add('felice', 'salta');
-        clearTimeout(li._t); li._t = setTimeout(() => li.classList.remove('felice', 'salta'), 1200);
+        const [a, f] = await Promise.all([pronta(src('aspetta')), pronta(src('felice'))]);
+        if (li.dataset.colore !== b.dataset.c) return;
+        ia.src = a; iff.src = f;
+        salto(li);
       });
     });
   });
+  // quando la sezione si avvicina, scarica anche gli altri colori
+  const compagno = document.getElementById('compagno');
+  if (compagno && 'IntersectionObserver' in window) {
+    const io = new IntersectionObserver(es => {
+      if (!es.some(e => e.isIntersecting)) return;
+      io.disconnect();
+      document.querySelectorAll('.animale').forEach(li => [0, 1, 2, 3].forEach(c => ['aspetta', 'felice'].forEach(t =>
+        pronta(`../assets/img/${li.dataset.animale}-${c}-${t}.webp`))));
+    }, { rootMargin: '400px' });
+    io.observe(compagno);
+  }
+
+  // ---------- lo studio: gli arredamenti ----------
+  const stili = [...document.querySelectorAll('.stile')];
+  const foto = [...document.querySelectorAll('.stile__foto')];
+  stili.forEach(b => b.addEventListener('click', () => {
+    stili.forEach(x => x.setAttribute('aria-selected', x === b ? 'true' : 'false'));
+    foto.forEach(f => f.classList.toggle('on', f.dataset.s === b.dataset.s));
+  }));
 
   // ---------- come funziona: il dipinto cresce scorrendo ----------
   const storia = document.querySelector('.storia');

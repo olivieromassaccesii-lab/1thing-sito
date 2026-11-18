@@ -24,7 +24,7 @@
 <link rel="apple-touch-icon" href="../assets/img/icona.png">
 <link rel="preload" href="../assets/poppi.woff2" as="font" type="font/woff2" crossorigin>
 <link rel="preload" href="../assets/img/costa-12.webp" as="image">
-<link rel="stylesheet" href="../assets/sito.css?v=202611171648">
+<link rel="stylesheet" href="../assets/sito.css?v=202611181247">
 </head>
 <body>
 <a class="salta" href="#contenuto">aller au contenu</a>
@@ -35,8 +35,8 @@
     <nav class="voci" aria-label="1thing">
       <a href="#compagno">le compagnon</a>
       <a href="#come">comment ça marche</a>
+      <a href="#studio">l&#x27;atelier</a>
       <a href="#dipinti">les tableaux</a>
-      <a href="#plus">1thing plus</a>
     </nav>
     <details class="lingue">
       <summary aria-label="langue">fr</summary>
@@ -87,6 +87,20 @@
       <button class="nota__ancora" type="button" hidden>recommencer</button>
     </p>
   </div>
+</section>
+
+<!-- per chi è, e cosa ti dà -->
+<section class="perchi" aria-labelledby="perchi-t">
+  <div class="perchi__testa" data-r>
+    <h2 id="perchi-t">pour ceux qui repoussent depuis trop longtemps.</h2>
+    <p>pour ceux qui ont une longue liste et ne commencent jamais. 1thing te fait choisir un seul objectif, petit, pour aujourd&#x27;hui.</p>
+  </div>
+  <ul class="benefici">
+    <li data-r><h3>arrête de repousser.</h3><p>un objectif par jour, c&#x27;est assez petit pour vraiment commencer.</p></li>
+    <li data-r><h3>vois ce que tu as fait.</h3><p>chaque objectif accompli reste : dans le tableau, dans le calendrier, sur le mur de l&#x27;atelier.</p></li>
+    <li data-r><h3>aucune culpabilité.</h3><p>si tu sautes un jour, tu ne perds rien. le tableau t&#x27;attend.</p></li>
+    <li data-r><h3>un moment à toi, chaque jour.</h3><p>un geste calme, un dessin qui grandit, un compagnon qui t&#x27;attend.</p></li>
+  </ul>
 </section>
 
 <!-- il compagno, al centro della pagina -->
@@ -148,6 +162,104 @@
   </div>
 </section>
 
+<!-- i momenti della giornata: le schermate vere dell'app -->
+<section class="momenti" aria-labelledby="momenti-t">
+  <div class="sezione-testa" data-r>
+    <h2 id="momenti-t">le tableau change avec ta journée.</h2>
+    <p>le tableau prend la lumière de l&#x27;heure où tu accomplis ton objectif.</p>
+  </div>
+  <ul class="momenti__lista">
+    <li class="momento momento--alba" data-r><div class="telefono telefono--foto"><div class="telefono__schermo"><img class="foto" src="../assets/img/momento-alba.webp" width="700" height="1522" loading="lazy" alt=""><div class="app-sopra" aria-hidden="true"><span class="app-data"></span><span class="app-conto">18 objectifs accomplis</span></div><p class="momento__obiettivo" aria-hidden="true">appeler mamie</p></div></div><span class="momento__nome">aube</span></li>
+    <li class="momento momento--giorno" data-r><div class="telefono telefono--foto"><div class="telefono__schermo"><img class="foto" src="../assets/img/momento-giorno.webp" width="700" height="1522" loading="lazy" alt=""><div class="app-sopra" aria-hidden="true"><span class="app-data"></span><span class="app-conto">18 objectifs accomplis</span></div><p class="momento__obiettivo" aria-hidden="true">appeler mamie</p></div></div><span class="momento__nome">jour</span></li>
+    <li class="momento momento--tramonto" data-r><div class="telefono telefono--foto"><div class="telefono__schermo"><img class="foto" src="../assets/img/momento-tramonto.webp" width="700" height="1522" loading="lazy" alt=""><div class="app-sopra" aria-hidden="true"><span class="app-data"></span><span class="app-conto">18 objectifs accomplis</span></div><p class="momento__obiettivo" aria-hidden="true">appeler mamie</p></div></div><span class="momento__nome">coucher du soleil</span></li>
+    <li class="momento momento--notte" data-r><div class="telefono telefono--foto"><div class="telefono__schermo"><img class="foto" src="../assets/img/momento-notte.webp" width="700" height="1522" loading="lazy" alt=""><div class="app-sopra" aria-hidden="true"><span class="app-data"></span><span class="app-conto">18 objectifs accomplis</span></div><p class="momento__obiettivo" aria-hidden="true">appeler mamie</p></div></div><span class="momento__nome">nuit</span></li>
+  </ul>
+</section>
+
+<!-- lo studio, e come si arreda -->
+<section class="studio" id="studio" aria-labelledby="studio-t">
+  <div class="studio__testo">
+    <div data-r>
+      <h2 id="studio-t">ton atelier.</h2>
+      <p>c&#x27;est la pièce où tu vis avec ton compagnon. sur le mur, un trait pour chaque objectif accompli. aux murs, les tableaux que tu as terminés.</p>
+    </div>
+    <div class="studio__arreda" data-r>
+      <h3>aménage-le comme tu veux.</h3>
+      <p>murs, rideaux, plantes, guirlandes lumineuses, tapis : plus de 40 choses.</p>
+      <div class="stili" role="tablist" aria-label="aménage-le comme tu veux.">
+        <button class="stile" type="button" role="tab" aria-selected="true" data-s="partenza">au début</button><button class="stile" type="button" role="tab" aria-selected="false" data-s="autunno">automne</button><button class="stile" type="button" role="tab" aria-selected="false" data-s="primavera">printemps</button><button class="stile" type="button" role="tab" aria-selected="false" data-s="mare">mer</button><button class="stile" type="button" role="tab" aria-selected="false" data-s="serra">serre</button>
+      </div>
+    </div>
+  </div>
+  <div class="studio__scena" data-r>
+    <div class="telefono telefono--studio">
+      <div class="telefono__schermo">
+        <img class="foto stile__foto on" data-s="partenza" src="../assets/img/studio-partenza.webp" width="800" height="1739" alt="l&#x27;atelier du peintre : la fenêtre, le tableau sur le chevalet et le chat qui dort dans sa niche.">
+        <img class="foto stile__foto" data-s="autunno" src="../assets/img/studio-autunno.webp" width="800" height="1739" loading="lazy" alt="">
+        <img class="foto stile__foto" data-s="primavera" src="../assets/img/studio-primavera.webp" width="800" height="1739" loading="lazy" alt="">
+        <img class="foto stile__foto" data-s="mare" src="../assets/img/studio-mare.webp" width="800" height="1739" loading="lazy" alt="">
+        <img class="foto stile__foto" data-s="serra" src="../assets/img/studio-serra.webp" width="800" height="1739" loading="lazy" alt="">
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- il calendario: gli obiettivi completati -->
+<section class="traccia" aria-labelledby="traccia-t">
+  <div class="traccia__testo" data-r>
+    <h2 id="traccia-t">chaque jour fait reste.</h2>
+    <p>dans le calendrier, tu retrouves les 30 morceaux du tableau. touche un jour pour relire l&#x27;objectif, et la note que tu as laissée.</p>
+  </div>
+  <div class="traccia__scena">
+    <figure class="calendario" data-r>
+      <figcaption><span class="calendario__titolo">la côte en hiver</span><span class="calendario__conto">18 / 30</span></figcaption>
+      <img src="../assets/img/calendario.webp" width="700" height="894" loading="lazy" alt="">
+    </figure>
+    <div class="elenco" data-r>
+      <h3>tous les objectifs</h3>
+      <ul>
+        <li><span class="elenco__giorno">jour 18</span><span class="elenco__obiettivo">appeler mamie</span><span class="elenco__nota">je lui ai raconté le voyage.</span></li>
+        <li><span class="elenco__giorno">jour 17</span><span class="elenco__obiettivo">lire dix pages</span></li>
+        <li><span class="elenco__giorno">jour 16</span><span class="elenco__obiettivo">aller courir</span><span class="elenco__nota">plus facile que prévu.</span></li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<!-- le funzioni di ogni giorno -->
+<section class="funzioni" aria-labelledby="funzioni-t">
+  <div class="sezione-testa" data-r><h2 id="funzioni-t">et chaque jour, un coup de main.</h2></div>
+  <ul class="funzioni__lista">
+    <li data-r>
+      <div class="vista vista--proposta" aria-hidden="true">
+        <div class="proposta">
+          <span class="proposta__domanda">on commence par celui-ci ?</span>
+          <span class="proposta__obiettivo">écrire à une amie</span>
+          <svg class="proposta__brilla" viewBox="0 0 24 24"><path d="M12 2.5c.6 4.6 2.8 6.9 7.4 7.5-4.6.6-6.8 2.9-7.4 7.5-.6-4.6-2.8-6.9-7.4-7.5 4.6-.6 6.8-2.9 7.4-7.5Z"/></svg>
+        </div>
+      </div>
+      <h3>les jours vides, je te trouve le bon objectif.</h3><p>je sais ce qui compte pour toi : je te le propose, tu choisis.</p>
+    </li>
+    <li data-r>
+      <div class="vista vista--home" aria-hidden="true">
+        <div class="widget"><img src="../assets/img/widget.webp" width="420" height="420" loading="lazy" alt=""><span class="widget__obiettivo">appeler mamie</span><span class="widget__fatto">fait.</span></div>
+        <div class="icone"><img src="../assets/img/icona-carta.webp" width="240" height="240" loading="lazy" alt=""><img src="../assets/img/icona-albicocca.webp" width="240" height="240" loading="lazy" alt=""><img src="../assets/img/icona-terracotta.webp" width="240" height="240" loading="lazy" alt=""><img src="../assets/img/icona-rosa.webp" width="240" height="240" loading="lazy" alt=""><img src="../assets/img/icona-giallo.webp" width="240" height="240" loading="lazy" alt=""><img src="../assets/img/icona-verde.webp" width="240" height="240" loading="lazy" alt=""><img src="../assets/img/icona-azzurro.webp" width="240" height="240" loading="lazy" alt=""><img src="../assets/img/icona-blu-penna.webp" width="240" height="240" loading="lazy" alt=""></div>
+      </div>
+      <h3>icône et widgets comme tu veux.</h3><p>huit icônes, et ton objectif sur l&#x27;écran d&#x27;accueil, dans le tableau.</p>
+    </li>
+    <li data-r>
+      <div class="vista vista--avviso" aria-hidden="true">
+        <div class="avviso">
+          <img src="../assets/img/icona.png" width="180" height="180" alt="">
+          <div><span class="avviso__app">1thing</span><span class="avviso__testo">c&#x27;est le moment de ton objectif.</span><span class="avviso__obiettivo">appeler mamie</span></div>
+          <span class="avviso__ora">21:00</span>
+        </div>
+      </div>
+      <h3>un rappel par jour.</h3><p>à l&#x27;heure que tu choisis, sur le ton que tu préfères.</p>
+    </li>
+  </ul>
+</section>
+
 <!-- i dipinti -->
 <section class="dipinti" id="dipinti" aria-labelledby="dipinti-t">
   <div class="dipinti__testa" data-r>
@@ -161,27 +273,6 @@
     <li data-r><figure class="quadro"><img src="../assets/img/deserto.webp" width="600" height="1354" loading="lazy" alt=""></figure><span>le désert rouge</span></li>
     <li data-r><figure class="quadro"><img src="../assets/img/luminoso.webp" width="600" height="1354" loading="lazy" alt=""></figure><span>le lumineux</span></li>
   </ul>
-</section>
-
-<!-- plus, di notte -->
-<section class="plus" id="plus" aria-labelledby="plus-t">
-  <div class="plus__dentro">
-    <div class="plus__cielo" data-r>
-      <img src="../assets/img/notte.webp" width="1200" height="697" loading="lazy" alt="la côte la nuit : la lune, le phare allumé, les étoiles.">
-    </div>
-    <div class="plus__testa" data-r>
-      <h2 id="plus-t">1thing plus.</h2>
-      <p>1thing est gratuit. avec 1thing plus :</p>
-    </div>
-    <ul class="plus__lista">
-      <li data-r><h3>ton atelier, aménagé comme tu veux.</h3><p>plantes, rideaux, guirlandes lumineuses, ton compagnon : plus de 40 choses.</p></li>
-      <li data-r><h3>les jours vides, je te trouve le bon objectif.</h3><p>je sais ce qui compte pour toi.</p></li>
-      <li data-r><h3>le prochain tableau, c&#x27;est toi qui le choisis.</h3><p>n&#x27;importe quel tableau, quand tu veux.</p></li>
-      <li data-r><h3>l&#x27;aube, le coucher du soleil et la nuit.</h3><p>le tableau change selon l&#x27;heure où tu accomplis ton objectif.</p></li>
-      <li data-r><h3>icône et widgets comme tu veux.</h3><p>l&#x27;app devient la tienne.</p></li>
-      <li class="plus__prova" data-r><h3>essaie-le gratuitement pendant 14 jours.</h3><span class="tasto tasto--chiaro tasto--presto">bientôt sur l&#x27;App Store</span></li>
-    </ul>
-  </div>
 </section>
 
 <!-- la fine -->
@@ -205,6 +296,6 @@
 </footer>
 
 <script>window.TESTI={lang:"fr",dayOf:"jour {d} sur 30",done:"le tableau 1 est terminé.",count:"{n} objectifs accomplis"};</script>
-<script src="../assets/sito.js?v=202611171648" defer></script>
+<script src="../assets/sito.js?v=202611181247" defer></script>
 </body>
 </html>

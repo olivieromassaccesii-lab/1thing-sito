@@ -24,7 +24,7 @@
 <link rel="apple-touch-icon" href="../assets/img/icona.png">
 <link rel="preload" href="../assets/poppi.woff2" as="font" type="font/woff2" crossorigin>
 <link rel="preload" href="../assets/img/costa-12.webp" as="image">
-<link rel="stylesheet" href="../assets/sito.css?v=202611171648">
+<link rel="stylesheet" href="../assets/sito.css?v=202611181247">
 </head>
 <body>
 <a class="salta" href="#contenuto">vai al contenuto</a>
@@ -35,8 +35,8 @@
     <nav class="voci" aria-label="1thing">
       <a href="#compagno">il compagno</a>
       <a href="#come">come funziona</a>
+      <a href="#studio">lo studio</a>
       <a href="#dipinti">i dipinti</a>
-      <a href="#plus">1thing plus</a>
     </nav>
     <details class="lingue">
       <summary aria-label="lingua">it</summary>
@@ -87,6 +87,20 @@
       <button class="nota__ancora" type="button" hidden>ricomincia</button>
     </p>
   </div>
+</section>
+
+<!-- per chi è, e cosa ti dà -->
+<section class="perchi" aria-labelledby="perchi-t">
+  <div class="perchi__testa" data-r>
+    <h2 id="perchi-t">per chi rimanda da troppo.</h2>
+    <p>per chi ha una lista lunga e non comincia mai. 1thing ti fa scegliere un obiettivo solo, piccolo, per oggi.</p>
+  </div>
+  <ul class="benefici">
+    <li data-r><h3>smetti di rimandare.</h3><p>un obiettivo al giorno è abbastanza piccolo da cominciare davvero.</p></li>
+    <li data-r><h3>vedi quello che hai fatto.</h3><p>ogni obiettivo completato resta: nel dipinto, nel calendario, sul muro dello studio.</p></li>
+    <li data-r><h3>niente sensi di colpa.</h3><p>se salti un giorno non perdi niente. il dipinto ti aspetta.</p></li>
+    <li data-r><h3>un momento tuo, ogni giorno.</h3><p>un gesto calmo, un disegno che cresce, un compagno che ti aspetta.</p></li>
+  </ul>
 </section>
 
 <!-- il compagno, al centro della pagina -->
@@ -148,6 +162,104 @@
   </div>
 </section>
 
+<!-- i momenti della giornata: le schermate vere dell'app -->
+<section class="momenti" aria-labelledby="momenti-t">
+  <div class="sezione-testa" data-r>
+    <h2 id="momenti-t">il dipinto cambia con la tua giornata.</h2>
+    <p>il dipinto prende la luce dell&#x27;ora in cui completi il tuo obiettivo.</p>
+  </div>
+  <ul class="momenti__lista">
+    <li class="momento momento--alba" data-r><div class="telefono telefono--foto"><div class="telefono__schermo"><img class="foto" src="../assets/img/momento-alba.webp" width="700" height="1522" loading="lazy" alt=""><div class="app-sopra" aria-hidden="true"><span class="app-data"></span><span class="app-conto">18 obiettivi completati</span></div><p class="momento__obiettivo" aria-hidden="true">chiamare la nonna</p></div></div><span class="momento__nome">alba</span></li>
+    <li class="momento momento--giorno" data-r><div class="telefono telefono--foto"><div class="telefono__schermo"><img class="foto" src="../assets/img/momento-giorno.webp" width="700" height="1522" loading="lazy" alt=""><div class="app-sopra" aria-hidden="true"><span class="app-data"></span><span class="app-conto">18 obiettivi completati</span></div><p class="momento__obiettivo" aria-hidden="true">chiamare la nonna</p></div></div><span class="momento__nome">giorno</span></li>
+    <li class="momento momento--tramonto" data-r><div class="telefono telefono--foto"><div class="telefono__schermo"><img class="foto" src="../assets/img/momento-tramonto.webp" width="700" height="1522" loading="lazy" alt=""><div class="app-sopra" aria-hidden="true"><span class="app-data"></span><span class="app-conto">18 obiettivi completati</span></div><p class="momento__obiettivo" aria-hidden="true">chiamare la nonna</p></div></div><span class="momento__nome">tramonto</span></li>
+    <li class="momento momento--notte" data-r><div class="telefono telefono--foto"><div class="telefono__schermo"><img class="foto" src="../assets/img/momento-notte.webp" width="700" height="1522" loading="lazy" alt=""><div class="app-sopra" aria-hidden="true"><span class="app-data"></span><span class="app-conto">18 obiettivi completati</span></div><p class="momento__obiettivo" aria-hidden="true">chiamare la nonna</p></div></div><span class="momento__nome">notte</span></li>
+  </ul>
+</section>
+
+<!-- lo studio, e come si arreda -->
+<section class="studio" id="studio" aria-labelledby="studio-t">
+  <div class="studio__testo">
+    <div data-r>
+      <h2 id="studio-t">il tuo studio.</h2>
+      <p>è la stanza dove vivi con il tuo compagno. sul muro, una tacca per ogni obiettivo completato. alle pareti, i dipinti che hai finito.</p>
+    </div>
+    <div class="studio__arreda" data-r>
+      <h3>arredalo come vuoi.</h3>
+      <p>pareti, tende, piante, lucine, tappeti: più di 40 cose.</p>
+      <div class="stili" role="tablist" aria-label="arredalo come vuoi.">
+        <button class="stile" type="button" role="tab" aria-selected="true" data-s="partenza">all&#x27;inizio</button><button class="stile" type="button" role="tab" aria-selected="false" data-s="autunno">autunno</button><button class="stile" type="button" role="tab" aria-selected="false" data-s="primavera">primavera</button><button class="stile" type="button" role="tab" aria-selected="false" data-s="mare">mare</button><button class="stile" type="button" role="tab" aria-selected="false" data-s="serra">serra</button>
+      </div>
+    </div>
+  </div>
+  <div class="studio__scena" data-r>
+    <div class="telefono telefono--studio">
+      <div class="telefono__schermo">
+        <img class="foto stile__foto on" data-s="partenza" src="../assets/img/studio-partenza.webp" width="800" height="1739" alt="lo studio del pittore: la finestra, il dipinto sul cavalletto e il gatto che dorme nella cuccia.">
+        <img class="foto stile__foto" data-s="autunno" src="../assets/img/studio-autunno.webp" width="800" height="1739" loading="lazy" alt="">
+        <img class="foto stile__foto" data-s="primavera" src="../assets/img/studio-primavera.webp" width="800" height="1739" loading="lazy" alt="">
+        <img class="foto stile__foto" data-s="mare" src="../assets/img/studio-mare.webp" width="800" height="1739" loading="lazy" alt="">
+        <img class="foto stile__foto" data-s="serra" src="../assets/img/studio-serra.webp" width="800" height="1739" loading="lazy" alt="">
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- il calendario: gli obiettivi completati -->
+<section class="traccia" aria-labelledby="traccia-t">
+  <div class="traccia__testo" data-r>
+    <h2 id="traccia-t">ogni giorno fatto resta.</h2>
+    <p>nel calendario ritrovi i 30 pezzi del dipinto. tocchi un giorno e rileggi l&#x27;obiettivo, e la nota che hai lasciato.</p>
+  </div>
+  <div class="traccia__scena">
+    <figure class="calendario" data-r>
+      <figcaption><span class="calendario__titolo">la costa d&#x27;inverno</span><span class="calendario__conto">18 / 30</span></figcaption>
+      <img src="../assets/img/calendario.webp" width="700" height="894" loading="lazy" alt="">
+    </figure>
+    <div class="elenco" data-r>
+      <h3>tutti gli obiettivi</h3>
+      <ul>
+        <li><span class="elenco__giorno">giorno 18</span><span class="elenco__obiettivo">chiamare la nonna</span><span class="elenco__nota">le ho raccontato del viaggio.</span></li>
+        <li><span class="elenco__giorno">giorno 17</span><span class="elenco__obiettivo">leggere dieci pagine</span></li>
+        <li><span class="elenco__giorno">giorno 16</span><span class="elenco__obiettivo">andare a correre</span><span class="elenco__nota">più facile del previsto.</span></li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<!-- le funzioni di ogni giorno -->
+<section class="funzioni" aria-labelledby="funzioni-t">
+  <div class="sezione-testa" data-r><h2 id="funzioni-t">e ogni giorno, un aiuto.</h2></div>
+  <ul class="funzioni__lista">
+    <li data-r>
+      <div class="vista vista--proposta" aria-hidden="true">
+        <div class="proposta">
+          <span class="proposta__domanda">cominciamo da questa?</span>
+          <span class="proposta__obiettivo">scrivere a un&#x27;amica</span>
+          <svg class="proposta__brilla" viewBox="0 0 24 24"><path d="M12 2.5c.6 4.6 2.8 6.9 7.4 7.5-4.6.6-6.8 2.9-7.4 7.5-.6-4.6-2.8-6.9-7.4-7.5 4.6-.6 6.8-2.9 7.4-7.5Z"/></svg>
+        </div>
+      </div>
+      <h3>nei giorni vuoti, l&#x27;obiettivo giusto te lo trovo io.</h3><p>so cosa ti sta a cuore: te lo propongo, tu scegli.</p>
+    </li>
+    <li data-r>
+      <div class="vista vista--home" aria-hidden="true">
+        <div class="widget"><img src="../assets/img/widget.webp" width="420" height="420" loading="lazy" alt=""><span class="widget__obiettivo">chiamare la nonna</span><span class="widget__fatto">fatto.</span></div>
+        <div class="icone"><img src="../assets/img/icona-carta.webp" width="240" height="240" loading="lazy" alt=""><img src="../assets/img/icona-albicocca.webp" width="240" height="240" loading="lazy" alt=""><img src="../assets/img/icona-terracotta.webp" width="240" height="240" loading="lazy" alt=""><img src="../assets/img/icona-rosa.webp" width="240" height="240" loading="lazy" alt=""><img src="../assets/img/icona-giallo.webp" width="240" height="240" loading="lazy" alt=""><img src="../assets/img/icona-verde.webp" width="240" height="240" loading="lazy" alt=""><img src="../assets/img/icona-azzurro.webp" width="240" height="240" loading="lazy" alt=""><img src="../assets/img/icona-blu-penna.webp" width="240" height="240" loading="lazy" alt=""></div>
+      </div>
+      <h3>icona e widget come vuoi tu.</h3><p>otto icone e il tuo obiettivo sulla schermata home, dentro il dipinto.</p>
+    </li>
+    <li data-r>
+      <div class="vista vista--avviso" aria-hidden="true">
+        <div class="avviso">
+          <img src="../assets/img/icona.png" width="180" height="180" alt="">
+          <div><span class="avviso__app">1thing</span><span class="avviso__testo">è il momento del tuo obiettivo.</span><span class="avviso__obiettivo">chiamare la nonna</span></div>
+          <span class="avviso__ora">21:00</span>
+        </div>
+      </div>
+      <h3>un promemoria al giorno.</h3><p>all&#x27;ora che scegli tu, con il tono che preferisci.</p>
+    </li>
+  </ul>
+</section>
+
 <!-- i dipinti -->
 <section class="dipinti" id="dipinti" aria-labelledby="dipinti-t">
   <div class="dipinti__testa" data-r>
@@ -161,27 +273,6 @@
     <li data-r><figure class="quadro"><img src="../assets/img/deserto.webp" width="600" height="1354" loading="lazy" alt=""></figure><span>il deserto rosso</span></li>
     <li data-r><figure class="quadro"><img src="../assets/img/luminoso.webp" width="600" height="1354" loading="lazy" alt=""></figure><span>il luminoso</span></li>
   </ul>
-</section>
-
-<!-- plus, di notte -->
-<section class="plus" id="plus" aria-labelledby="plus-t">
-  <div class="plus__dentro">
-    <div class="plus__cielo" data-r>
-      <img src="../assets/img/notte.webp" width="1200" height="697" loading="lazy" alt="la costa di notte: la luna, il faro acceso, le stelle.">
-    </div>
-    <div class="plus__testa" data-r>
-      <h2 id="plus-t">1thing plus.</h2>
-      <p>1thing è gratis. con 1thing plus:</p>
-    </div>
-    <ul class="plus__lista">
-      <li data-r><h3>il tuo studio, arredato come vuoi tu.</h3><p>piante, tende, lucine, il tuo compagno: più di 40 cose.</p></li>
-      <li data-r><h3>nei giorni vuoti, l&#x27;obiettivo giusto te lo trovo io.</h3><p>so cosa ti sta a cuore.</p></li>
-      <li data-r><h3>il prossimo dipinto lo scegli tu.</h3><p>ogni dipinto, quando vuoi.</p></li>
-      <li data-r><h3>l&#x27;alba, il tramonto e la notte.</h3><p>il dipinto cambia con l&#x27;ora in cui completi il tuo obiettivo.</p></li>
-      <li data-r><h3>icona e widget come vuoi tu.</h3><p>l&#x27;app diventa tua.</p></li>
-      <li class="plus__prova" data-r><h3>14 giorni gratis per provarlo.</h3><span class="tasto tasto--chiaro tasto--presto">presto sull&#x27;App Store</span></li>
-    </ul>
-  </div>
 </section>
 
 <!-- la fine -->
@@ -205,6 +296,6 @@
 </footer>
 
 <script>window.TESTI={lang:"it",dayOf:"giorno {d} di 30",done:"dipinto 1 è finito.",count:"{n} obiettivi completati"};</script>
-<script src="../assets/sito.js?v=202611171648" defer></script>
+<script src="../assets/sito.js?v=202611181247" defer></script>
 </body>
 </html>

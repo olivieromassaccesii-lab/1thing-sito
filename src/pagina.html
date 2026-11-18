@@ -30,8 +30,8 @@
     <nav class="voci" aria-label="1thing">
       <a href="#compagno">{{nav_pets}}</a>
       <a href="#come">{{nav_how}}</a>
+      <a href="#studio">{{nav_studio}}</a>
       <a href="#dipinti">{{nav_paintings}}</a>
-      <a href="#plus">{{nav_plus}}</a>
     </nav>
     <details class="lingue">
       <summary aria-label="{{lang_label}}">{{lang}}</summary>
@@ -84,6 +84,20 @@
   </div>
 </section>
 
+<!-- per chi è, e cosa ti dà -->
+<section class="perchi" aria-labelledby="perchi-t">
+  <div class="perchi__testa" data-r>
+    <h2 id="perchi-t">{{who_title}}</h2>
+    <p>{{who_text}}</p>
+  </div>
+  <ul class="benefici">
+    <li data-r><h3>{{b1}}</h3><p>{{b1d}}</p></li>
+    <li data-r><h3>{{b2}}</h3><p>{{b2d}}</p></li>
+    <li data-r><h3>{{b3}}</h3><p>{{b3d}}</p></li>
+    <li data-r><h3>{{b4}}</h3><p>{{b4d}}</p></li>
+  </ul>
+</section>
+
 <!-- il compagno, al centro della pagina -->
 <section class="compagno" id="compagno" aria-labelledby="compagno-t">
   <div class="compagno__testa" data-r>
@@ -131,6 +145,95 @@
   </div>
 </section>
 
+<!-- i momenti della giornata: le schermate vere dell'app -->
+<section class="momenti" aria-labelledby="momenti-t">
+  <div class="sezione-testa" data-r>
+    <h2 id="momenti-t">{{moments_title}}</h2>
+    <p>{{moments_text}}</p>
+  </div>
+  <ul class="momenti__lista">
+    {{moments}}
+  </ul>
+</section>
+
+<!-- lo studio, e come si arreda -->
+<section class="studio" id="studio" aria-labelledby="studio-t">
+  <div class="studio__testo">
+    <div data-r>
+      <h2 id="studio-t">{{studio2_title}}</h2>
+      <p>{{studio2_text}}</p>
+    </div>
+    <div class="studio__arreda" data-r>
+      <h3>{{deco_title}}</h3>
+      <p>{{deco_text}}</p>
+      <div class="stili" role="tablist" aria-label="{{deco_title}}">
+        {{style_tabs}}
+      </div>
+    </div>
+  </div>
+  <div class="studio__scena" data-r>
+    <div class="telefono telefono--studio">
+      <div class="telefono__schermo">
+        {{style_frames}}
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- il calendario: gli obiettivi completati -->
+<section class="traccia" aria-labelledby="traccia-t">
+  <div class="traccia__testo" data-r>
+    <h2 id="traccia-t">{{track_title}}</h2>
+    <p>{{track_text}}</p>
+  </div>
+  <div class="traccia__scena">
+    <figure class="calendario" data-r>
+      <figcaption><span class="calendario__titolo">{{p_costa}}</span><span class="calendario__conto">18 / 30</span></figcaption>
+      <img src="../assets/img/calendario.webp" width="700" height="894" loading="lazy" alt="">
+    </figure>
+    <div class="elenco" data-r>
+      <h3>{{track_list}}</h3>
+      <ul>
+        {{track_items}}
+      </ul>
+    </div>
+  </div>
+</section>
+
+<!-- le funzioni di ogni giorno -->
+<section class="funzioni" aria-labelledby="funzioni-t">
+  <div class="sezione-testa" data-r><h2 id="funzioni-t">{{feat_title}}</h2></div>
+  <ul class="funzioni__lista">
+    <li data-r>
+      <div class="vista vista--proposta" aria-hidden="true">
+        <div class="proposta">
+          <span class="proposta__domanda">{{f_ai_q}}</span>
+          <span class="proposta__obiettivo">{{f_ai_g}}</span>
+          <svg class="proposta__brilla" viewBox="0 0 24 24"><path d="M12 2.5c.6 4.6 2.8 6.9 7.4 7.5-4.6.6-6.8 2.9-7.4 7.5-.6-4.6-2.8-6.9-7.4-7.5 4.6-.6 6.8-2.9 7.4-7.5Z"/></svg>
+        </div>
+      </div>
+      <h3>{{f_ai}}</h3><p>{{f_ai_d}}</p>
+    </li>
+    <li data-r>
+      <div class="vista vista--home" aria-hidden="true">
+        <div class="widget"><img src="../assets/img/widget.webp" width="420" height="420" loading="lazy" alt=""><span class="widget__obiettivo">{{goal_example}}</span><span class="widget__fatto">{{widget_done}}</span></div>
+        <div class="icone">{{icons}}</div>
+      </div>
+      <h3>{{f_custom}}</h3><p>{{f_custom_d}}</p>
+    </li>
+    <li data-r>
+      <div class="vista vista--avviso" aria-hidden="true">
+        <div class="avviso">
+          <img src="../assets/img/icona.png" width="180" height="180" alt="">
+          <div><span class="avviso__app">1thing</span><span class="avviso__testo">{{f_notify_t}}</span><span class="avviso__obiettivo">{{goal_example}}</span></div>
+          <span class="avviso__ora">21:00</span>
+        </div>
+      </div>
+      <h3>{{f_notify}}</h3><p>{{f_notify_d}}</p>
+    </li>
+  </ul>
+</section>
+
 <!-- i dipinti -->
 <section class="dipinti" id="dipinti" aria-labelledby="dipinti-t">
   <div class="dipinti__testa" data-r>
@@ -140,27 +243,6 @@
   <ul class="quadri">
     {{paintings}}
   </ul>
-</section>
-
-<!-- plus, di notte -->
-<section class="plus" id="plus" aria-labelledby="plus-t">
-  <div class="plus__dentro">
-    <div class="plus__cielo" data-r>
-      <img src="../assets/img/notte.webp" width="1200" height="697" loading="lazy" alt="{{night_alt}}">
-    </div>
-    <div class="plus__testa" data-r>
-      <h2 id="plus-t">{{plus_title}}</h2>
-      <p>{{plus_text}}</p>
-    </div>
-    <ul class="plus__lista">
-      <li data-r><h3>{{plus_f1}}</h3><p>{{plus_f1d}}</p></li>
-      <li data-r><h3>{{plus_f2}}</h3><p>{{plus_f2d}}</p></li>
-      <li data-r><h3>{{plus_f3}}</h3><p>{{plus_f3d}}</p></li>
-      <li data-r><h3>{{plus_f4}}</h3><p>{{plus_f4d}}</p></li>
-      <li data-r><h3>{{plus_f5}}</h3><p>{{plus_f5d}}</p></li>
-      <li class="plus__prova" data-r><h3>{{plus_trial}}</h3>{{cta_light}}</li>
-    </ul>
-  </div>
 </section>
 
 <!-- la fine -->

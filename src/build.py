@@ -29,6 +29,9 @@ COLORI = {'gatto': ['#e0873a', '#9a958c', '#5a534c', '#e8cfa2'],
           'cane': ['#d9a464', '#8f6346', '#a7a39b', '#ead7b0'],
           'pappagallo': ['#5e9e4a', '#5a8fc8', '#d4553c', '#e6b42e'],
           'criceto': ['#e3a35a', '#ecd6ae', '#b0aaa0', '#f1ebe0']}
+MOMENTI = ['alba', 'giorno', 'tramonto', 'notte']
+STILI = ['partenza', 'autunno', 'primavera', 'mare', 'serra']
+ICONE = ['carta', 'albicocca', 'terracotta', 'rosa', 'giallo', 'verde', 'azzurro', 'blu-penna']
 STORIA = [1, 2, 4, 7, 10, 14, 18, 22, 26, 30]
 
 def tasto(t, tipo=''):
@@ -79,9 +82,28 @@ for lg in LINGUE:
                 f'<span class="animale__nome" aria-hidden="true">{e["pet_" + a]}</span>'
                 f'<div class="tinte" role="radiogroup" aria-label="{e["pet_" + a]}: {e["color"]}">{tinte}</div></li>')
     animali = '\n    '.join(animale(a) for a in ANIMALI)
+    momenti = '\n    '.join(
+        f'<li class="momento momento--{m}" data-r><div class="telefono telefono--foto"><div class="telefono__schermo">'
+        f'<img class="foto" src="../assets/img/momento-{m}.webp" width="700" height="1522" loading="lazy" alt="">'
+        f'<div class="app-sopra" aria-hidden="true"><span class="app-data"></span><span class="app-conto">{e["done_count"].replace("{n}", "18")}</span></div>'
+        f'<p class="momento__obiettivo" aria-hidden="true">{e["goal_example"]}</p></div></div>'
+        f'<span class="momento__nome">{e["m_" + m]}</span></li>' for m in MOMENTI)
+    stili_tab = ''.join(
+        f'<button class="stile" type="button" role="tab" aria-selected="{"true" if i == 0 else "false"}" data-s="{st}">{e["d_" + st]}</button>'
+        for i, st in enumerate(STILI))
+    pigri = ['' if i == 0 else 'loading="lazy" ' for i in range(len(STILI))]
+    alts = [e['studio_alt']] + [''] * (len(STILI) - 1)
+    stili_img = '\n        '.join(
+        f'<img class="foto stile__foto{" on" if i == 0 else ""}" data-s="{st}" src="../assets/img/studio-{st}.webp" width="800" height="1739" '
+        f'{pigri[i]}alt="{alts[i]}">' for i, st in enumerate(STILI))
+    voci = [(18, 'g1', 'g1n'), (17, 'g2', None), (16, 'g3', 'g3n')]
+    traccia = '\n        '.join(
+        f'<li><span class="elenco__giorno">{e["day_short"].replace("{d}", str(d))}</span><span class="elenco__obiettivo">{e[g]}</span>'
+        + (f'<span class="elenco__nota">{e[n]}</span>' if n else '') + '</li>' for d, g, n in voci)
+    icone = ''.join(f'<img src="../assets/img/icona-{i}.webp" width="240" height="240" loading="lazy" alt="">' for i in ICONE)
     val = dict(e)
     val.update(lang=lg, site=SITO, v=v, locale=LOCALE[lg], hreflang=hreflang, lang_links=links,
-               story_frames=frames, paintings=quadri, pets=animali, cta=tasto(e),
+               story_frames=frames, moments=momenti, style_tabs=stili_tab, style_frames=stili_img, track_items=traccia, icons=icone, paintings=quadri, pets=animali, cta=tasto(e),
                cta_small=tasto(e, 'piccolo'), cta_light=tasto(e, 'chiaro'),
                app_head=testa_app(e, 12), app_head_story=testa_app(e, 1),
                js_count=json.dumps(t['done_count'], ensure_ascii=False),
