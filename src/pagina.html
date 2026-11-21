@@ -110,6 +110,42 @@
   <p class="compagno__richiamo" data-r>{{pets_kicker}}</p>
 </section>
 
+<!-- lo studio: la stanza che cresce con te, e si arreda -->
+<section class="studio" id="studio" aria-labelledby="studio-t">
+  <div class="sezione-testa" data-r>
+    <h2 id="studio-t">{{studio2_title}}</h2>
+    <p>{{studio2_text}}</p>
+  </div>
+  <div class="studio__palco">
+    <ol class="richiami richiami--sx">
+      <li data-r><span class="segno" aria-hidden="true">1</span><p>{{c1}}</p></li>
+      <li data-r><span class="segno" aria-hidden="true">2</span><p>{{c2}}</p></li>
+    </ol>
+    <div class="studio__scena" data-r>
+      <div class="telefono telefono--studio">
+        <div class="telefono__schermo">
+          {{style_frames}}
+          <span class="punto" style="--x:70%;--y:33%" aria-hidden="true">1</span>
+          <span class="punto" style="--x:58%;--y:21%" aria-hidden="true">2</span>
+          <span class="punto" style="--x:22%;--y:84%" aria-hidden="true">3</span>
+          <span class="punto" style="--x:10%;--y:33%" aria-hidden="true">4</span>
+        </div>
+      </div>
+    </div>
+    <ol class="richiami richiami--dx" start="3">
+      <li data-r><span class="segno" aria-hidden="true">3</span><p>{{c3}}</p></li>
+      <li data-r><span class="segno" aria-hidden="true">4</span><p>{{c4}}</p></li>
+    </ol>
+  </div>
+  <div class="studio__arreda" data-r>
+    <h3>{{deco_title}}</h3>
+    <p>{{deco_text}}</p>
+    <div class="stili" role="tablist" aria-label="{{deco_title}}">
+      {{style_tabs}}
+    </div>
+  </div>
+</section>
+
 <!-- come funziona: la pagina si ferma, il dipinto cresce con lo scorrimento -->
 <section class="storia" id="come" aria-labelledby="come-t">
   <div class="storia__fermo">
@@ -156,30 +192,6 @@
   </ul>
 </section>
 
-<!-- lo studio, e come si arreda -->
-<section class="studio" id="studio" aria-labelledby="studio-t">
-  <div class="studio__testo">
-    <div data-r>
-      <h2 id="studio-t">{{studio2_title}}</h2>
-      <p>{{studio2_text}}</p>
-    </div>
-    <div class="studio__arreda" data-r>
-      <h3>{{deco_title}}</h3>
-      <p>{{deco_text}}</p>
-      <div class="stili" role="tablist" aria-label="{{deco_title}}">
-        {{style_tabs}}
-      </div>
-    </div>
-  </div>
-  <div class="studio__scena" data-r>
-    <div class="telefono telefono--studio">
-      <div class="telefono__schermo">
-        {{style_frames}}
-      </div>
-    </div>
-  </div>
-</section>
-
 <!-- il calendario: gli obiettivi completati -->
 <section class="traccia" aria-labelledby="traccia-t">
   <div class="traccia__testo" data-r>
@@ -187,17 +199,35 @@
     <p>{{track_text}}</p>
   </div>
   <div class="traccia__scena">
-    <figure class="calendario" data-r>
-      <figcaption><span class="calendario__titolo">{{p_costa}}</span><span class="calendario__conto">18 / 30</span></figcaption>
-      <img src="../assets/img/calendario.webp" width="700" height="894" loading="lazy" alt="">
-    </figure>
-    <div class="elenco" data-r>
-      <h3>{{track_list}}</h3>
-      <ul>
-        {{track_items}}
-      </ul>
+    <div class="cal" data-r>
+      <div class="cal__testa"><span class="cal__titolo">{{p_costa}}</span><span class="cal__conto">18 / 30</span></div>
+      <ol class="cal__griglia">
+        {{cal_days}}
+      </ol>
+      <p class="cal__hint">{{cal_hint}}</p>
+    </div>
+    <div class="cal__foglio" aria-live="polite" data-r>
+      <img class="cal__emblema" src="../assets/img/cal-18.webp" width="172" height="172" alt="">
+      <p class="cal__quando"></p>
+      <p class="cal__obiettivo"></p>
+      <p class="cal__nota"></p>
     </div>
   </div>
+</section>
+
+<!-- perché funziona: gli studi dietro le idee dell'app -->
+<section class="scienza" aria-labelledby="scienza-t">
+  <div class="sezione-testa" data-r>
+    <h2 id="scienza-t">{{sci_title}}</h2>
+    <p>{{sci_text}}</p>
+  </div>
+  <ol class="studi">
+    <li data-r><h3>{{s1}}</h3><p>{{s1d}}</p><p class="studi__app">{{s1a}}</p><a class="studi__fonte" href="https://doi.org/10.1037/bul0000025" rel="noopener" target="_blank">{{s1c}}<span aria-hidden="true"> ↗</span></a></li>
+    <li data-r><h3>{{s2}}</h3><p>{{s2d}}</p><p class="studi__app">{{s2a}}</p><a class="studi__fonte" href="https://www.hbs.edu/faculty/Pages/item.aspx?num=40244" rel="noopener" target="_blank">{{s2c}}<span aria-hidden="true"> ↗</span></a></li>
+    <li data-r><h3>{{s3}}</h3><p>{{s3d}}</p><p class="studi__app">{{s3a}}</p><a class="studi__fonte" href="https://doi.org/10.1002/ejsp.674" rel="noopener" target="_blank">{{s3c}}<span aria-hidden="true"> ↗</span></a></li>
+    <li data-r><h3>{{s4}}</h3><p>{{s4d}}</p><p class="studi__app">{{s4a}}</p><a class="studi__fonte" href="https://doi.org/10.1016/j.paid.2010.01.029" rel="noopener" target="_blank">{{s4c}}<span aria-hidden="true"> ↗</span></a></li>
+  </ol>
+  <p class="scienza__nota" data-r>{{sci_note}}</p>
 </section>
 
 <!-- le funzioni di ogni giorno -->
@@ -267,7 +297,7 @@
   </div>
 </footer>
 
-<script>window.TESTI={lang:"{{lang}}",dayOf:{{js_day_of}},done:{{js_done}},count:{{js_count}}};</script>
+<script>window.TESTI={lang:"{{lang}}",dayOf:{{js_day_of}},done:{{js_done}},count:{{js_count}},cal:{{js_cal}}};</script>
 <script src="../assets/sito.js?v={{v}}" defer></script>
 </body>
 </html>

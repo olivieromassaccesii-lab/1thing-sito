@@ -24,7 +24,7 @@
 <link rel="apple-touch-icon" href="../assets/img/icona.png">
 <link rel="preload" href="../assets/poppi.woff2" as="font" type="font/woff2" crossorigin>
 <link rel="preload" href="../assets/img/costa-12.webp" as="image">
-<link rel="stylesheet" href="../assets/sito.css?v=202611181839">
+<link rel="stylesheet" href="../assets/sito.css?v=202611211848">
 </head>
 <body>
 <a class="salta" href="#contenuto">ir al contenido</a>
@@ -118,6 +118,46 @@
   <p class="compagno__richiamo" data-r>elige quién.</p>
 </section>
 
+<!-- lo studio: la stanza che cresce con te, e si arreda -->
+<section class="studio" id="studio" aria-labelledby="studio-t">
+  <div class="sezione-testa" data-r>
+    <h2 id="studio-t">tu estudio.</h2>
+    <p>la habitación donde pintas, toda tuya. crece contigo: cada objetivo deja una marca, cada cuadro terminado encuentra su sitio en las paredes.</p>
+  </div>
+  <div class="studio__palco">
+    <ol class="richiami richiami--sx">
+      <li data-r><span class="segno" aria-hidden="true">1</span><p>una marca por cada objetivo completado.</p></li>
+      <li data-r><span class="segno" aria-hidden="true">2</span><p>los cuadros terminados, colgados en las paredes.</p></li>
+    </ol>
+    <div class="studio__scena" data-r>
+      <div class="telefono telefono--studio">
+        <div class="telefono__schermo">
+          <img class="foto stile__foto on" data-s="partenza" src="../assets/img/studio-partenza.webp" width="800" height="1739" alt="el estudio del pintor: la ventana, el cuadro en el caballete y el gato durmiendo en su caseta.">
+        <img class="foto stile__foto" data-s="autunno" src="../assets/img/studio-autunno.webp" width="800" height="1739" loading="lazy" alt="">
+        <img class="foto stile__foto" data-s="primavera" src="../assets/img/studio-primavera.webp" width="800" height="1739" loading="lazy" alt="">
+        <img class="foto stile__foto" data-s="mare" src="../assets/img/studio-mare.webp" width="800" height="1739" loading="lazy" alt="">
+        <img class="foto stile__foto" data-s="serra" src="../assets/img/studio-serra.webp" width="800" height="1739" loading="lazy" alt="">
+          <span class="punto" style="--x:70%;--y:33%" aria-hidden="true">1</span>
+          <span class="punto" style="--x:58%;--y:21%" aria-hidden="true">2</span>
+          <span class="punto" style="--x:22%;--y:84%" aria-hidden="true">3</span>
+          <span class="punto" style="--x:10%;--y:33%" aria-hidden="true">4</span>
+        </div>
+      </div>
+    </div>
+    <ol class="richiami richiami--dx" start="3">
+      <li data-r><span class="segno" aria-hidden="true">3</span><p>tu compañero, que te espera.</p></li>
+      <li data-r><span class="segno" aria-hidden="true">4</span><p>cortinas, plantas, lucecitas, alfombras: más de 40 cosas para elegir.</p></li>
+    </ol>
+  </div>
+  <div class="studio__arreda" data-r>
+    <h3>decóralo a tu gusto.</h3>
+    <p>paredes, cortinas, plantas, lucecitas, alfombras: más de 40 cosas.</p>
+    <div class="stili" role="tablist" aria-label="decóralo a tu gusto.">
+      <button class="stile" type="button" role="tab" aria-selected="true" data-s="partenza">al principio</button><button class="stile" type="button" role="tab" aria-selected="false" data-s="autunno">otoño</button><button class="stile" type="button" role="tab" aria-selected="false" data-s="primavera">primavera</button><button class="stile" type="button" role="tab" aria-selected="false" data-s="mare">mar</button><button class="stile" type="button" role="tab" aria-selected="false" data-s="serra">invernadero</button>
+    </div>
+  </div>
+</section>
+
 <!-- come funziona: la pagina si ferma, il dipinto cresce con lo scorrimento -->
 <section class="storia" id="come" aria-labelledby="come-t">
   <div class="storia__fermo">
@@ -176,34 +216,6 @@
   </ul>
 </section>
 
-<!-- lo studio, e come si arreda -->
-<section class="studio" id="studio" aria-labelledby="studio-t">
-  <div class="studio__testo">
-    <div data-r>
-      <h2 id="studio-t">tu estudio.</h2>
-      <p>es la habitación donde vives con tu compañero. en la pared, una marca por cada objetivo completado. colgados, los cuadros que has terminado.</p>
-    </div>
-    <div class="studio__arreda" data-r>
-      <h3>decóralo a tu gusto.</h3>
-      <p>paredes, cortinas, plantas, lucecitas, alfombras: más de 40 cosas.</p>
-      <div class="stili" role="tablist" aria-label="decóralo a tu gusto.">
-        <button class="stile" type="button" role="tab" aria-selected="true" data-s="partenza">al principio</button><button class="stile" type="button" role="tab" aria-selected="false" data-s="autunno">otoño</button><button class="stile" type="button" role="tab" aria-selected="false" data-s="primavera">primavera</button><button class="stile" type="button" role="tab" aria-selected="false" data-s="mare">mar</button><button class="stile" type="button" role="tab" aria-selected="false" data-s="serra">invernadero</button>
-      </div>
-    </div>
-  </div>
-  <div class="studio__scena" data-r>
-    <div class="telefono telefono--studio">
-      <div class="telefono__schermo">
-        <img class="foto stile__foto on" data-s="partenza" src="../assets/img/studio-partenza.webp" width="800" height="1739" alt="el estudio del pintor: la ventana, el cuadro en el caballete y el gato durmiendo en su caseta.">
-        <img class="foto stile__foto" data-s="autunno" src="../assets/img/studio-autunno.webp" width="800" height="1739" loading="lazy" alt="">
-        <img class="foto stile__foto" data-s="primavera" src="../assets/img/studio-primavera.webp" width="800" height="1739" loading="lazy" alt="">
-        <img class="foto stile__foto" data-s="mare" src="../assets/img/studio-mare.webp" width="800" height="1739" loading="lazy" alt="">
-        <img class="foto stile__foto" data-s="serra" src="../assets/img/studio-serra.webp" width="800" height="1739" loading="lazy" alt="">
-      </div>
-    </div>
-  </div>
-</section>
-
 <!-- il calendario: gli obiettivi completati -->
 <section class="traccia" aria-labelledby="traccia-t">
   <div class="traccia__testo" data-r>
@@ -211,19 +223,64 @@
     <p>en el calendario encuentras los 30 trozos del cuadro. tocas un día y vuelves a leer el objetivo, y la nota que dejaste.</p>
   </div>
   <div class="traccia__scena">
-    <figure class="calendario" data-r>
-      <figcaption><span class="calendario__titolo">la costa en invierno</span><span class="calendario__conto">18 / 30</span></figcaption>
-      <img src="../assets/img/calendario.webp" width="700" height="894" loading="lazy" alt="">
-    </figure>
-    <div class="elenco" data-r>
-      <h3>todos los objetivos</h3>
-      <ul>
-        <li><span class="elenco__giorno">día 18</span><span class="elenco__obiettivo">llamar a la abuela</span><span class="elenco__nota">le conté lo del viaje.</span></li>
-        <li><span class="elenco__giorno">día 17</span><span class="elenco__obiettivo">leer diez páginas</span></li>
-        <li><span class="elenco__giorno">día 16</span><span class="elenco__obiettivo">salir a correr</span><span class="elenco__nota">más fácil de lo que pensaba.</span></li>
-      </ul>
+    <div class="cal" data-r>
+      <div class="cal__testa"><span class="cal__titolo">la costa en invierno</span><span class="cal__conto">18 / 30</span></div>
+      <ol class="cal__griglia">
+        <li><button class="giorno" type="button" data-d="1" aria-pressed="false" aria-label="día 1: dar un paseo sin el móvil"><span class="giorno__n" aria-hidden="true">1</span><img src="../assets/img/cal-1.webp" width="172" height="172" loading="lazy" alt=""></button></li>
+        <li><button class="giorno" type="button" data-d="2" aria-pressed="false" aria-label="día 2: terminar el borrador"><span class="giorno__n" aria-hidden="true">2</span><img src="../assets/img/cal-2.webp" width="172" height="172" loading="lazy" alt=""></button></li>
+        <li><button class="giorno" type="button" data-d="3" aria-pressed="false" aria-label="día 3: llamar a la abuela"><span class="giorno__n" aria-hidden="true">3</span><img src="../assets/img/cal-3.webp" width="172" height="172" loading="lazy" alt=""><span class="giorno__nota" aria-hidden="true"></span></button></li>
+        <li><button class="giorno" type="button" data-d="4" aria-pressed="false" aria-label="día 4: ordenar el escritorio"><span class="giorno__n" aria-hidden="true">4</span><img src="../assets/img/cal-4.webp" width="172" height="172" loading="lazy" alt=""></button></li>
+        <li><button class="giorno" type="button" data-d="5" aria-pressed="false" aria-label="día 5: leer diez páginas"><span class="giorno__n" aria-hidden="true">5</span><img src="../assets/img/cal-5.webp" width="172" height="172" loading="lazy" alt=""></button></li>
+        <li><button class="giorno" type="button" data-d="6" aria-pressed="false" aria-label="día 6: salir a correr"><span class="giorno__n" aria-hidden="true">6</span><img src="../assets/img/cal-6.webp" width="172" height="172" loading="lazy" alt=""><span class="giorno__nota" aria-hidden="true"></span></button></li>
+        <li><button class="giorno" type="button" data-d="7" aria-pressed="false" aria-label="día 7: escribir a Giulia"><span class="giorno__n" aria-hidden="true">7</span><img src="../assets/img/cal-7.webp" width="172" height="172" loading="lazy" alt=""></button></li>
+        <li><button class="giorno" type="button" data-d="8" aria-pressed="false" aria-label="día 8: pedir cita con el dentista"><span class="giorno__n" aria-hidden="true">8</span><img src="../assets/img/cal-8.webp" width="172" height="172" loading="lazy" alt=""></button></li>
+        <li><button class="giorno" type="button" data-d="9" aria-pressed="false" aria-label="día 9: cocinar algo nuevo"><span class="giorno__n" aria-hidden="true">9</span><img src="../assets/img/cal-9.webp" width="172" height="172" loading="lazy" alt=""></button></li>
+        <li><button class="giorno" type="button" data-d="10" aria-pressed="false" aria-label="día 10: ordenar las fotos"><span class="giorno__n" aria-hidden="true">10</span><img src="../assets/img/cal-10.webp" width="172" height="172" loading="lazy" alt=""></button></li>
+        <li><button class="giorno" type="button" data-d="11" aria-pressed="false" aria-label="día 11: hacer estiramientos"><span class="giorno__n" aria-hidden="true">11</span><img src="../assets/img/cal-11.webp" width="172" height="172" loading="lazy" alt=""></button></li>
+        <li><button class="giorno" type="button" data-d="12" aria-pressed="false" aria-label="día 12: pagar la factura"><span class="giorno__n" aria-hidden="true">12</span><img src="../assets/img/cal-12.webp" width="172" height="172" loading="lazy" alt=""></button></li>
+        <li><button class="giorno" type="button" data-d="13" aria-pressed="false" aria-label="día 13: aprender diez palabras"><span class="giorno__n" aria-hidden="true">13</span><img src="../assets/img/cal-13.webp" width="172" height="172" loading="lazy" alt=""></button></li>
+        <li><button class="giorno" type="button" data-d="14" aria-pressed="false" aria-label="día 14: regar las plantas"><span class="giorno__n" aria-hidden="true">14</span><img src="../assets/img/cal-14.webp" width="172" height="172" loading="lazy" alt=""><span class="giorno__nota" aria-hidden="true"></span></button></li>
+        <li><button class="giorno" type="button" data-d="15" aria-pressed="false" aria-label="día 15: escribir el diario"><span class="giorno__n" aria-hidden="true">15</span><img src="../assets/img/cal-15.webp" width="172" height="172" loading="lazy" alt=""></button></li>
+        <li><button class="giorno" type="button" data-d="16" aria-pressed="false" aria-label="día 16: responder los correos"><span class="giorno__n" aria-hidden="true">16</span><img src="../assets/img/cal-16.webp" width="172" height="172" loading="lazy" alt=""></button></li>
+        <li><button class="giorno" type="button" data-d="17" aria-pressed="false" aria-label="día 17: ir al gimnasio"><span class="giorno__n" aria-hidden="true">17</span><img src="../assets/img/cal-17.webp" width="172" height="172" loading="lazy" alt=""></button></li>
+        <li><button class="giorno" type="button" data-d="18" aria-pressed="true" aria-label="día 18: preparar la presentación"><span class="giorno__n" aria-hidden="true">18</span><img src="../assets/img/cal-18.webp" width="172" height="172" loading="lazy" alt=""></button></li>
+        <li><span class="giorno giorno--vuoto" title="todavía por pintar"><span class="giorno__n" aria-hidden="true">19</span><svg class="giorno__anello" viewBox="0 0 100 100" aria-hidden="true"><path data-seme="19" d=""/></svg></span></li>
+        <li><span class="giorno giorno--vuoto" title="todavía por pintar"><span class="giorno__n" aria-hidden="true">20</span><svg class="giorno__anello" viewBox="0 0 100 100" aria-hidden="true"><path data-seme="20" d=""/></svg></span></li>
+        <li><span class="giorno giorno--vuoto" title="todavía por pintar"><span class="giorno__n" aria-hidden="true">21</span><svg class="giorno__anello" viewBox="0 0 100 100" aria-hidden="true"><path data-seme="21" d=""/></svg></span></li>
+        <li><span class="giorno giorno--vuoto" title="todavía por pintar"><span class="giorno__n" aria-hidden="true">22</span><svg class="giorno__anello" viewBox="0 0 100 100" aria-hidden="true"><path data-seme="22" d=""/></svg></span></li>
+        <li><span class="giorno giorno--vuoto" title="todavía por pintar"><span class="giorno__n" aria-hidden="true">23</span><svg class="giorno__anello" viewBox="0 0 100 100" aria-hidden="true"><path data-seme="23" d=""/></svg></span></li>
+        <li><span class="giorno giorno--vuoto" title="todavía por pintar"><span class="giorno__n" aria-hidden="true">24</span><svg class="giorno__anello" viewBox="0 0 100 100" aria-hidden="true"><path data-seme="24" d=""/></svg></span></li>
+        <li><span class="giorno giorno--vuoto" title="todavía por pintar"><span class="giorno__n" aria-hidden="true">25</span><svg class="giorno__anello" viewBox="0 0 100 100" aria-hidden="true"><path data-seme="25" d=""/></svg></span></li>
+        <li><span class="giorno giorno--vuoto" title="todavía por pintar"><span class="giorno__n" aria-hidden="true">26</span><svg class="giorno__anello" viewBox="0 0 100 100" aria-hidden="true"><path data-seme="26" d=""/></svg></span></li>
+        <li><span class="giorno giorno--vuoto" title="todavía por pintar"><span class="giorno__n" aria-hidden="true">27</span><svg class="giorno__anello" viewBox="0 0 100 100" aria-hidden="true"><path data-seme="27" d=""/></svg></span></li>
+        <li><span class="giorno giorno--vuoto" title="todavía por pintar"><span class="giorno__n" aria-hidden="true">28</span><svg class="giorno__anello" viewBox="0 0 100 100" aria-hidden="true"><path data-seme="28" d=""/></svg></span></li>
+        <li><span class="giorno giorno--vuoto" title="todavía por pintar"><span class="giorno__n" aria-hidden="true">29</span><svg class="giorno__anello" viewBox="0 0 100 100" aria-hidden="true"><path data-seme="29" d=""/></svg></span></li>
+        <li><span class="giorno giorno--vuoto" title="todavía por pintar"><span class="giorno__n" aria-hidden="true">30</span><svg class="giorno__anello" viewBox="0 0 100 100" aria-hidden="true"><path data-seme="30" d=""/></svg></span></li>
+      </ol>
+      <p class="cal__hint">toca un día hecho para volver a leerlo.</p>
+    </div>
+    <div class="cal__foglio" aria-live="polite" data-r>
+      <img class="cal__emblema" src="../assets/img/cal-18.webp" width="172" height="172" alt="">
+      <p class="cal__quando"></p>
+      <p class="cal__obiettivo"></p>
+      <p class="cal__nota"></p>
     </div>
   </div>
+</section>
+
+<!-- perché funziona: gli studi dietro le idee dell'app -->
+<section class="scienza" aria-labelledby="scienza-t">
+  <div class="sezione-testa" data-r>
+    <h2 id="scienza-t">por qué funciona.</h2>
+    <p>1thing se basa en ideas que la investigación lleva mucho tiempo estudiando.</p>
+  </div>
+  <ol class="studi">
+    <li data-r><h3>anotar los progresos ayuda a alcanzar los objetivos.</h3><p>un metaanálisis de 138 estudios: quien sigue sus progresos alcanza sus objetivos más a menudo, sobre todo si los anota.</p><p class="studi__app">en 1thing: el cuadro y el calendario.</p><a class="studi__fonte" href="https://doi.org/10.1037/bul0000025" rel="noopener" target="_blank">Harkin y colaboradores, Psychological Bulletin, 2016<span aria-hidden="true"> ↗</span></a></li>
+    <li data-r><h3>los pequeños avances cuentan.</h3><p>en unos 12.000 diarios de trabajo, los mejores días eran los de un pequeño avance.</p><p class="studi__app">en 1thing: un objetivo pequeño, cada día.</p><a class="studi__fonte" href="https://www.hbs.edu/faculty/Pages/item.aspx?num=40244" rel="noopener" target="_blank">Amabile y Kramer, The Progress Principle, 2011<span aria-hidden="true"> ↗</span></a></li>
+    <li data-r><h3>saltarse un día no rompe un hábito.</h3><p>siguiendo a 96 personas durante 12 semanas, saltarse una ocasión no cambió de forma apreciable la formación del hábito.</p><p class="studi__app">en 1thing: si te saltas un día, el cuadro te espera.</p><a class="studi__fonte" href="https://doi.org/10.1002/ejsp.674" rel="noopener" target="_blank">Lally y colaboradores, European Journal of Social Psychology, 2010<span aria-hidden="true"> ↗</span></a></li>
+    <li data-r><h3>perdonarse ayuda a posponer menos.</h3><p>los estudiantes que se perdonaron por haber pospuesto el estudio de un examen pospusieron menos el siguiente.</p><p class="studi__app">en 1thing: sin culpa, sin rachas que perder.</p><a class="studi__fonte" href="https://doi.org/10.1016/j.paid.2010.01.029" rel="noopener" target="_blank">Wohl, Pychyl y Bennett, Personality and Individual Differences, 2010<span aria-hidden="true"> ↗</span></a></li>
+  </ol>
+  <p class="scienza__nota" data-r>son estudios sobre las ideas en las que se basa la app, no sobre 1thing.</p>
 </section>
 
 <!-- le funzioni di ogni giorno -->
@@ -297,7 +354,7 @@
   </div>
 </footer>
 
-<script>window.TESTI={lang:"es",dayOf:"día {d} de 30",done:"el cuadro 1 está terminado.",count:"{n} objetivos completados"};</script>
-<script src="../assets/sito.js?v=202611181839" defer></script>
+<script>window.TESTI={lang:"es",dayOf:"día {d} de 30",done:"el cuadro 1 está terminado.",count:"{n} objetivos completados",cal:{"goals": ["dar un paseo sin el móvil", "terminar el borrador", "llamar a la abuela", "ordenar el escritorio", "leer diez páginas", "salir a correr", "escribir a Giulia", "pedir cita con el dentista", "cocinar algo nuevo", "ordenar las fotos", "hacer estiramientos", "pagar la factura", "aprender diez palabras", "regar las plantas", "escribir el diario", "responder los correos", "ir al gimnasio", "preparar la presentación"], "notes": {"3": "le conté lo del viaje.", "6": "más fácil de lo que pensaba.", "14": "la albahaca ha revivido."}, "day": "día {d}"}};</script>
+<script src="../assets/sito.js?v=202611211848" defer></script>
 </body>
 </html>

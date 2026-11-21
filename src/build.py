@@ -63,8 +63,8 @@ os.makedirs(DIST, exist_ok=True)
 for lg in LINGUE:
     t = dict(testi[lg])
     if lg == 'fr':
-        t = {k: fr_spazi(v_) for k, v_ in t.items()}
-    e = {k: html.escape(v_, quote=True) for k, v_ in t.items()}
+        t = {k: (fr_spazi(v_) if isinstance(v_, str) else v_) for k, v_ in t.items()}
+    e = {k: html.escape(v_, quote=True) for k, v_ in t.items() if isinstance(v_, str)}
     links = ''.join(
         f'<li><a href="../{o}/" hreflang="{HREFLANG[o]}" lang="{o}"' + (' aria-current="page"' if o == lg else '') +
         f'>{html.escape(testi[o]["lang_name"])}</a></li>' for o in LINGUE)
@@ -108,9 +108,22 @@ for lg in LINGUE:
         f'<li><span class="elenco__giorno">{e["day_short"].replace("{d}", str(d))}</span><span class="elenco__obiettivo">{e[g]}</span>'
         + (f'<span class="elenco__nota">{e[n]}</span>' if n else '') + '</li>' for d, g, n in voci)
     icone = ''.join(f'<img src="../assets/img/icona-{i}.webp" width="240" height="240" loading="lazy" alt="">' for i in ICONE)
+    # il calendario: 30 giorni, i primi 18 fatti, con il pezzo di dipinto vero
+    def anello(i):
+        return f'<svg class="giorno__anello" viewBox="0 0 100 100" aria-hidden="true"><path data-seme="{i}" d=""/></svg>'
+    giorni_cal = []
+    for i in range(1, 31):
+        if i <= 18:
+            nota = '<span class="giorno__nota" aria-hidden="true"></span>' if str(i) in t['cal_notes'] else ''
+            giorni_cal.append(f'<li><button class="giorno" type="button" data-d="{i}" aria-pressed="{"true" if i == 18 else "false"}" '
+                              f'aria-label="{e["day"].replace("{d}", str(i))}: {html.escape(t["cal_goals"][i - 1], quote=True)}">'
+                              f'<span class="giorno__n" aria-hidden="true">{i}</span><img src="../assets/img/cal-{i}.webp" width="172" height="172" loading="lazy" alt="">{nota}</button></li>')
+        else:
+            giorni_cal.append(f'<li><span class="giorno giorno--vuoto" title="{e["cal_todo"]}"><span class="giorno__n" aria-hidden="true">{i}</span>{anello(i)}</span></li>')
+    js_cal = json.dumps({'goals': t['cal_goals'], 'notes': t['cal_notes'], 'day': t['day']}, ensure_ascii=False)
     val = dict(e)
     val.update(lang=lg, site=SITO, v=v, locale=LOCALE[lg], hreflang=hreflang, lang_links=links,
-               story_frames=frames, moments=momenti, style_tabs=stili_tab, style_frames=stili_img, track_items=traccia, icons=icone, paintings=quadri, pets=animali, cta=tasto(e),
+               story_frames=frames, cal_days='\n        '.join(giorni_cal), js_cal=js_cal, moments=momenti, style_tabs=stili_tab, style_frames=stili_img, track_items=traccia, icons=icone, paintings=quadri, pets=animali, cta=tasto(e),
                cta_small=tasto(e, 'piccolo'), cta_light=tasto(e, 'chiaro'),
                app_head=testa_app(e, 12), app_head_story=testa_app(e, 1),
                js_count=json.dumps(t['done_count'], ensure_ascii=False),

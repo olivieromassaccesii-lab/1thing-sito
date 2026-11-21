@@ -96,7 +96,7 @@ a.tasto:active{transform:translateY(0) scale(.98)}
 .foglio__poster,.foglio__tela,.storia__quadro{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
 .foglio__tela{opacity:0;transition:opacity .5s}
 .telefono--vivo.vivo .foglio__tela{opacity:1}
-.foglio__obiettivo{position:absolute;left:6.2%;right:6.2%;top:38%;font:400 9.4cqw/1.2 var(--mano);color:var(--inchiostro);pointer-events:none;transition:color .6s}
+.foglio__obiettivo{position:absolute;left:6.2%;right:6.2%;top:41%;font:400 9.4cqw/1.2 var(--mano);color:var(--inchiostro);pointer-events:none;transition:color .6s}
 .fatto .foglio__obiettivo{color:rgb(35 30 26 / .5)}
 
 .app-testa{position:absolute;inset:0 0 auto;padding:16.5cqw 6cqw 0;display:flex;align-items:flex-start;justify-content:space-between;color:var(--inchiostro);pointer-events:none;z-index:1}
@@ -257,10 +257,10 @@ a.tasto:active{transform:translateY(0) scale(.98)}
 /* ---------- foto vere dentro il telefono ---------- */
 .telefono--foto,.telefono--studio{background:linear-gradient(145deg,#3b3632,#151210 40%,#25211e)}
 .foto{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
-.app-sopra{position:absolute;left:0;right:0;top:20.6cqw;display:flex;flex-direction:column;align-items:center;font-family:var(--mano);line-height:1.05;color:var(--inchiostro);pointer-events:none}
+.app-sopra{position:absolute;left:0;right:0;top:10.2%;display:flex;flex-direction:column;align-items:center;font-family:var(--mano);line-height:1.05;color:var(--inchiostro);pointer-events:none}
 .app-sopra .app-data{font-size:6.2cqw}
 .app-sopra .app-conto{font-size:3.9cqw;opacity:.72}
-.momento__obiettivo{position:absolute;left:6.4%;right:6.4%;top:95cqw;font:400 9.6cqw/1.2 var(--mano);color:rgb(35 30 26 / .55);pointer-events:none}
+.momento__obiettivo{position:absolute;left:6.4%;right:24%;top:45.3%;font:400 9.6cqw/1.2 var(--mano);color:rgb(35 30 26 / .55);pointer-events:none}
 .momento--notte .app-sopra,.momento--notte .momento__obiettivo{color:#eef3ff}
 
 /* ---------- i momenti ---------- */
@@ -278,37 +278,85 @@ a.tasto:active{transform:translateY(0) scale(.98)}
   .momento:nth-child(even){margin-top:0}
 }
 
-/* ---------- lo studio ---------- */
-.studio{max-width:var(--larga);margin:0 auto;padding:clamp(90px,11vw,150px) var(--gutter);display:grid;grid-template-columns:minmax(0,1fr) auto;gap:clamp(40px,7vw,110px);align-items:center}
-.studio__testo>div>p{margin-top:18px;font-size:clamp(1.1rem,1rem + .35vw,1.25rem);color:var(--matita);max-width:40ch}
-.studio__arreda{margin-top:clamp(36px,4vw,56px);padding-top:28px;border-top:1px solid var(--filo)}
-.studio__arreda h3{font:400 2rem/1.05 var(--mano)}
+/* ---------- lo studio: la parte più bella dell'app ---------- */
+.studio{position:relative;padding:clamp(100px,12vw,170px) var(--gutter) clamp(90px,11vw,150px);
+  background:radial-gradient(ellipse 60% 55% at 50% 52%,#f3e6cf,transparent 72%),var(--carta)}
+.studio__palco{max-width:1180px;margin:clamp(44px,5vw,72px) auto 0;display:grid;grid-template-columns:minmax(0,1fr) auto minmax(0,1fr);gap:clamp(24px,4vw,64px);align-items:center}
+.richiami{display:flex;flex-direction:column;gap:clamp(40px,7vw,120px)}
+.richiami li{display:flex;gap:14px;align-items:flex-start}
+.richiami--sx li{flex-direction:row-reverse;text-align:right}
+.richiami p{font:400 clamp(1.35rem,1.1rem + .7vw,1.75rem)/1.15 var(--mano);color:var(--inchiostro);max-width:16ch}
+.segno,.punto{position:relative;display:inline-flex;align-items:center;justify-content:center;flex:none;width:40px;height:40px;
+  font:400 1.35rem/1 var(--mano);color:var(--penna);padding-bottom:3px}
+.segno svg,.punto svg{position:absolute;inset:0;width:100%;height:100%;overflow:visible;pointer-events:none}
+.segno path,.punto path{fill:none;stroke:var(--penna);stroke-width:2.6;stroke-linecap:round}
+.punto{position:absolute;left:var(--x);top:var(--y);translate:-50% -50%;width:34px;height:34px;font-size:1.15rem;z-index:2}
+.punto::before{content:"";position:absolute;inset:8%;border-radius:50%;background:radial-gradient(circle,rgb(249 245 239 / .95) 55%,rgb(249 245 239 / 0) 72%)}
+.punto span{position:relative}
+@media (prefers-reduced-motion:no-preference){.punto{animation:galleggia 3.2s ease-in-out infinite}.punto:nth-of-type(2n){animation-delay:-1.6s}}
+@keyframes galleggia{50%{translate:-50% calc(-50% - 4px)}}
+.studio .telefono{--w:min(360px,calc((100svh - 140px) * 402 / 874))}
+.stile__foto{opacity:0;transition:opacity .6s var(--esce)}
+.stile__foto.on{opacity:1}
+.studio__arreda{max-width:720px;margin:clamp(48px,6vw,80px) auto 0;display:flex;flex-direction:column;align-items:center;text-align:center}
+.studio__arreda h3{font:400 2.2rem/1.05 var(--mano)}
 .studio__arreda p{margin-top:8px;color:var(--matita)}
-.stili{margin-top:20px;display:flex;flex-wrap:wrap;gap:8px}
-.stile{height:40px;padding:0 16px;border-radius:999px;border:1px solid var(--filo);background:transparent;cursor:pointer;font-size:.92rem;color:var(--testo);transition:background-color .25s,color .25s,border-color .25s}
+.stili{margin-top:22px;display:flex;flex-wrap:wrap;justify-content:center;gap:8px}
+.stile{height:42px;padding:0 18px;border-radius:999px;border:1px solid var(--filo);background:rgb(255 255 255 / .5);cursor:pointer;font-size:.92rem;color:var(--testo);transition:background-color .25s,color .25s,border-color .25s}
 .stile:hover{border-color:rgb(35 30 26 / .3)}
 .stile[aria-selected="true"]{background:var(--inchiostro);border-color:var(--inchiostro);color:var(--carta)}
-.studio .telefono{--w:min(330px,calc((100svh - 160px) * 402 / 874))}
-.stile__foto{opacity:0;transition:opacity .5s var(--esce)}
-.stile__foto.on{opacity:1}
-@media (max-width:860px){.studio{grid-template-columns:1fr}.studio__scena{display:flex;justify-content:center}.studio .telefono{--w:min(300px,76vw)}}
+@media (max-width:900px){
+  .studio__palco{grid-template-columns:1fr;justify-items:center}
+  .studio__scena{order:-1}
+  .studio .telefono{--w:min(320px,80vw)}
+  .richiami{gap:18px;width:100%;max-width:440px}
+  .richiami--sx li{flex-direction:row;text-align:left}
+}
 
-/* ---------- il calendario ---------- */
+/* ---------- il calendario, da toccare ---------- */
 .traccia{padding:clamp(90px,11vw,150px) var(--gutter);background:var(--carta-2)}
 .traccia__testo{max-width:var(--larga);margin:0 auto}
 .traccia__testo p{margin-top:18px;font-size:clamp(1.1rem,1rem + .35vw,1.25rem);color:var(--matita);max-width:46ch}
-.traccia__scena{max-width:var(--larga);margin:clamp(40px,5vw,64px) auto 0;display:grid;grid-template-columns:minmax(0,.85fr) minmax(0,1fr);gap:clamp(20px,3vw,40px);align-items:start}
-.calendario{margin:0;padding:clamp(18px,2.4vw,28px);border-radius:18px;background:#fbf8f3;box-shadow:0 0 0 1px rgb(35 30 26 / .05),0 18px 40px -26px rgb(35 30 26 / .35)}
-.calendario figcaption{display:flex;flex-direction:column;align-items:center;margin-bottom:10px}
-.calendario__titolo{font:400 1.9rem/1.1 var(--mano);color:var(--inchiostro)}
-.calendario__conto{font-size:.85rem;color:var(--matita);font-variant-numeric:tabular-nums}
-.elenco{padding:clamp(18px,2.4vw,28px);border-radius:18px;background:#fbf8f3;box-shadow:0 0 0 1px rgb(35 30 26 / .05),0 18px 40px -26px rgb(35 30 26 / .35)}
-.elenco h3{font:400 1.9rem/1.1 var(--mano);text-align:center;margin-bottom:14px}
-.elenco li{display:grid;grid-template-columns:auto 1fr;column-gap:14px;padding:14px 4px;border-top:1px solid var(--filo)}
-.elenco__giorno{grid-row:span 2;font-size:.8rem;font-weight:600;color:var(--penna);padding-top:6px;white-space:nowrap}
-.elenco__obiettivo{font:400 1.45rem/1.2 var(--mano);color:var(--inchiostro)}
-.elenco__nota{color:var(--matita);font-size:.95rem;margin-top:2px}
-@media (max-width:860px){.traccia__scena{grid-template-columns:1fr}}
+.traccia__scena{max-width:var(--larga);margin:clamp(40px,5vw,64px) auto 0;display:grid;grid-template-columns:minmax(0,1.15fr) minmax(0,1fr);gap:clamp(20px,3vw,40px);align-items:start}
+.cal,.cal__foglio{border-radius:18px;background:#fbf8f3;box-shadow:0 0 0 1px rgb(35 30 26 / .05),0 18px 40px -26px rgb(35 30 26 / .35)}
+.cal{padding:clamp(18px,2.6vw,32px)}
+.cal__testa{display:flex;flex-direction:column;align-items:center;margin-bottom:16px}
+.cal__titolo{font:400 1.9rem/1.1 var(--mano);color:var(--inchiostro)}
+.cal__conto{font-size:.85rem;color:var(--matita);font-variant-numeric:tabular-nums}
+.cal__griglia{display:grid;grid-template-columns:repeat(5,minmax(0,1fr));gap:clamp(6px,1.4vw,14px)}
+.giorno{position:relative;display:block;width:100%;aspect-ratio:1;padding:0;border:0;background:none;border-radius:50%;-webkit-tap-highlight-color:transparent}
+button.giorno{cursor:pointer;transition:transform .35s var(--esce)}
+button.giorno:hover{transform:scale(1.06)}
+.giorno img{width:100%;height:100%;clip-path:circle(47.5%);border-radius:50%}
+.giorno__scelto{position:absolute;inset:-7%;width:114%;height:114%;overflow:visible;pointer-events:none;opacity:0;transition:opacity .2s}
+.giorno__scelto path{fill:none;stroke:#5f86b8;stroke-width:3.4;stroke-linecap:round;stroke-dasharray:var(--l);stroke-dashoffset:var(--l)}
+.giorno[aria-pressed="true"] .giorno__scelto{opacity:1}
+.giorno[aria-pressed="true"] .giorno__scelto path{stroke-dashoffset:0;transition:stroke-dashoffset .5s var(--esce)}
+.giorno__n{position:absolute;left:-2px;top:-4px;font:400 .95rem/1 var(--mano);color:var(--matita)}
+.giorno__nota{position:absolute;right:4%;top:4%;width:12px;height:12px;border-radius:50%;background:#7b9ccc}
+.giorno__anello{width:100%;height:100%}
+.giorno__anello path{fill:none;stroke:rgb(35 30 26 / .32);stroke-width:2;stroke-linecap:round}
+.cal__hint{margin-top:16px;text-align:center;font-size:.9rem;color:var(--matita)}
+.cal__foglio{position:sticky;top:96px;padding:clamp(24px,3vw,40px);display:flex;flex-direction:column;align-items:center;text-align:center;min-height:320px}
+.cal__emblema{width:132px;height:132px;clip-path:circle(47.5%);transition:opacity .25s}
+.cal__quando{margin-top:16px;font-size:.85rem;font-weight:600;color:var(--penna);letter-spacing:.01em}
+.cal__obiettivo{margin-top:6px;font:400 clamp(1.8rem,1.4rem + 1vw,2.3rem)/1.1 var(--mano);color:var(--inchiostro)}
+.cal__nota{margin-top:14px;max-width:30ch;color:var(--testo);font:400 1.3rem/1.25 var(--mano);color:var(--matita)}
+.cal__nota:empty{display:none}
+.cal__foglio.cambia .cal__emblema,.cal__foglio.cambia p{animation:sale .45s var(--esce)}
+@media (max-width:860px){.traccia__scena{grid-template-columns:1fr}.cal__foglio{position:static;min-height:0}}
+
+/* ---------- perché funziona ---------- */
+.scienza{padding:clamp(110px,13vw,170px) var(--gutter) clamp(40px,6vw,80px)}
+.studi{max-width:var(--larga);margin:clamp(44px,5vw,72px) auto 0;display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:clamp(28px,4vw,56px) clamp(32px,5vw,80px)}
+.studi li{padding-top:22px;border-top:1px solid var(--filo);display:flex;flex-direction:column;gap:10px}
+.studi h3{font:400 clamp(1.6rem,1.3rem + .8vw,2rem)/1.1 var(--mano)}
+.studi p{color:var(--matita);max-width:52ch}
+.studi .studi__app{color:var(--inchiostro);font-weight:500}
+.studi__fonte{font-size:.85rem;color:var(--penna);text-decoration:none;margin-top:auto}
+.studi__fonte:hover{text-decoration:underline}
+.scienza__nota{max-width:var(--larga);margin:clamp(28px,4vw,44px) auto 0;font-size:.85rem;color:var(--matita)}
+@media (max-width:760px){.studi{grid-template-columns:1fr}}
 
 /* ---------- le funzioni ---------- */
 .funzioni{padding:clamp(110px,13vw,170px) 0 clamp(40px,6vw,80px)}

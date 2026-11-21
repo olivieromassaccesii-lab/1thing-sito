@@ -113,6 +113,57 @@
     foto.forEach(f => f.classList.toggle('on', f.dataset.s === b.dataset.s));
   }));
 
+  // ---------- anelli a mano: numeri dello studio, giorni del calendario ----------
+  const svgNS = 'http://www.w3.org/2000/svg';
+  const anelloSVG = (seed, cls, chiuso) => {
+    const svg = document.createElementNS(svgNS, 'svg'); svg.setAttribute('viewBox', '0 0 100 100'); svg.setAttribute('aria-hidden', 'true');
+    if (cls) svg.setAttribute('class', cls);
+    const p = document.createElementNS(svgNS, 'path'); p.setAttribute('d', giro(seed, chiuso, 50, 50, 44)); svg.append(p); return svg;
+  };
+  document.querySelectorAll('.segno, .punto').forEach((el, i) => {
+    const n = el.textContent; el.textContent = '';
+    const s = document.createElement('span'); s.textContent = n;
+    el.append(anelloSVG(51 + i * 3, '', false), s);
+  });
+  // i giorni ancora da dipingere: il tratteggio a mano
+  document.querySelectorAll('.giorno__anello path').forEach(p => {
+    const i = +p.dataset.seme; p.setAttribute('d', giro(70 + i, true, 50, 50, 40));
+    const L = p.getTotalLength(), R = rng(i * 13 + 5), pezzi = [];
+    let fatto = 0; while (fatto < L) { const a = 5 + R() * 9, b = 4 + R() * 6; pezzi.push(a.toFixed(1), b.toFixed(1)); fatto += a + b; }
+    p.style.strokeDasharray = pezzi.join(' ');
+  });
+
+  // ---------- il calendario: tocchi un giorno, rileggi l'obiettivo ----------
+  const cal = document.querySelector('.cal');
+  if (cal && T.cal) {
+    const foglio = document.querySelector('.cal__foglio');
+    const emb = foglio.querySelector('.cal__emblema'), quando = foglio.querySelector('.cal__quando');
+    const ob = foglio.querySelector('.cal__obiettivo'), nota = foglio.querySelector('.cal__nota');
+    const fmt = (() => { try { return new Intl.DateTimeFormat(T.lang === 'pt' ? 'pt-BR' : T.lang, { day: 'numeric', month: 'long' }); } catch (e) { return null; } })();
+    const oggi = new Date();
+    const data = d => { const x = new Date(oggi); x.setDate(oggi.getDate() - (19 - d)); return fmt ? fmt.format(x).toLowerCase() : ''; };
+    const bottoni = [...cal.querySelectorAll('button.giorno')];
+    bottoni.forEach((b, i) => {
+      const svg = anelloSVG(90 + i, 'giorno__scelto', false); b.append(svg);
+      const p = svg.querySelector('path'); svg.style.setProperty('--l', p.getTotalLength());
+    });
+    const mostra = (d, anima) => {
+      bottoni.forEach(b => b.setAttribute('aria-pressed', +b.dataset.d === d ? 'true' : 'false'));
+      emb.src = `../assets/img/cal-${d}.webp`;
+      quando.textContent = (T.cal.day || '{d}').replace('{d}', d) + (data(d) ? ' · ' + data(d) : '');
+      ob.textContent = T.cal.goals[d - 1];
+      nota.textContent = T.cal.notes[String(d)] || '';
+      if (anima) { foglio.classList.remove('cambia'); void foglio.offsetWidth; foglio.classList.add('cambia'); }
+    };
+    bottoni.forEach(b => b.addEventListener('click', () => {
+      mostra(+b.dataset.d, true);
+      // su telefono la scheda sta sotto la griglia: se non si vede, ci si arriva
+      const r = foglio.getBoundingClientRect();
+      if (r.top > innerHeight - 120 || r.bottom < 80) foglio.scrollIntoView({ behavior: calma ? 'auto' : 'smooth', block: 'center' });
+    }));
+    mostra(18, false);
+  }
+
   // ---------- come funziona: il dipinto cresce scorrendo ----------
   const storia = document.querySelector('.storia');
   if (storia) {
